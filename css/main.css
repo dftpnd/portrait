@@ -1140,6 +1140,7 @@ h1, h2, h3 {
 .thumbs li img {
     width: 100%;
     max-height: 80px;
+    max-width: 151px;
 }
 
 .cot-gallery .fg-template a {
@@ -1985,6 +1986,7 @@ dd {
 
 .thumbs li {
     display: inline-block;
+    text-align: center;
 }
 
 .thumb-modal .modal-content {
