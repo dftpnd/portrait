@@ -46,7 +46,7 @@ $(function () {
 
             },
             function () {
-                closeDoor();
+                location.reload();
             }
         );
     });
