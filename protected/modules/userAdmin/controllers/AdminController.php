@@ -278,5 +278,13 @@ class AdminController extends CController
         ));
     }
 
+    public function actionReview()
+    {
+        $review = new Review();
+        $this->render('review', array(
+            'review' => $review
+        ));
+    }
+
 
 }

@@ -10,7 +10,6 @@ return array(
         'application.models.*',
         //'application.modules.UsersModule.models.User',
         'application.components.*',
-        'application.modules.srbac.controllers.SBaseController',
         'application.modules.*',
 //        'application.modules.userAdmin.models.*',
 //        'application.modules.userAdmin.components.*',
