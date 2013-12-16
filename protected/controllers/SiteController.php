@@ -9,63 +9,10 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $criteria = new CDbCriteria();
-        $criteria->order = 't.order ASC';
-        $slides = Slider::model()->findAllByAttributes(array('position' => Slider::POSION_SHOW), $criteria);
-        $service = Service::model()->findAll();
-        MyHelper::render($this, '/site/index', array('service' => $service, 'slides' => $slides), 'Главная');
+
+        $this->render('index');
     }
 
-    public function actionAbout()
-    {
-        $criteria = new CDbCriteria();
-        $criteria->order = 't.order ASC';
-        $vacancys = Vacancy::model()->findAllByAttributes(array('position' => 2));
-
-        MyHelper::render($this, '/site/about', array('vacancys' => $vacancys), 'О компании');
-    }
-
-
-    public function actionEquipment()
-    {
-        $pgs = ProductsGroup::model()->findAll();
-        MyHelper::render($this, '/site/equipment', array('pgs' => $pgs), 'Оборудование');
-    }
-
-    public function actionProduction($id)
-    {
-        $pgs = ProductsGroup::model()->findAll();
-        $equipments = Equipment::model()->findAllByAttributes(array('pg_id' => $id));
-
-        MyHelper::render($this, '/site/production', array('equipments' => $equipments, 'pgs' => $pgs), 'Оборудование');
-    }
-
-    public function actionServices()
-    {
-
-        $service = Service::model()->findAll();
-        MyHelper::render($this, '/site/services', array('service' => $service), 'Услуги');
-    }
-
-    public function actionWorks()
-    {
-
-        $tags = Tag::model()->findAll();
-
-        MyHelper::render($this, '/site/works', array('tags' => $tags), 'Работы');
-    }
-
-    public function actionWork()
-    {
-
-        MyHelper::render($this, '/site/work', array(), 'Работы');
-    }
-
-    public function actionContacts()
-    {
-
-        MyHelper::render($this, '/site/contacts', array(), 'Контакты');
-    }
 
     public function actionError()
     {
@@ -79,6 +26,9 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
+        $cs = Yii::app()->clientScript;
+        $cs->registerScriptFile($this->createUrl('/js/jquery.md5.js'));
+
         $model = new LoginForm;
         if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form') {
             echo CActiveForm::validate($model);

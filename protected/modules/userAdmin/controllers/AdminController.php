@@ -21,37 +21,7 @@ class AdminController extends Controller
         $this->render('index', array('user' => $user));
     }
 
-    public function actionMain()
-    {
-        $contacts = Contacts::contactsHelper();
 
-        unset($contacts['about_large']);
-        unset($contacts['about_maine']);
-        unset($contacts['about_plus']);
-
-        $about_plus = Contacts::model()->findByAttributes(array('name' => 'about_plus'));
-        $about_maine = Contacts::model()->findByAttributes(array('name' => 'about_maine'));
-
-        $slides = Slider::model()->findAll(array(
-            'order' => 't.order ASC'));
-        if (isset($_POST['Contacts'])) {
-
-            foreach ($_POST['Contacts'] as $attribute => $val) {
-                $contacts = Contacts::model()->findByAttributes(array('name' => $attribute));
-                $contacts->val = $val;
-                $contacts->save();
-            }
-            echo json_encode(array('status' => 'succses'));
-            die();
-        }
-
-        $this->render('main', array(
-            'contacts' => $contacts,
-            'slides' => $slides,
-            'about_plus' => $about_plus,
-            'about_maine' => $about_maine
-        ));
-    }
 
     public function actionSaveSledePosition()
     {

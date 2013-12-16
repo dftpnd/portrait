@@ -1,7 +1,7 @@
 <?php
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
-    'name' => 'Градус-м',
+    'name' => 'starter',
     'language' => 'ru',
     // preloading 'log' component
     'preload' => array('log'),
@@ -78,14 +78,6 @@ return array(
             'urlFormat' => 'path',
             'showScriptName' => false,
             'rules' => array(
-                '/about'=>'site/about/',
-                ''=>'site/index/',
-                '/equipment'=>'site/equipment/',
-                '/services'=>'site/services/',
-                '/works'=>'site/works/',
-                '/login'=>'site/login/',
-                '/logout'=>'site/logout/',
-                '/production/<id:\d+>'=>'site/production/',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',

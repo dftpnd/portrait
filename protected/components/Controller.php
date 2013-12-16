@@ -3,14 +3,15 @@
 class Controller extends SBaseController
 {
 
-    public $layout = 'column1';
-    public $menu = array();
-    public $breadcrumbs = array();
 
     public function init()
     {
-        $this->contacts = Contacts::contactsHelper();
-        $this->menu = MyHelper::menu();
+        $cs = Yii::app()->clientScript;
+        $cs->registerCoreScript('jquery');
+//        $cs->registerCoreScript('jquery.ui');
+        $cs->registerCssFile($this->createUrl('/css/main.css'));
+        $cs->registerScriptFile($this->createUrl('/js/action.js'));
+
     }
 
 }

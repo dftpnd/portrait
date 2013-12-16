@@ -2,6 +2,18 @@
 
 class DefaultController extends Controller
 {
+    public function init()
+    {
+        $cs = Yii::app()->clientScript;
+        $cs->scriptMap=array(
+            'jquery.js'=>false,
+            'jquery.ui.js' => false,
+        );
+        //$cs = Yii::app()->clientScript;
+        //$cs->registerCoreScript('jquery') = false;
+//        $cs->registerScriptFile($this->createUrl('/js/action.js'));
+
+    }
 	public function actionIndex()
 	{
 		$this->render('index');
