@@ -1,0 +1,437 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+hr {
+  float: none;
+  clear: both;
+}
+
+a {
+  color: #333333;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.wrapper {
+  width: 900px;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  min-height: 100%;
+  margin: 0 auto;
+
+}
+
+li {
+  list-style: none;
+}
+
+.menu {
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+
+.maine_nav li {
+  display: block;
+  float: left;
+  margin-right: 20px;
+}
+
+.maine_nav li a {
+  display: block;
+  padding: 1px 3px;
+}
+
+.maine_nav li.active a {
+  background: #000000;
+  color: #fff;
+  text-decoration: none;
+}
+
+.anchor, qq-upload-list {
+  float: none;
+  clear: both;
+}
+
+.classic_form {
+  position: relative;
+  label {
+    display: block;
+    padding: 5px;
+    position: relative;
+  }
+  span {
+    display: inline-block;
+    min-width: 150px;
+  }
+  input[type="submit"] {
+    margin-left: 160px;
+  }
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: normal;
+  color: red;
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: normal;
+  color: blue;
+  margin: 10px 0;
+}
+
+.qq-upload-button {
+  height: 15px !important;
+}
+
+input[type="password"],
+input[type="text"],
+input[type="email"] {
+  font-size: 14px;
+  margin: 0px;
+  width: 70%;
+  box-sizing: border-box;
+  border: 1px solid #d9d9d9;
+  padding: 0px;
+  color: #3b3b3b;
+  line-height: 27px;
+  height: 27px;
+  text-indent: 5px;
+}
+
+.qq-upload-button, input[type='submit'] {
+  margin-top: 10px;
+  float: left;
+  font-size: 20px;
+  height: 35px;
+  font-size: 12px;
+  padding: 5px 10px;
+  background-color: #eeeeee !important;
+  /*    background-color: #e1e1e1 !important;*/
+  color: #282828 !important;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  text-shadow: 0 1px 0px rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1); /* , 0 1px 1px rgba(0, 0, 0, 0.2); */
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1); /* , 0 1px 1px rgba(0, 0, 0, 0.2); */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1); /* , 0 1px 1px rgba(0, 0, 0, 0.2); */
+  background-image: -ms-linear-gradient(top, #eeeeee, #e1e1e1);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#e1e1e1));
+  background-image: -webkit-linear-gradient(top, #eeeeee, #e1e1e1);
+  background-image: -o-linear-gradient(top, #eeeeee, #e1e1e1);
+  background-image: linear-gradient(top, #eeeeee, #e1e1e1);
+  background-image: -moz-linear-gradient(top, #eeeeee, #e1e1e1);
+  background-repeat: repeat-x;
+  border: 1px solid #d9d8d8;
+  *border: 0;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-color: #d9d8d8 #cccbcb #aeaeae;
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#eeeeee', endColorstr='#e1e1e1', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  font-family: arial, sans-serif;
+  font-weight: normal;
+  text-decoration: none;
+  height: 26px;
+  vertical-align: middle;
+}
+
+.qq-upload-button-hover, input[type='submit']:hover {
+  background-color: #fcfcfc !important;
+  *background-color: #e8e8e8 !important;
+  background-image: -ms-linear-gradient(top, #fcfcfc, #e8e8e8);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fcfcfc), to(#e8e8e8));
+  background-image: -webkit-linear-gradient(top, #fcfcfc, #e8e8e8);
+  background-image: -o-linear-gradient(top, #fcfcfc, #e8e8e8);
+  background-image: linear-gradient(top, #fcfcfc, #e8e8e8);
+  background-image: -moz-linear-gradient(top, #fcfcfc, #e8e8e8);
+  background-repeat: repeat-x;
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#e8e8e8', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  text-decoration: none;
+}
+
+.qq-upload-button-focus, input[type='submit']:active {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: #e1e1e1 !important;
+  border: 1px solid #a4a7ac;
+  *border: 0;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-color: #a4a7ac #d2d3d4 #e1e1e1;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.vacansy {
+  position: relative;
+  border: 1px dotted #999;
+  padding: 5px;
+  font-weight: bold;
+  margin: 10px;
+  background: #ececec;
+}
+
+.delete {
+  color: red;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.position {
+  color: blue;
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.delete:hover {
+  text-decoration: none;
+}
+
+.opportunitys {
+  margin-top: 20px;
+  .opp:nth-child(1) {
+    width: 50%;
+    position: relative;
+    float: left;
+  }
+  .opp:nth-child(2) {
+    width: 50%;
+    float: right;
+  }
+  .opp  textarea {
+    display: block;
+    width: 90%;
+  }
+  .opp label {
+    display: block;
+  }
+  .opp span {
+    min-width: 150px;
+  }
+}
+
+ul.deafault {
+  width: 90%;
+  margin-top: 20px;
+}
+
+ul.deafault li {
+  list-style: disc;
+  font-weight: normal;
+  margin-left: 20px;
+  position: relative;
+  .close {
+    background: url('../img/close_delete.gif');
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
+ul.deafault li:hover .close {
+  opacity: 1;
+}
+
+.tag_list {
+
+  padding-left: 40px;
+  li {
+    list-style: circle;
+    font-size: 20px;
+    line-height: 20px;
+    position: relative;
+  }
+}
+
+.push {
+  height: 200px;
+  float: none;
+  clear: both;
+}
+
+.map_hint {
+  padding-left: 150px;
+}
+
+.zagr_img {
+  display: inline-block;
+  width: 150px;
+}
+
+.download_picter {
+  display: inline-block;
+  padding-top: 50px;
+}
+
+.block_port {
+  position: relative;
+}
+
+.delete_tag {
+  background: url('../img/close_delete.gif');
+  width: 11px;
+  height: 11px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+a {
+  color: blue;
+}
+
+.qq-upload-failed-text {
+  display: none;
+}
+
+.qq-upload-list {
+  display: block;
+  position: relative;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#sample {
+  ul {
+
+  }
+  ul li {
+    background: url("../img/bullet.png") no-repeat left 8px;
+    display: block;
+    padding-left: 10px;
+
+  }
+
+}
+
+.qq-upload-button {
+  float: none !important;
+  display: inline-block !important;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  .tr {
+    display: table-row;
+    .td {
+      vertical-align: top;
+      display: table-cell;
+      padding: 10px;
+      border-top: 1px solid #999;
+      input[type="text"] {
+        width: 95%;
+        display: block;
+      }
+      textarea {
+        height: 100px;
+        width: 95%;
+      }
+    }
+  }
+}
+
+.slider {
+  height: 250px;
+  border: 1px solid black;
+  overflow-x: scroll;
+  padding-top: 15px;
+  .slide {
+    float: left;
+    width: 200px;
+    height: 200px;
+    background: #e1e1e1;
+    margin-right: 20px;
+    position: relative;
+  }
+}
+
+.slider_button {
+  padding-top: 20px;
+  input {
+    margin: 0 0 0 10px;
+    float: right;
+  }
+}
+
+.slide_button {
+  position: absolute;
+  height: 30px;
+  width: 50px;
+  right: 0;
+  top: 5px;
+}
+
+.delete_slide {
+  background: url("../img/close_delete.gif") repeat scroll 0 0 transparent;
+  cursor: pointer;
+  display: inline-block;
+  height: 11px;
+  width: 11px;
+}
+
+.slide_position_2 .position_side {
+  background: red;
+}
+
+.slide_position_1 .position_side {
+  background: green;
+}
+
+.position_side {
+  cursor: pointer;
+  display: inline-block;
+  height: 11px;
+  width: 11px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-right: 8px;
+}
+
+.ui-state-default {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.slide img {
+  display: block;
+  width: 94px;
+  height: 40px;
+}
+.create-updete-info{
+  border: 1px solid #000000;
+}
+.large_img, .mini_img{
+  color: red!important;
+  cursor: pointer;
+}
