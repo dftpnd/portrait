@@ -1,7 +1,7 @@
 <?php
 
 $this->widget('zii.widgets.CMenu', array(
-    'htmlOptions' => array('class' => 'maine_nav'),
+    'htmlOptions' => array('class' => 'nav nav-pills pull-right'),
     'items' => array(
 
         array(

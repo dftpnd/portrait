@@ -1,34 +1,22 @@
-<form id="user_data" class="classic_form">
-    <label>
-        <span>
-        Login
-            </span>
-        <input type="text" name="User[username]" value="<?php echo $user->username ?>">
-    </label>
-    <label>
-        <span>
-        New Password
-            </span>
-        <input type="text" name="User[password]" value="">
-    </label>
-    <input type="submit" value="Изменить" onclick="updateUser();return false">
-</form>
-<script>
-    function updateUser() {
-        $.ajax({
-            type: "POST",
-            url: '/userAdmin/admin/index',
-            dataType: "json",
-            data: $('#user_data').serialize(),
-            success: function (data) {
-                if (data == null) {
-                    alert('Ошибка. Попробуйте перезагрузить страницу.');
-                }else{
-                    alert('Изменено');
-                    location.reload();
-                }
+<div class="jumbotron">
+    <h1>Учетные данные</h1>
 
-            }
-        });
-    }
-</script>
+    <form id="user_data" class="classic_form">
+        <div>
+            <label>
+                <div>
+                    Login
+                </div>
+                <input type="text" autocomplete="off" name="User[username]" value="<?php echo $user->username ?>">
+            </label>
+            <label>
+                <div>
+                    New Password
+                </div>
+                <input type="password" name="User[password]" value="">
+            </label>
+        </div>
+        <input class="btn btn-lg btn-success" type="submit" value="Изменить" onclick="updateUser();return false">
+    </form>
+</div>
+
