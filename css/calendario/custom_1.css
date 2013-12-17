@@ -1,15 +1,5 @@
 body {
-	background: #cebe29;
-	background: -moz-linear-gradient(-45deg, #cebe29 0%, #9b1f50 33%, #2989d8 71%, #89b4ff 91%);
-	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#cebe29), color-stop(33%,#9b1f50), color-stop(71%,#2989d8), color-stop(91%,#89b4ff));
-	background: -webkit-linear-gradient(-45deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%);
-	background: -o-linear-gradient(-45deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%);
-	background: -ms-linear-gradient(-45deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%);
-	background: linear-gradient(135deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cebe29', endColorstr='#89b4ff',GradientType=1 );
-	-webkit-background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	background-size: 100% 100%;
+	/*background: #777;*/
 }
 
 .custom-calendar-full {
@@ -38,10 +28,7 @@ body {
 .custom-header h2,
 .custom-header h3 {
 	float: left;
-	font-weight: 300;
 	text-transform: uppercase;
-	letter-spacing: 4px;
-	text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
 }
 
 .custom-header h2 {
@@ -67,8 +54,6 @@ body {
 
 .custom-header h3 {
 	width: 40%;
-	color: #ddd;
-	color: rgba(255,255,255,0.6);
 	font-weight: 300;
 	line-height: 30px;
 	text-align: right;
@@ -92,9 +77,8 @@ body {
 	width: 30px;
 	height: 30px;
 	position: relative;
-	color: transparent;
 	cursor: pointer;
-	background: rgba(255,255,255,0.3);
+	background: black;
 	margin: 0 1px;
 	font-size: 20px;
 	border-radius: 0 3px 3px 0;
@@ -118,13 +102,6 @@ body {
 	text-indent: 4px;
 }
 
-.custom-header nav span.custom-prev:before {
-	content: '\25c2';
-}
-
-.custom-header nav span.custom-next:before {
-	content: '\25b8';
-}
 
 .custom-header nav span:last-child {
 	margin-left: 20px;
@@ -137,7 +114,7 @@ body {
 
 
 .fc-calendar {
-	background: rgba(255,255,255,0.1);
+	background: rgba(0,0,200,0.1);
 	width: auto;
 	top: 10px;
 	bottom: 20px;
@@ -149,8 +126,8 @@ body {
 }
 
 .fc-calendar .fc-head { 
-	background: rgba(255,255,255,0.2);
-	color: rgba(255,255,255,0.9);
+	/*background: rgba(255,255,255,0.2);*/
+	/*color: rgba(255,255,255,0.9);*/
 	box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
 	border-radius: 20px 20px 0 0;
 	height: 40px;
@@ -167,7 +144,7 @@ body {
 }
 
 .fc-calendar .fc-row > div > span.fc-date {
-	color: rgba(255,255,255,0.9);
+	/*color: rgba(255,255,255,0.9);*/
 	text-shadow: none;
 	font-size: 26px;
 	font-weight: 300;
@@ -185,7 +162,7 @@ body {
 }
 
 .fc-calendar .fc-row {
-	box-shadow: inset 0 -1px 0 rgba(255,255,255,0.2);
+	box-shadow: inset 0 -1px 0 #000;
 	border: none;
 }
 
@@ -210,7 +187,7 @@ body {
 }
 
 .fc-calendar .fc-row > div {
-	box-shadow: -1px 0 0 rgba(255, 255, 255, 0.2);
+	box-shadow: -1px 0 0 #000;
 	border: none;
 	padding: 10px;
 	cursor: pointer;
@@ -221,24 +198,24 @@ body {
 }
 
 .fc-calendar .fc-row > div.fc-today {
-	background: transparent;
-	box-shadow: inset 0 0 100px rgba(255,255,255,0.1);
+	/*background: transparent;*/
+	/*box-shadow: inset 0 0 100px rgba(255,255,255,0.1);*/
 }
 
 .fc-calendar .fc-row > div.fc-today:after { 
-	content: ''; 
-	display: block;
-	position: absolute;
-	top: 0; 
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0.2;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0.15)), to(rgba(0, 0, 0, 0.25))), -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, .15)), color-stop(0.501, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0)));
-	background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25)), -moz-linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
-	background: -o-linear-gradient(top, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25)), -o-llinear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
-	background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25)), -ms-linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
-	background: linear-gradient(top, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25)), linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
+	/*content: ''; */
+	/*display: block;*/
+	/*position: absolute;*/
+	/*top: 0; */
+	/*left: 0;*/
+	/*width: 100%;*/
+	/*height: 100%;*/
+	/*opacity: 0.2;*/
+	/*background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0.15)), to(rgba(0, 0, 0, 0.25))), -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, .15)), color-stop(0.501, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0)));*/
+	/*background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25)), -moz-linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));*/
+	/*background: -o-linear-gradient(top, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25)), -o-llinear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));*/
+	/*background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25)), -ms-linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));*/
+	/*background: linear-gradient(top, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25)), linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));*/
 }
 
 .fc-calendar .fc-row > div > div {
@@ -247,7 +224,7 @@ body {
 
 .fc-calendar .fc-row > div > div a,
 .fc-calendar .fc-row > div > div span {
-	color: rgba(255,255,255,0.7);
+	/*color: rgba(255,255,255,0.7);*/
 	font-size: 12px;
 	text-transform: uppercase;
 	display: inline-block;
@@ -336,11 +313,11 @@ body {
 	}
 
 	.fc-calendar .fc-row > div.fc-today {
-		background: rgba(255, 255, 255, 0.2);
+		/*background: rgba(255, 255, 255, 0.2);*/
 	}
 
 	.fc-calendar .fc-row > div.fc-today:after { 
-		display: none;
+		/*display: none;*/
 	}
 
 	.fc-calendar .fc-row > div > span.fc-date {
