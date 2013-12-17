@@ -12,6 +12,7 @@ class AdminController extends Controller
         $cs->registerCssFile($this->createUrl('/css/bootstrap-theme.min.css'));
         $cs->registerCssFile($this->createUrl('/css/jumbotron-narrow.css'));
         $cs->registerCssFile($this->createUrl('/css/admin.css'));
+        $cs->registerCssFile($this->createUrl('/css/door.css'));
 
     }
 
@@ -28,7 +29,7 @@ class AdminController extends Controller
                 echo json_encode(array('status' => 'succses'));
 
             }
-            die();
+            Yii::app()->end();
         }
         $this->render('index', array('user' => $user));
     }

@@ -1,5 +1,7 @@
 $(function () {
-
+    $('html').click(function () {
+        closeDoor();
+    });
 });
 function addZero(num) {
     if (num < 10) {
@@ -11,7 +13,17 @@ function onDayClickUser($el, dateProperties) {
     var t = '.';
 
     var datapick = addZero(dateProperties.day) + t + addZero(dateProperties.month) + t + dateProperties.year;
-    alert(datapick);
+    $.ajax({
+        url: '/site/CalendarDoor',
+        type: 'POST',
+        dataType: 'html',
+        data: ({
+            datapick: datapick
+        }),
+        success: function (data) {
+            openDoor(data);
+        }
+    });
 }
 
 

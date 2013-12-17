@@ -10,7 +10,11 @@ class Controller extends SBaseController
         $cs->registerCoreScript('jquery');
 //        $cs->registerCoreScript('jquery.ui');
         $cs->registerCssFile($this->createUrl('/css/main.css'));
+        $cs->registerCssFile($this->createUrl('/css/door.css'));
+        $cs->registerScriptFile($this->createUrl('/js/door.js'));
         $cs->registerScriptFile($this->createUrl('/js/action.js'));
+
+
 
     }
 

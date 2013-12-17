@@ -4,6 +4,7 @@
 	'SiteError',
 	'SiteLogin',
 	'SiteLogout',
+	'SiteCalendarDoor',
 	'userAdmin@AdminCalendar'
 );
 ?>
