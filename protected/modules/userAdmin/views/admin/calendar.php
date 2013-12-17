@@ -1,24 +1,66 @@
-<h1>Calendar</h1>
-<div class="nadstroika">
-    <div class="container">
-        <div class="custom-calendar-wrap custom-calendar-full">
-            <div class="custom-header clearfix">
-                <h3 class="custom-month-year">
-                    <span id="custom-month" class="custom-month"></span>
-                    <span id="custom-year" class="custom-year"></span>
-                    <nav>
-                        <span id="custom-prev" class="custom-prev"></span>
-                        <span id="custom-next" class="custom-next"></span>
-                    </nav>
-                </h3>
-            </div>
-            <div id="calendar" class="fc-calendar-container"></div>
-        </div>
-    </div>
-    <!-- /container -->
+<div class="jumbotron">
+    <?php
+
+    $this->widget('zii.widgets.grid.CGridView', array(
+        'id' => 'datapick-grid',
+        'dataProvider' => $datapick->search(),
+        'cssFile' => false,
+        'itemsCssClass' => 'table table-hover',
+        'columns' => array(
+            array(
+                'name' => 'datapick',
+                'value' => '$data->datapick',
+            ),
+            array(
+                'name' => 'created',
+                'value' => 'date("d.m.Y G:i",$data->created)',
+            ),
+            array(
+                'name' => 'status',
+                'value' => '$data->status',
+            ),
+
+        ),
+        'pagerCssClass'=>'pager',
+        'pager' => array(
+            'htmlOptions' => array('class' => 'pagination pagination-sm'),
+            'cssFile' => false,
+            'header' => '',
+            'firstPageLabel' => '',
+            'prevPageLabel' => '&laquo;',
+            'nextPageLabel' => '&raquo;',
+            'lastPageLabel' => '',
+
+        ),
+        'template' => '{items}{pager}',
+    ));
+    ?>
 </div>
 
-<div class="anchor"></div>
+<div class="jumbotron">
+    <h1>Calendar</h1>
+
+    <div class="nadstroika">
+        <div class="container">
+            <div class="custom-calendar-wrap custom-calendar-full">
+                <div class="custom-header clearfix">
+                    <h3 class="custom-month-year">
+                        <span id="custom-month" class="custom-month"></span>
+                        <span id="custom-year" class="custom-year"></span>
+                        <nav>
+                            <span id="custom-prev" class="custom-prev"></span>
+                            <span id="custom-next" class="custom-next"></span>
+                        </nav>
+                    </h3>
+                </div>
+                <div id="calendar" class="fc-calendar-container"></div>
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+
+    <div class="anchor"></div>
+</div>
 <script type="text/javascript">
     $(function () {
 

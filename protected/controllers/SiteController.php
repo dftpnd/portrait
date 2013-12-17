@@ -63,10 +63,11 @@ class SiteController extends Controller
         $this->redirect(Yii::app()->homeUrl);
     }
 
-    public function actionCalendarDoor(){
-        $_POST['datapick'];
-
-        echo $this->renderPartial('_calendar_door');
+    public function actionCalendarDoor()
+    {
+        $datapick = new Datapick();
+        $datapick->attributes = $_POST['datapick'];
+        echo $this->renderPartial('_calendar_door', array('datapick' => $datapick));
     }
 
 }

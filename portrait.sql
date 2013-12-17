@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.7deb7
+-- version 4.1.0
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost
--- Время создания: Дек 16 2013 г., 11:21
--- Версия сервера: 5.5.30
--- Версия PHP: 5.3.23-1~dotdeb.0
+-- Host: localhost
+-- Generation Time: Dec 17, 2013 at 07:22 PM
+-- Server version: 5.5.34-0ubuntu0.13.10.1
+-- PHP Version: 5.5.3-1ubuntu2
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -16,13 +17,13 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- База данных: `portrait`
+-- Database: `portrait`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `assignments`
+-- Table structure for table `assignments`
 --
 
 CREATE TABLE IF NOT EXISTS `assignments` (
@@ -34,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `assignments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `assignments`
+-- Dumping data for table `assignments`
 --
 
 INSERT INTO `assignments` (`itemname`, `userid`, `bizrule`, `data`) VALUES
@@ -44,7 +45,7 @@ INSERT INTO `assignments` (`itemname`, `userid`, `bizrule`, `data`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `authassignment`
+-- Table structure for table `authassignment`
 --
 
 CREATE TABLE IF NOT EXISTS `authassignment` (
@@ -55,15 +56,10 @@ CREATE TABLE IF NOT EXISTS `authassignment` (
   PRIMARY KEY (`itemname`,`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `authassignment`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `authitem`
+-- Table structure for table `authitem`
 --
 
 CREATE TABLE IF NOT EXISTS `authitem` (
@@ -76,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `authitem` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `authitem`
+-- Dumping data for table `authitem`
 --
 
 INSERT INTO `authitem` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
@@ -97,7 +93,7 @@ INSERT INTO `authitem` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `authitemchild`
+-- Table structure for table `authitemchild`
 --
 
 CREATE TABLE IF NOT EXISTS `authitemchild` (
@@ -107,15 +103,60 @@ CREATE TABLE IF NOT EXISTS `authitemchild` (
   KEY `child` (`child`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Дамп данных таблицы `authitemchild`
+-- Table structure for table `gr_datapick`
 --
 
+CREATE TABLE IF NOT EXISTS `gr_datapick` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `datapick` varchar(255) NOT NULL,
+  `year` varchar(255) NOT NULL,
+  `day` varchar(255) NOT NULL,
+  `month` varchar(255) NOT NULL,
+  `created` int(255) DEFAULT NULL,
+  `status` int(10) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
+
+--
+-- Dumping data for table `gr_datapick`
+--
+
+INSERT INTO `gr_datapick` (`id`, `datapick`, `year`, `day`, `month`, `created`, `status`) VALUES
+(1, '11.12.2013', '2013', '11', '12', 1387287522, 1),
+(2, '11.12.2013', '2013', '11', '12', 1387287522, 1),
+(3, '13.12.2013', '2013', '13', '12', 1387287557, 1),
+(4, '13.12.2013', '2013', '13', '12', 1387287557, 1),
+(5, '13.12.2013', '2013', '13', '12', 1387287561, 1),
+(6, '13.12.2013', '2013', '13', '12', 1387287561, 1),
+(7, '13.12.2013', '2013', '13', '12', 1387287561, 1),
+(8, '13.12.2013', '2013', '13', '12', 1387287595, 1),
+(9, '05.12.2013', '2013', '5', '12', 1387288082, 2),
+(10, '21.12.2013', '2013', '21', '12', 1387288086, 1),
+(11, '08.01.2014', '2014', '8', '1', 1387288093, 1),
+(12, '17.01.2014', '2014', '17', '1', 1387288096, 1),
+(13, '21.01.2014', '2014', '21', '1', 1387288099, 1),
+(14, '15.11.2013', '2013', '15', '11', 1387288105, 1),
+(15, '16.11.2013', '2013', '16', '11', 1387288108, 1),
+(16, '19.11.2013', '2013', '19', '11', 1387288112, 1),
+(17, '22.11.2013', '2013', '22', '11', 1387288115, 1),
+(18, '08.08.2013', '2013', '8', '8', 1387291969, 1),
+(19, '12.08.2013', '2013', '12', '8', 1387291972, 1),
+(20, '12.08.2013', '2013', '12', '8', 1387291973, 1),
+(21, '13.08.2013', '2013', '13', '8', 1387291979, 1),
+(22, '14.08.2013', '2013', '14', '8', 1387291984, 1),
+(23, '15.08.2013', '2013', '15', '8', 1387291987, 1),
+(24, '15.08.2013', '2013', '15', '8', 1387291988, 1),
+(25, '16.08.2013', '2013', '16', '8', 1387291991, 1),
+(26, '17.08.2013', '2013', '17', '8', 1387291995, 1),
+(27, '25.08.2013', '2013', '25', '8', 1387291998, 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gr_user`
+-- Table structure for table `gr_user`
 --
 
 CREATE TABLE IF NOT EXISTS `gr_user` (
@@ -127,16 +168,16 @@ CREATE TABLE IF NOT EXISTS `gr_user` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=132 ;
 
 --
--- Дамп данных таблицы `gr_user`
+-- Dumping data for table `gr_user`
 --
 
 INSERT INTO `gr_user` (`id`, `password`, `username`, `active`) VALUES
-(1, '21232f297a57a5a743894a0e4a801fc3', 'admin', 1);
+(1, 'fe01ce2a7fbac8fafaed7c982a04e229', 'demo', 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `itemchildren`
+-- Table structure for table `itemchildren`
 --
 
 CREATE TABLE IF NOT EXISTS `itemchildren` (
@@ -147,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `itemchildren` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `itemchildren`
+-- Dumping data for table `itemchildren`
 --
 
 INSERT INTO `itemchildren` (`parent`, `child`) VALUES
@@ -233,7 +274,7 @@ INSERT INTO `itemchildren` (`parent`, `child`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `items`
+-- Table structure for table `items`
 --
 
 CREATE TABLE IF NOT EXISTS `items` (
@@ -246,7 +287,7 @@ CREATE TABLE IF NOT EXISTS `items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `items`
+-- Dumping data for table `items`
 --
 
 INSERT INTO `items` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
@@ -331,31 +372,35 @@ INSERT INTO `items` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
 ('View User', 0, NULL, NULL, NULL);
 
 --
--- Ограничения внешнего ключа сохраненных таблиц
+-- Constraints for dumped tables
 --
 
 --
--- Ограничения внешнего ключа таблицы `assignments`
+-- Constraints for table `assignments`
 --
 ALTER TABLE `assignments`
   ADD CONSTRAINT `assignments_ibfk_1` FOREIGN KEY (`itemname`) REFERENCES `items` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `authassignment`
+-- Constraints for table `authassignment`
 --
 ALTER TABLE `authassignment`
   ADD CONSTRAINT `authassignment_ibfk_1` FOREIGN KEY (`itemname`) REFERENCES `authitem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `authitemchild`
+-- Constraints for table `authitemchild`
 --
 ALTER TABLE `authitemchild`
   ADD CONSTRAINT `authitemchild_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `authitem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `authitemchild_ibfk_2` FOREIGN KEY (`child`) REFERENCES `authitem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `itemchildren`
+-- Constraints for table `itemchildren`
 --
 ALTER TABLE `itemchildren`
   ADD CONSTRAINT `itemchildren_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `items` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `itemchildren_ibfk_2` FOREIGN KEY (`child`) REFERENCES `items` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

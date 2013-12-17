@@ -44,8 +44,18 @@ class AdminController extends Controller
         $cs->registerScriptFile($this->createUrl('/js/calendario/jquery.calendario.js'));
         $cs->registerScriptFile($this->createUrl('/js/calendario/data.js'));
 
+//        $datapicks = Datapick::model()->findAll();
+        $datapick= new Datapick;
 
-        $this->render('calendar');
+        $this->render('calendar', array('datapick' => $datapick));
+    }
+
+    public function actionSetDatapick()
+    {
+        Datapick::model()->setDatapick();
+
+        echo json_encode(array('status' => 'success'));
+
     }
 
 }

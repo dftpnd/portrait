@@ -5,6 +5,7 @@
 	'SiteLogin',
 	'SiteLogout',
 	'SiteCalendarDoor',
-	'userAdmin@AdminCalendar'
+	'userAdmin@AdminCalendar',
+	'userAdmin@AdminSetDatapick'
 );
 ?>
