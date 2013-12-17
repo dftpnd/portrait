@@ -12,8 +12,9 @@
  */
 class Datapick extends CActiveRecord
 {
-    const STATUS_UNCHECKED = 1;
-    const STATUS_APPROVED = 2;
+    const STATUS_NEW = 1;
+    const STATUS_UNCHECKED = 2;
+    const STATUS_APPROVED = 3;
 
 
     /**
@@ -114,7 +115,7 @@ class Datapick extends CActiveRecord
         $datapick->attributes = $_POST['Datapick'];
         $datapick->created = time();
 
-        if($datapick->save()){
+        if ($datapick->save()) {
             //send email
         }
 

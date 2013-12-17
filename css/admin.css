@@ -37,6 +37,18 @@
     border-color: #428bca;
 }
 
-.pager .pagination a{
-    border-radius: 0px!important;
+.pager .pagination a {
+    border-radius: 0px !important;
+}
+
+.row_status_1 {
+    background: #dff0d8;
+}
+
+.row_status_2 td {
+    background: #f2dede;
+}
+
+.row_status_3 {
+
 }

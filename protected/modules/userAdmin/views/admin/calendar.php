@@ -1,15 +1,22 @@
 <div class="jumbotron">
+    <h1>Список ..</h1>
     <?php
-
+    //    array(
+    //        'name' => 'status',
+    //        'value' => 'Lookup::item("PostStatus",$data->status)',
+    //        'filter' => Lookup::items('PostStatus'),
+    //    ),
     $this->widget('zii.widgets.grid.CGridView', array(
         'id' => 'datapick-grid',
         'dataProvider' => $datapick->search(),
         'cssFile' => false,
         'itemsCssClass' => 'table table-hover',
+        'rowCssClassExpression' => '("row_status_$data->status")',
         'columns' => array(
             array(
                 'name' => 'datapick',
-                'value' => '$data->datapick',
+                'value' => 'CHtml::link($data->datapick, $data->id)',
+                'htmlOptions' => array('class' => 'editdatapick'),
             ),
             array(
                 'name' => 'created',
@@ -17,11 +24,12 @@
             ),
             array(
                 'name' => 'status',
-                'value' => '$data->status',
+                'value' => 'Lookup::item("datapickStatus",$data->status)',
+                'filter' => Lookup::items('datapickStatus'),
             ),
 
         ),
-        'pagerCssClass'=>'pager',
+        'pagerCssClass' => 'pager',
         'pager' => array(
             'htmlOptions' => array('class' => 'pagination pagination-sm'),
             'cssFile' => false,
