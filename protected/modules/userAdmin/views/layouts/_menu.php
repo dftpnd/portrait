@@ -10,6 +10,11 @@ $this->widget('zii.widgets.CMenu', array(
             'active' => (Yii::app()->controller->getId() == 'admin' && Yii::app()->controller->getAction()->getId() == 'index')
         ),
         array(
+            'label' => 'Календарь',
+            'url' => Yii::app()->urlManager->createUrl('/userAdmin/admin/calendar'),
+            'active' => (Yii::app()->controller->getId() == 'admin' && Yii::app()->controller->getAction()->getId() == 'calendar')
+        ),
+        array(
             'label' => 'srbac',
             'url' => Yii::app()->urlManager->createUrl('/srbac/authitem/manage'),
             'active' => (Yii::app()->controller->getId() == 'authitem')

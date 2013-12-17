@@ -33,5 +33,18 @@ class AdminController extends Controller
         $this->render('index', array('user' => $user));
     }
 
+    public function actionCalendar()
+    {
+        $cs = Yii::app()->clientScript;
+        $cs->registerCssFile($this->createUrl('/css/calendario/calendar.css'));
+        $cs->registerCssFile($this->createUrl('/css/calendario/custom_1.css'));
+        $cs->registerScriptFile($this->createUrl('/js/calendario/action.js'));
+        $cs->registerScriptFile($this->createUrl('/js/calendario/modernizr.custom.63321.js'));
+        $cs->registerScriptFile($this->createUrl('/js/calendario/jquery.calendario.js'));
+        $cs->registerScriptFile($this->createUrl('/js/calendario/data.js'));
+
+
+        $this->render('calendar');
+    }
 
 }

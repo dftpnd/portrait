@@ -11,7 +11,7 @@
         <h3 class="text-muted">Админка</h3>
     </div>
     <?php echo $content; ?>
-
+    <div class="anchor"></div>
     <div class="footer">
         © BFP 2013
     </div>
