@@ -8,6 +8,7 @@ class AdminController extends Controller
         $cs->registerCoreScript('jquery');
         $cs->registerCoreScript('jquery.ui');
         $cs->registerScriptFile($this->createUrl('/js/admin.js'));
+        $cs->registerScriptFile($this->createUrl('/js/door.js'));
         $cs->registerCssFile($this->createUrl('/css/bootstrap.min.css'));
         $cs->registerCssFile($this->createUrl('/css/bootstrap-theme.min.css'));
         $cs->registerCssFile($this->createUrl('/css/jumbotron-narrow.css'));
@@ -49,6 +50,7 @@ class AdminController extends Controller
 
     public function actionSetDatapick()
     {
+
         Datapick::model()->setDatapick();
 
         echo json_encode(array('status' => 'success'));

@@ -52,3 +52,10 @@
 .row_status_3 {
 
 }
+.popup_prepear{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.popup_prepear:hover{
+    text-decoration: none;
+}

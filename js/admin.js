@@ -15,3 +15,10 @@ function updateUser() {
         }
     });
 }
+$(function () {
+
+    $( "body" ).on( "click", ".popup_prepear", function() {
+        alert('asd');
+    });
+
+})

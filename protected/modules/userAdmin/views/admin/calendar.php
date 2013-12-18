@@ -15,7 +15,8 @@
         'columns' => array(
             array(
                 'name' => 'datapick',
-                'value' => 'CHtml::link($data->datapick, $data->id)',
+                'type' => 'raw',
+                'value'=>array($datapick, 'popupPrepear'),
                 'htmlOptions' => array('class' => 'editdatapick'),
             ),
             array(
