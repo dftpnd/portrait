@@ -1,6 +1,6 @@
 <?php
 $this->widget('zii.widgets.CMenu', array(
-    'htmlOptions' => array('class' => 'navbar navbar-default navbar-static'),
+    'htmlOptions' => array('class' => 'scrollmenu main-menu anchor2 centrator ', 'id' => 'fixed-main-menu'),
     'items' => array(
         array(
             'label' => 'index',

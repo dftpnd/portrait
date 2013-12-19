@@ -1,15 +1,14 @@
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.md5.js"></script>
-<?php $this->pageTitle = Yii::app()->name . ' - Login'; ?>
-<div class="site_login">
-    <h1>Авторизуйтесь.</h1>
+<div class="centrator">
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.md5.js"></script>
+    <div class="site_login">
+        <h1>Авторизуйтесь.</h1>
 
-    <div class="vk">
         <div class="form">
             <?php
             $form = $this->beginWidget('CActiveForm', array(
                 'id' => 'login-form', 'enableAjaxValidation' => true,));
             ?>
-            <div id="maineeror">Неправильный логин или пароль</div>
+            <div id="maineeror" style="display: none">Неправильный логин или пароль</div>
             <table class="reg_form">
                 <tr>
                     <td class="spechak">

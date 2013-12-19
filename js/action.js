@@ -1,16 +1,20 @@
+var offset_menu;
+
 $(function () {
-    $('html').click(function () {
-        closeDoor();
+
+    $(window).scroll(function () {
+        watchMenu();
     });
 
-
-    $('.navbar a').click(function () {
+    $('.scrollmenu a').click(function () {
         var anchor = $(this).attr('href').substring(2);
         var offset = $('#' + anchor).offset();
         var caclculate_offset = offset.top;
         $("html, body").animate({ scrollTop: caclculate_offset + "px" });
         return false;
     });
+
+    offset_menu = $('#fixed-main-menu').offset();
 
 
     if ($('.in_scrollspy').length != 0)
@@ -128,11 +132,23 @@ function onDayClickUser($el, dateProperties) {
         }
     });
 }
+function watchMenu() {
+
+    if ($(document).scrollTop() > offset_menu.top) {
+        $('#fixed-main-menu').addClass('fixerus');
+    } else {
+        $('#fixed-main-menu').removeClass('fixerus');
+    }
+
+}
 function putAnchor(anchor) {
+
     history.pushState({
         title: '',
         url: anchor
     }, '', '#' + anchor);
+
+
 }
 
 

@@ -10,9 +10,18 @@
 <?php $this->renderPartial('application.views.layouts._door'); ?>
 <div class="universe">
     <div class="wrapper">
+        <div class="header centrator">
+
+
+        </div>
         <?php $this->renderPartial('application.views.layouts._menu'); ?>
         <?php echo $content; ?>
+        <div class="acnhor"></div>
+    </div>
+    <div class="footer centrator">
+
     </div>
 </div>
+
 </body>
 </html>

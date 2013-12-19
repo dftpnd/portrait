@@ -10,7 +10,6 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $cs = Yii::app()->clientScript;
-        $cs->registerCssFile($this->createUrl('/css/bootstrap.min.css'));
         $cs->registerCssFile($this->createUrl('/css/calendario/calendar.css'));
         $cs->registerCssFile($this->createUrl('/css/calendario/custom_1.css'));
         $cs->registerScriptFile($this->createUrl('/js/calendario/modernizr.custom.63321.js'));

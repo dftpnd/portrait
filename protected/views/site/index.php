@@ -1,14 +1,14 @@
 <section class="index">
-    <article class="in_scrollspy" id="test_1">
+    <article class="in_scrollspy centrator" id="test_1">
 
     </article>
-    <article class="in_scrollspy" id="test_2">
+    <article class="in_scrollspy centrator" id="test_2">
 
     </article>
-    <article class="in_scrollspy"id="test_3">
+    <article class="in_scrollspy centrator"id="test_3">
 
     </article>
-    <article class="in_scrollspy" id="test_4">
+    <article class="in_scrollspy centrator" id="test_4">
         <div class="nadstroika">
             <div class="container">
                 <div class="custom-calendar-wrap custom-calendar-full">
@@ -27,10 +27,10 @@
             </div>
         </div>
     </article>
-    <article class="in_scrollspy" id="test_5">
+    <article class="in_scrollspy centrator" id="test_5">
 
     </article>
-    <article class="in_scrollspy" id="test_6">
+    <article class="in_scrollspy centrator" id="test_6">
 
     </article>
 
