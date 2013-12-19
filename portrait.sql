@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 4.1.0
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost
--- Время создания: Дек 17 2013 г., 18:59
--- Версия сервера: 5.5.24-log
--- Версия PHP: 5.3.13
+-- Host: localhost
+-- Generation Time: Dec 19, 2013 at 09:51 AM
+-- Server version: 5.5.34-0ubuntu0.13.10.1
+-- PHP Version: 5.5.3-1ubuntu2
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- База данных: `portrait`
+-- Database: `portrait`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `assignments`
+-- Table structure for table `assignments`
 --
 
 CREATE TABLE IF NOT EXISTS `assignments` (
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `assignments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `assignments`
+-- Dumping data for table `assignments`
 --
 
 INSERT INTO `assignments` (`itemname`, `userid`, `bizrule`, `data`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `assignments` (`itemname`, `userid`, `bizrule`, `data`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `authassignment`
+-- Table structure for table `authassignment`
 --
 
 CREATE TABLE IF NOT EXISTS `authassignment` (
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `authassignment` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `authitem`
+-- Table structure for table `authitem`
 --
 
 CREATE TABLE IF NOT EXISTS `authitem` (
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `authitem` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `authitem`
+-- Dumping data for table `authitem`
 --
 
 INSERT INTO `authitem` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
@@ -93,7 +93,7 @@ INSERT INTO `authitem` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `authitemchild`
+-- Table structure for table `authitemchild`
 --
 
 CREATE TABLE IF NOT EXISTS `authitemchild` (
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `authitemchild` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gr_datapick`
+-- Table structure for table `gr_datapick`
 --
 
 CREATE TABLE IF NOT EXISTS `gr_datapick` (
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `gr_datapick` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
--- Дамп данных таблицы `gr_datapick`
+-- Dumping data for table `gr_datapick`
 --
 
 INSERT INTO `gr_datapick` (`id`, `datapick`, `year`, `day`, `month`, `created`, `status`) VALUES
@@ -156,7 +156,7 @@ INSERT INTO `gr_datapick` (`id`, `datapick`, `year`, `day`, `month`, `created`, 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gr_lookup`
+-- Table structure for table `gr_lookup`
 --
 
 CREATE TABLE IF NOT EXISTS `gr_lookup` (
@@ -169,18 +169,18 @@ CREATE TABLE IF NOT EXISTS `gr_lookup` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
--- Дамп данных таблицы `gr_lookup`
+-- Dumping data for table `gr_lookup`
 --
 
 INSERT INTO `gr_lookup` (`id`, `name`, `code`, `type`, `position`) VALUES
 (18, 'Новый', 1, 'datapickStatus', 1),
-(19, 'Отклоненный', 2, 'datapickStatus', 2),
-(20, 'Подтвержденный', 3, 'datapickStatus', 3);
+(19, 'Отклоненный', 3, 'datapickStatus', 3),
+(20, 'Подтвержденный', 2, 'datapickStatus', 2);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gr_user`
+-- Table structure for table `gr_user`
 --
 
 CREATE TABLE IF NOT EXISTS `gr_user` (
@@ -192,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `gr_user` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=132 ;
 
 --
--- Дамп данных таблицы `gr_user`
+-- Dumping data for table `gr_user`
 --
 
 INSERT INTO `gr_user` (`id`, `password`, `username`, `active`) VALUES
@@ -201,7 +201,7 @@ INSERT INTO `gr_user` (`id`, `password`, `username`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `itemchildren`
+-- Table structure for table `itemchildren`
 --
 
 CREATE TABLE IF NOT EXISTS `itemchildren` (
@@ -212,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `itemchildren` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `itemchildren`
+-- Dumping data for table `itemchildren`
 --
 
 INSERT INTO `itemchildren` (`parent`, `child`) VALUES
@@ -298,7 +298,7 @@ INSERT INTO `itemchildren` (`parent`, `child`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `items`
+-- Table structure for table `items`
 --
 
 CREATE TABLE IF NOT EXISTS `items` (
@@ -311,7 +311,7 @@ CREATE TABLE IF NOT EXISTS `items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `items`
+-- Dumping data for table `items`
 --
 
 INSERT INTO `items` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
@@ -396,30 +396,30 @@ INSERT INTO `items` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
 ('View User', 0, NULL, NULL, NULL);
 
 --
--- Ограничения внешнего ключа сохраненных таблиц
+-- Constraints for dumped tables
 --
 
 --
--- Ограничения внешнего ключа таблицы `assignments`
+-- Constraints for table `assignments`
 --
 ALTER TABLE `assignments`
   ADD CONSTRAINT `assignments_ibfk_1` FOREIGN KEY (`itemname`) REFERENCES `items` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `authassignment`
+-- Constraints for table `authassignment`
 --
 ALTER TABLE `authassignment`
   ADD CONSTRAINT `authassignment_ibfk_1` FOREIGN KEY (`itemname`) REFERENCES `authitem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `authitemchild`
+-- Constraints for table `authitemchild`
 --
 ALTER TABLE `authitemchild`
   ADD CONSTRAINT `authitemchild_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `authitem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `authitemchild_ibfk_2` FOREIGN KEY (`child`) REFERENCES `authitem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `itemchildren`
+-- Constraints for table `itemchildren`
 --
 ALTER TABLE `itemchildren`
   ADD CONSTRAINT `itemchildren_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `items` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,

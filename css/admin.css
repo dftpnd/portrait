@@ -44,14 +44,14 @@
 .row_status_1 {
     background: #dff0d8;
 }
+.row_status_2 {
 
-.row_status_2 td {
+}
+.row_status_3{
     background: #f2dede;
 }
 
-.row_status_3 {
 
-}
 .popup_prepear{
     text-decoration: underline;
     cursor: pointer;

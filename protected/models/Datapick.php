@@ -13,8 +13,9 @@
 class Datapick extends CActiveRecord
 {
     const STATUS_NEW = 1;
-    const STATUS_UNCHECKED = 2;
-    const STATUS_APPROVED = 3;
+    const STATUS_APPROVED = 2;
+    const STATUS_UNCHECKED = 3;
+
 
 
     /**
