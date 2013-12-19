@@ -62,11 +62,12 @@ $(function () {
 
 });
 function sender($el) {
+    $el.addClass('loading');
 
     $el.jax(function () {
 
     }, function () {
-        alert('success')
+
     });
 
     return false;

@@ -16,6 +16,13 @@ body{
     float: none;
     clear: both;
 }
+.anchor2:after{
+    content: '.';
+    font-size: 0px;
+    color: transparent;
+    float: none;
+    clear: both;
+}
 .push{
     height: 100px;
     float: none;
@@ -73,4 +80,18 @@ body{
 
 .popup_prepear{
     cursor: pointer;
+}
+.door_but{
+    padding-top: 30px;
+}
+.door_but button{
+    float: right;
+}
+.door_but button:last-child{
+    margin-right: 30px;
+}
+.loading {
+    background: url(../i/loader_button.gif) repeat !important;
+    box-shadow: none;
+    cursor: default !important;
 }

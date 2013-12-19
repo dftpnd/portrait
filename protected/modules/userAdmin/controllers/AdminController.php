@@ -7,6 +7,7 @@ class AdminController extends Controller
         $cs = Yii::app()->clientScript;
         $cs->registerCoreScript('jquery');
         $cs->registerCoreScript('jquery.ui');
+        $cs->registerScriptFile($this->createUrl('/js/action.js'));
         $cs->registerScriptFile($this->createUrl('/js/admin.js'));
         $cs->registerScriptFile($this->createUrl('/js/door.js'));
         $cs->registerCssFile($this->createUrl('/css/bootstrap.min.css'));
@@ -69,6 +70,16 @@ class AdminController extends Controller
         $model = Datapick::model()->findByPk($id);
 
         echo $this->renderPartial('_popup_prepear', array('model' => $model));
+
+    }
+
+    public function actionPopupSender()
+    {
+        $id = $_POST['datapick_id'];
+        $model = Datapick::model()->findByPk($id);
+        $model->attributes = $_POST['Datapick'];
+        $model->save();
+        echo json_encode(array('status' => 'success'));
 
     }
 
