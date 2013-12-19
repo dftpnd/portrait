@@ -71,6 +71,7 @@ section.index > article {
 /*maine menu*/
 .main-menu {
     background: #e5e5e5;
+    height: 29px;
 }
 
 .main-menu li {
@@ -83,6 +84,13 @@ section.index > article {
     padding: 4px 10px;
 }
 
+.main-menu li.active a{
+    background: black;
+    color: #fff;
+}
+.stopper{
+    height: 29px;
+}
 .fixerus {
     position: fixed;
     left: 10%;

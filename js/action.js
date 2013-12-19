@@ -134,7 +134,7 @@ function onDayClickUser($el, dateProperties) {
 }
 function watchMenu() {
 
-    if ($(document).scrollTop() > offset_menu.top) {
+    if (($(document).scrollTop() ) > (offset_menu.top)) {
         $('#fixed-main-menu').addClass('fixerus');
     } else {
         $('#fixed-main-menu').removeClass('fixerus');
@@ -147,6 +147,15 @@ function putAnchor(anchor) {
         title: '',
         url: anchor
     }, '', '#' + anchor);
+
+    $('#fixed-main-menu li').removeClass('active');
+
+    var $li = $('#fixed-main-menu').find('#link_' + anchor);
+
+
+    if ($li.length != 0) {
+        $li.addClass('active');
+    }
 
 
 }

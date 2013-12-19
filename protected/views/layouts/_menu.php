@@ -1,31 +1,28 @@
-<?php
-$this->widget('zii.widgets.CMenu', array(
-    'htmlOptions' => array('class' => 'scrollmenu main-menu anchor2 centrator ', 'id' => 'fixed-main-menu'),
-    'items' => array(
-        array(
-            'label' => 'index',
-            'url' => Yii::app()->urlManager->createUrl('site/index'),
-        ),
-        array(
-            'label' => 'test_1',
-            'url' => Yii::app()->urlManager->createUrl('#test_1'),
-        ),
-        array(
-            'label' => 'test_2',
-            'url' => Yii::app()->urlManager->createUrl('#test_2'),
-        ),
-        array(
-            'label' => 'test_3',
-            'url' => Yii::app()->urlManager->createUrl('#test_3'),
-        ),
-        array(
-            'label' => 'Вход',
-            'url' => ('/site/login'),
-            'visible' => Yii::app()->user->isGuest,
-        ),
-        array(
-            'label' => 'Выход',
-            'url' => Yii::app()->urlManager->createUrl('site/logout'),
-            'visible' => !Yii::app()->user->isGuest)
-    ),));
-?>
+<div class="stopper">
+    <ul id="fixed-main-menu" class="scrollmenu main-menu anchor2 centrator ">
+        <li id="">
+            <a href="/">index</a>
+        </li>
+        <li id="link_test_1">
+            <a href="/#test_1">test_1</a>
+        </li>
+        <li id="link_test_2">
+            <a href="/#test_2">test_2</a>
+        </li>
+        <li id="link_test_3">
+            <a href="/#test_3">test_3</a>
+        </li>
+        <li id="link_test_4">
+            <a href="/#test_4">test_4</a>
+        </li>
+        <li id="link_test_5">
+            <a href="/#test_5">test_5</a>
+        </li>
+        <li id="link_test_6">
+            <a href="/#test_6">test_6</a>
+        </li>
+        <li>
+            <a href="/site/login">Вход</a>
+        </li>
+    </ul>
+</div>
