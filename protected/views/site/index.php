@@ -1,3 +1,7 @@
+<script>
+    var codropsEvents = <?php echo $datapicks;?>;
+</script>
+
 <div class="nadstroika">
     <div class="container">
         <div class="custom-calendar-wrap custom-calendar-full">

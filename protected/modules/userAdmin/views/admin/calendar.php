@@ -16,7 +16,7 @@
             array(
                 'name' => 'datapick',
                 'type' => 'raw',
-                'value'=>array($datapick, 'popupPrepear'),
+                'value' => array($datapick, 'popupPrepear'),
                 'htmlOptions' => array('class' => 'editdatapick'),
             ),
             array(
@@ -71,6 +71,7 @@
     <div class="anchor"></div>
 </div>
 <script type="text/javascript">
+    var codropsEvents = <?php echo $models;?>;
     $(function () {
 
         var cal = $('#calendar').calendario({

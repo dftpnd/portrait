@@ -42,10 +42,14 @@ class AdminController extends Controller
         $cs->registerCssFile($this->createUrl('/css/calendario/custom_1.css'));
         $cs->registerScriptFile($this->createUrl('/js/calendario/modernizr.custom.63321.js'));
         $cs->registerScriptFile($this->createUrl('/js/calendario/jquery.calendario.js'));
-        $cs->registerScriptFile($this->createUrl('/js/calendario/data.js'));
 
-        $datapick= new Datapick;
-        $this->render('calendar', array('datapick' => $datapick));
+
+        $datapick = new Datapick;
+
+
+        $models = Datapick::model()->jsonePrepeare(Datapick::model()->findAllByAttributes(array('status' => Datapick::STATUS_APPROVED)));
+
+        $this->render('calendar', array('datapick' => $datapick, 'models' => $models));
     }
 
     public function actionSetDatapick()
@@ -57,13 +61,14 @@ class AdminController extends Controller
 
     }
 
-    public function actionPopupPrepear(){
+    public function actionPopupPrepear()
+    {
 
         $id = $_POST['datapick_id'];
 
         $model = Datapick::model()->findByPk($id);
 
-        echo $this->renderPartial('_popup_prepear', array('model' => $model ));
+        echo $this->renderPartial('_popup_prepear', array('model' => $model));
 
     }
 

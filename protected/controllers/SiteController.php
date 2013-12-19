@@ -14,10 +14,11 @@ class SiteController extends Controller
         $cs->registerCssFile($this->createUrl('/css/calendario/custom_1.css'));
         $cs->registerScriptFile($this->createUrl('/js/calendario/modernizr.custom.63321.js'));
         $cs->registerScriptFile($this->createUrl('/js/calendario/jquery.calendario.js'));
-        $cs->registerScriptFile($this->createUrl('/js/calendario/data.js'));
 
 
-        $this->render('index');
+        $datapicks = Datapick::model()->jsonePrepeare(Datapick::model()->findAllByAttributes(array('status' => Datapick::STATUS_APPROVED)));
+
+        $this->render('index', array('datapicks' => $datapicks));
     }
 
 
