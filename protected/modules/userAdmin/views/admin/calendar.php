@@ -11,7 +11,7 @@
         'dataProvider' => $datapick->search(),
         'cssFile' => false,
         'itemsCssClass' => 'table table-hover',
-        'rowCssClassExpression' => '("row_status_$data->status")',
+        'rowCssClassExpression' => '("popup_prepear row_status_$data->status")',
         'columns' => array(
             array(
                 'name' => 'datapick',

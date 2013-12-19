@@ -123,6 +123,6 @@ class Datapick extends CActiveRecord
 
     }
     public function popupPrepear($model){
-        return "<div class='popup_prepear' datapick_id='$model->id' >$model->datapick</div>";
+        return "<div datapick_id='$model->id' >$model->datapick</div>";
     }
 }

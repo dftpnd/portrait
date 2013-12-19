@@ -1,10 +1,30 @@
+body{
+    padding: 0!important;
+}
+.header{
+    margin-top: 30px;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -100px;
+    position: relative;
+}
+
 .anchor {
     float: none;
     clear: both;
 }
-
+.push{
+    height: 100px;
+    float: none;
+    clear: both;
+}
 .footer {
-    padding-top: 100px;
+    height: 100px!important;
+    padding: 0!important;
+    margin: 0!important;
 }
 
 .nadstroika {
@@ -51,11 +71,6 @@
     background: #f2dede;
 }
 
-
 .popup_prepear{
-    text-decoration: underline;
     cursor: pointer;
-}
-.popup_prepear:hover{
-    text-decoration: none;
 }

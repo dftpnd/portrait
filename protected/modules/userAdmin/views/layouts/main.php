@@ -15,10 +15,13 @@
             </div>
             <?php echo $content; ?>
             <div class="anchor"></div>
-            <div class="footer">
-                © BFP 2013
-            </div>
         </div>
+        <div class="push"></div>
+    </div>
+    <div class="anchor"></div>
+
+    <div class="footer">
+        © BFP 2013
     </div>
 </div>
 </body>

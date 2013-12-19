@@ -57,4 +57,14 @@ class AdminController extends Controller
 
     }
 
+    public function actionPopupPrepear(){
+
+        $id = $_POST['datapick_id'];
+
+        $model = Datapick::model()->findByPk($id);
+
+        echo $this->renderPartial('_popup_prepear', array('model' => $model ));
+
+    }
+
 }
