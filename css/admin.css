@@ -88,7 +88,7 @@ body{
     float: right;
 }
 .door_but button:last-child{
-    margin-right: 30px;
+    margin-right: 10px;
 }
 .loading {
     background: url(../i/loader_button.gif) repeat !important;

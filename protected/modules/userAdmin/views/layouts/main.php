@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Административная панель</title>
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar-example">
 <?php $this->renderPartial('application.views.layouts._door'); ?>
 <div class="universe">
     <div class="wrapper">

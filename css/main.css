@@ -16,3 +16,17 @@ html, body {
     margin: 0 auto -212px;
     position: relative;
 }
+section.index {
+
+}
+
+section.index > article {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid black;
+    height: 900px;
+    /*padding: 50px 0;*/
+}

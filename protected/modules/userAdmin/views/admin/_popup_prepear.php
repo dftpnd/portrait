@@ -23,8 +23,8 @@
         </label>
     </div>
     <div class="door_but anchor2">
+        <button id="popup-sender" class="btn btn btn-primary" onclick="sender($(this));return false">Сохранить</button>
         <button class="btn btn-default" onclick="closeDoor();return false">Отмена</button>
-        <button id="popup-sender" class="btn btn-default" onclick="sender($(this));return false">Сохранить</button>
     </div>
 </div>
 

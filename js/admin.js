@@ -17,6 +17,8 @@ function updateUser() {
 }
 $(function () {
 
+
+
     $("body").on("click", ".popup_prepear", function () {
         var datapick_id = $(this).children(":first").children(":first").attr('datapick_id');
         $.ajax({

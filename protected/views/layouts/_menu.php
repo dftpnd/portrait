@@ -1,11 +1,22 @@
 <?php
 $this->widget('zii.widgets.CMenu', array(
+    'htmlOptions' => array('class' => 'navbar navbar-default navbar-static'),
     'items' => array(
         array(
             'label' => 'index',
             'url' => Yii::app()->urlManager->createUrl('site/index'),
-            'active' => (Yii::app()->controller->getId() == 'site' &&
-                Yii::app()->controller->getAction()->getId() == 'about')
+        ),
+        array(
+            'label' => 'test_1',
+            'url' => Yii::app()->urlManager->createUrl('#test_1'),
+        ),
+        array(
+            'label' => 'test_2',
+            'url' => Yii::app()->urlManager->createUrl('#test_2'),
+        ),
+        array(
+            'label' => 'test_3',
+            'url' => Yii::app()->urlManager->createUrl('#test_3'),
         ),
         array(
             'label' => 'Вход',
