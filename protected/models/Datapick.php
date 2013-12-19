@@ -84,7 +84,8 @@ class Datapick extends CActiveRecord
         //$dataProvider= new CActiveDataProvider('Post');
 
         $criteria = new CDbCriteria;
-        $criteria->order = 'created DESC';
+        $criteria->order = 'status ASC,created DESC';
+        //$criteria->order = 'created DESC';
 
         $criteria->compare('id', $this->id);
         $criteria->compare('datapick', $this->datapick, true);
