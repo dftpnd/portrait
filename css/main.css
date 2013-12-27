@@ -196,13 +196,16 @@ h3{
     padding-right: 30px;
 }
 .action-bg{
-    background: url(../i/action-bg.jpg) no-repeat;
-    width: 1046px;
-    height: 532px;
     position: absolute;
     top: 20px;
     left:0px;
+    right: 0px;
     z-index: 5;
+}
+.action-bg img{
+    width: 100%;
+    height: auto;
+    display: block;
 }
 .window{
     width: 300px;
@@ -212,7 +215,7 @@ h3{
     -moz-border-radius: 15px;
     border-radius: 15px;
     position: absolute;
-    right: 220px;
+    right: 12%;
     top: 130px;
     background: rgb(220,224,35); /* Old browsers */
     background: -moz-radial-gradient(center, ellipse cover,  rgba(220,224,35,1) 0%, rgba(93,147,42,1) 92%); /* FF3.6+ */

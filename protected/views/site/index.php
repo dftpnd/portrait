@@ -7,7 +7,9 @@
         <div class="act-price">
             <span class="active">1100 р</span> <span class="no-price">вместо</span> <span class="no-price"><hr>2200p</span>
         </div>
-        <div class="action-bg"></div>
+        <div class="action-bg">
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/action-bg.jpg"/>
+        </div>
         <div class="window">
             <div class="w_info">
                 <p>Подайте заявку прямо</p>
