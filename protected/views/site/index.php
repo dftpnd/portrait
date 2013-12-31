@@ -25,8 +25,11 @@
             <div class="button reservd"></div>
         </div>
     </article>
-    <article class="in_scrollspy centrator" id="test_2">
-
+    <article class="in_scrollspy about" id="test_2">
+        <div class="centrator">
+            <h1>О базе отдыха Илеть</h1>
+        
+        </div>
     </article>
     <article class="in_scrollspy centrator"id="test_3">
 

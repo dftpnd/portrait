@@ -1,5 +1,10 @@
 /*setting*/
+
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic-ext);
+@font-face {
+    font-family: 'PT Sans';
+    src: url('../fonts/PT_Sans.woff');
+}
 * {
     margin: 0;
     padding: 0;
@@ -11,10 +16,15 @@ html, body {
 body{
     font-family: 'PT Sans', sans-serif, Arial;
 }
-
+article{
+    padding-top: 30px;
+}
 .anchor {
     float: none;
     clear: both;
+}
+h1{
+    font-size: 42px;
 }
 h2{
     font-size: 24px;
@@ -47,6 +57,8 @@ h3{
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    min-width: 940px;
+    max-width: 1440px;
 }
 
 .wrapper {
@@ -97,6 +109,8 @@ h3{
     display: inline-block;
     list-style: none;
     padding-top: 25px;
+}
+.header nav ul:last-child{
     margin-left: 15px;
 }
 .header nav ul:first-child li a:after{
@@ -111,14 +125,16 @@ h3{
 }
 .header nav ul li a{
     color: #0dbda7;
-    line-height: 2;
+    line-height: 2.2;
 } 
 .contacts{
-    padding-top: 40px;
+    padding-top: 35px;
 }
 .contacts h2{
     color: #4a4a49;
-    text-align: center;
+    text-align: right;
+    margin-top: -5px;
+    padding-bottom: 5px;    
 }
 .contacts .button{
     background: url(../i/call-btn.png) no-repeat;
@@ -216,7 +232,7 @@ h3{
     border-radius: 15px;
     position: absolute;
     right: 12%;
-    top: 130px;
+    top: 150px;
     background: rgb(220,224,35); /* Old browsers */
     background: -moz-radial-gradient(center, ellipse cover,  rgba(220,224,35,1) 0%, rgba(93,147,42,1) 92%); /* FF3.6+ */
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(220,224,35,1)), color-stop(92%,rgba(93,147,42,1))); /* Chrome,Safari4+ */
@@ -308,3 +324,11 @@ h1, h2, h3 {
     margin: 0;
 }
 
+/*about*/
+.about{
+    background: #91fef0;
+}
+.about h1{
+    color:#23baa7;
+    text-align: center;
+}
