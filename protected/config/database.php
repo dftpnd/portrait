@@ -1,6 +1,6 @@
 <?php
 return array(
-          'connectionString' => 'mysql:host=localhost;dbname=gradus',
+          'connectionString' => 'mysql:host=localhost;dbname=portrait',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => '',

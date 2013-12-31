@@ -326,9 +326,17 @@ h1, h2, h3 {
 
 /*about*/
 .about{
-    background: #91fef0;
+    background: #94c11c;
 }
 .about h1{
     color:#23baa7;
     text-align: center;
+}
+.picterself{
+    height: 758px;
+    background: url(../i/STasu2.jpg) no-repeat center center;
+}
+.picterform{
+    height: 262px;
+    background: url(../i/STasu3.png) no-repeat center center;
 }

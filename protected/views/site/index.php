@@ -27,12 +27,13 @@
     </article>
     <article class="in_scrollspy about" id="test_2">
         <div class="centrator">
-            <h1>О базе отдыха Илеть</h1>
-        
+            <div class="picterself"></div>
         </div>
     </article>
     <article class="in_scrollspy centrator"id="test_3">
-
+        <div class="centerator">
+            <div class="picterform"></div>
+        </div>
     </article>
     <article class="in_scrollspy centrator" id="test_4">
         <div class="nadstroika">
