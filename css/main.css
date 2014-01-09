@@ -327,10 +327,11 @@ h1, h2, h3 {
 /*about*/
 .about{
     background: #94c11c;
+    color:#fff;
 }
 .about h1{
-    color:#23baa7;
     text-align: center;
+    font-weight: normal;
 }
 .picterself{
     height: 758px;
@@ -339,4 +340,25 @@ h1, h2, h3 {
 .picterform{
     height: 262px;
     background: url(../i/STasu3.png) no-repeat center center;
+}
+.abt-icon{
+    width: 136px;
+    height: 136px;
+    background: url(../i/ico.png) no-repeat;
+    display: inline-block;
+}
+.abt-icon-1{background-position: 0px 0px;}
+.abt-icon-2{background-position: -140px 0px;}
+.abt-icon-3{background-position: -280px 0px;}
+.abt-icon-4{background-position: -420px 0px;}
+.abt-icon-5{background-position: -560px 0px;}
+.abt-icon-6{background-position: -700px 0px;}
+
+.abt-ul li{
+    float: left;
+    min-width: 470px;
+}
+.abt-ul p{
+    display: inline-block;
+    font-size: 24px;
 }

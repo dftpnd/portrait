@@ -27,7 +27,35 @@
     </article>
     <article class="in_scrollspy about" id="test_2">
         <div class="centrator">
-            <div class="picterself"></div>
+            <!--            <div class="picterself"></div>-->
+            <h1>О базе отдыха Илеть</h1>
+            <ul class="abt-ul">
+                <li>
+                    <div class="abt-icon abt-icon-1"></div>
+                    <p>На нашей базе есть
+                        волейбольная площадка и футбольное поле!</p>
+                </li>
+                <li>
+                    <div class="abt-icon abt-icon-2"></div>
+                    <p>На территории базы имеется  детская игровая зона.</p>
+                </li>
+                <li>
+                    <div class="abt-icon abt-icon-3"></div>
+                    <p>А также на нашей базе  соверешенно бесплатная охраняемая стоянка.</p>
+                </li>
+                <li>
+                    <div class="abt-icon abt-icon-4"></div>
+                    <p>Дома полностью отапливаемы и в них тепло!</p>
+                </li>
+                <li>
+                    <div class="abt-icon abt-icon-5"></div>
+                    <p>В каждом домике есть большой зал для застолья, кухня, бытовые кухонные приборы, душевая кабина</p>
+                </li>
+                <li>
+                    <div class="abt-icon abt-icon-6"></div>
+                    <p>В каждом домике есть большой зал для застолья, кухня, бытовые кухонные приборы, душевая кабина</p>
+                </li>
+            </ul>
         </div>
     </article>
     <article class="in_scrollspy centrator"id="test_3">
