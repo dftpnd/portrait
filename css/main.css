@@ -40,6 +40,9 @@ h3{
 .d-turquoise{
     color: #64a098;
 }
+.d-green{
+    color: #a4b609;
+}
 .anchor2:after {
     content: '.';
     font-size: 0px;
@@ -212,7 +215,7 @@ h3{
     padding-right: 30px;
 }
 .action-bg{
-    position: absolute;
+    position: relative;
     top: 20px;
     left:0px;
     right: 0px;
@@ -284,7 +287,6 @@ section.index {
 
 section.index > article {
     display: block;
-    height: 900px;
 }
 
 .nadstroika {
@@ -333,32 +335,102 @@ h1, h2, h3 {
     text-align: center;
     font-weight: normal;
 }
-.picterself{
-    height: 758px;
-    background: url(../i/STasu2.jpg) no-repeat center center;
-}
-.picterform{
-    height: 262px;
-    background: url(../i/STasu3.png) no-repeat center center;
-}
 .abt-icon{
-    width: 136px;
+    width: 138px;
     height: 136px;
     background: url(../i/ico.png) no-repeat;
-    display: inline-block;
+    float: left;
 }
 .abt-icon-1{background-position: 0px 0px;}
-.abt-icon-2{background-position: -140px 0px;}
-.abt-icon-3{background-position: -280px 0px;}
-.abt-icon-4{background-position: -420px 0px;}
-.abt-icon-5{background-position: -560px 0px;}
-.abt-icon-6{background-position: -700px 0px;}
+.abt-icon-2{background-position: -138px 0px;}
+.abt-icon-3{background-position: -276px 0px;}
+.abt-icon-4{background-position: -414px 0px;}
+.abt-icon-5{background-position: -552px 0px;}
+.abt-icon-6{background-position: -690px 0px;}
 
+.abt-ul{
+    margin-top: 60px;
+}
 .abt-ul li{
     float: left;
-    min-width: 470px;
+    display: block;
+    width: 50%;
+    height: 136px;
+    overflow: hidden;
+    list-style: none;
+    margin-bottom: 60px;
 }
 .abt-ul p{
-    display: inline-block;
     font-size: 24px;
+    height: 136px;
+    vertical-align: middle;
+    display: table-cell;
+    padding-left: 10px;
+    padding-right: 30px;
+    line-height: 1.25;
+}
+.picterform{
+    text-align: center;
+    padding-bottom: 30px;
+}
+.ask-form{
+    border: 7px solid #fad44a;
+    -webkit-border-radius: 23px;
+    -moz-border-radius: 23px;
+    border-radius: 23px;
+    padding: 20px 70px 100px;
+    width: 80%;
+    display: inline-block;
+    position: relative;
+}
+.ask-form h2{
+    font-size: 30px;
+    text-align: center;
+    font-weight: normal;
+    padding-bottom: 25px;
+}
+.ask-form input{
+    /*border: 1px solid #919090;*/
+    box-shadow: -1px 0 0 #919090, 1px 0 0 #919090, 0px 1px 0 #919090, 0px -1px 0 #919090;
+    border: none;
+    outline: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 10px 0;
+    color: #808080;
+    font-size: 15px;
+    text-indent: 6px;
+    margin: 5px 0;
+}
+.input-name{
+    display: block;
+    width: 100%;
+}
+.input-phone, .input-mail{
+    width: 50%;
+    display: inline-block;
+    position: relative;
+}
+.input-phone input, .input-mail input{
+    position: absolute;
+}
+.input-phone input{
+    left: 0px;
+    right: 25px;
+}
+.input-mail input{
+    left: 25px;
+    right: 0px;
+}
+.ask-btn{
+    width: 216px;
+    height: 53px;
+    background: url(../i/button_ask.png) no-repeat;
+    border: none;
+    outline: none;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    margin-left: -108px;
 }
