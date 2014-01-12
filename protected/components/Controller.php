@@ -12,7 +12,7 @@ class Controller extends SBaseController
         $cs->registerCssFile($this->createUrl('/css/main.css'));
         $cs->registerScriptFile($this->createUrl('/js/door.js'));
         $cs->registerScriptFile($this->createUrl('/js/action.js'));
-
+        $cs->registerScriptFile($this->createUrl('/js/carousel.js'));
 
 
 
