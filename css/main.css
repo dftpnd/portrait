@@ -124,7 +124,9 @@ h3 {
     height: 0;
     visibility: hidden;
 }
-
+.logo > a{
+    display: block;
+}
 .logo-img {
     background: url(../i/logo.png);
     width: 164px;
@@ -1015,5 +1017,5 @@ dd {
 }
 
 #fixed-main-menu {
-    display: none;
+
 }

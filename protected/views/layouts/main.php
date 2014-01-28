@@ -15,11 +15,13 @@
                         
                         <ul class="head-ul">
                             <li class="logo">
+                                <a href="/#main" id="linklogo">
                                 <div class="logo-img"></div>
                                 <div class="logo-text">
                                     <h3 class="turquoise">База отдыха <b>Илеть</b></h3>
                                     <h3 class="d-turquoise">в Марий Эл</h3>
-                                </div>    
+                                </div>
+                                </a>
                             </li>
                             <li>
                                 <nav>

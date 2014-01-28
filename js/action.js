@@ -1,16 +1,22 @@
 var offset_menu;
+var flag = true;
 
 $(function () {
+    var header = $('#fixed-main-menu').height();
 
     $(window).scroll(function () {
         watchMenu();
     });
 
-    $('.scrollmenu a').click(function () {
+    $('.scrollmenu a, #linklogo').click(function () {
+        flag = false;
         var anchor = $(this).attr('href').substring(2);
         var offset = $('#' + anchor).offset();
-        var caclculate_offset = offset.top;
-        $("html, body").animate({ scrollTop: caclculate_offset + "px" });
+        var caclculate_offset = offset.top - header;
+        $("html, body").animate({ scrollTop: caclculate_offset + "px" }, function(){
+            flag = true;
+            putAnchor(anchor);
+        });
         return false;
     });
 
@@ -21,13 +27,13 @@ $(function () {
         $('.in_scrollspy').each(function (i) {
             var position = $(this).position();
             $(this).scrollspy({
-                min: position.top,
+                min: position.top - header ,
                 max: position.top + $(this).height(),
                 onEnter: function (element, position) {
                     putAnchor(element.id);
                 },
                 onLeave: function (element, position) {
-                    //console.log('leaving ' +  element.id);
+//                    putAnchor(element.id);
                 }
             });
         });
@@ -142,10 +148,9 @@ function watchMenu() {
 
 }
 function putAnchor(anchor) {
-    /*
+    if(flag){
     history.pushState({
-        title: '',
-        url: anchor
+        title: '', url: anchor
     }, '', '#' + anchor);
 
     $('#fixed-main-menu li').removeClass('active');
@@ -157,6 +162,7 @@ function putAnchor(anchor) {
         $li.addClass('active');
     }
 
-    */
+    flag = true;
+    }
 }
 
