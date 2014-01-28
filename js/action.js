@@ -2,6 +2,10 @@ var offset_menu;
 
 $(function () {
 
+    alert('1');
+    debugger;
+    alert('2');
+
     $(window).scroll(function () {
         watchMenu();
     });
