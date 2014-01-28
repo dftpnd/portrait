@@ -142,7 +142,7 @@ function watchMenu() {
 
 }
 function putAnchor(anchor) {
-
+    /*
     history.pushState({
         title: '',
         url: anchor
@@ -150,13 +150,13 @@ function putAnchor(anchor) {
 
     $('#fixed-main-menu li').removeClass('active');
 
-    var $li = $('#fixed-main-menu').find('#link_' + anchor);
+    var $li = $('#fixed-main-menu #link_' + anchor);
 
 
     if ($li.length != 0) {
         $li.addClass('active');
     }
 
-
+    */
 }
 

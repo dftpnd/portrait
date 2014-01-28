@@ -1,5 +1,5 @@
 <section class="index">
-<article class="in_scrollspy action" id="test_1">
+<article class="in_scrollspy action" id="main">
     <div class="centrator">
         <p class="action-title">
             <span class="big-tit">Уютные коттеджи</span>
@@ -34,7 +34,7 @@
         <div class="anchor"></div>
     </div>
 </article>
-<article class="in_scrollspy about" id="test_2">
+<article class="in_scrollspy about" id="about">
     <div class="centrator">
         <h1>О базе отдыха Илеть</h1>
         <ul class="abt-ul">
@@ -68,7 +68,7 @@
     </div>
     <div class="anchor"></div>
 </article>
-<article class="in_scrollspy centrator" id="test_3">
+<article class="in_scrollspy centrator" id="wherewe">
     <div class="centerator">
         <div class="picterform">
             <form class="ask-form">
@@ -168,7 +168,7 @@
         </div>
     </div>
 </article>
-<article>
+<article id="ourhome" class="in_scrollspy" >
     <div class="centrator cottage">
         <h2>Наши коттеджи</h2>
         <ul class="cottages-ul">
@@ -303,6 +303,7 @@
                     </div>
                 </div>
             </li>
+
         </ul>
 
 
@@ -339,7 +340,7 @@
 
     </div>
 </article>
-<article class="in_scrollspy centrator" id="test_5">
+<article class="in_scrollspy centrator" id="reservation">
     <div class="nadstroika">
         <div class="container">
             <div class="custom-calendar-wrap custom-calendar-full">
@@ -371,6 +372,7 @@
     //    $('.carousel').carousel();
 
     var codropsEvents = <?php echo $datapicks; ?>;
+
     $(function () {
 
         var cal = $('#calendar').calendario({
@@ -398,31 +400,7 @@
     });
 
 
-    var options = {
-        currentPage: 1,
-        totalPages: 10,
-        shouldShowPage: function (type, page, current) {
-            switch (type) {
-                case "first":
-                case "last":
-                    return false;
-                default:
-                    return true;
-            }
-        }
-    }
 
-    $('.pagination').bootstrapPaginator(options);
-
-
-    $("area[rel^='prettyPhoto']").prettyPhoto();
-    $(".cot-gallery:first a[rel^='prettyPhoto']").prettyPhoto({
-        animation_speed: 'normal',
-        slideshow: 3000,
-        autoplay_slideshow: false,
-        social_tools: false,
-        gallery_markup: ''
-    });
 
     $('#myModal').modal('hide');
 
