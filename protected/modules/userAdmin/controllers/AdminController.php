@@ -9,7 +9,6 @@ class AdminController extends Controller
         $cs->registerCoreScript('jquery.ui');
         $cs->registerScriptFile($this->createUrl('/js/action.js'));
         $cs->registerScriptFile($this->createUrl('/js/admin.js'));
-        $cs->registerScriptFile($this->createUrl('/js/door.js'));
         $cs->registerCssFile($this->createUrl('/css/bootstrap.min.css'));
         $cs->registerCssFile($this->createUrl('/css/bootstrap-theme.min.css'));
         $cs->registerCssFile($this->createUrl('/css/jumbotron-narrow.css'));
