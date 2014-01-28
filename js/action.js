@@ -5,7 +5,7 @@ $(function () {
     var header = $('#fixed-main-menu').height();
 
     $(window).scroll(function () {
-        watchMenu();
+        //watchMenu();
     });
 
     $('.scrollmenu a, #linklogo').click(function () {

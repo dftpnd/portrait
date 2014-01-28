@@ -13,7 +13,6 @@ class AdminController extends Controller
         $cs->registerCssFile($this->createUrl('/css/bootstrap-theme.min.css'));
         $cs->registerCssFile($this->createUrl('/css/jumbotron-narrow.css'));
         $cs->registerCssFile($this->createUrl('/css/admin.css'));
-        $cs->registerCssFile($this->createUrl('/css/door.css'));
 
     }
 

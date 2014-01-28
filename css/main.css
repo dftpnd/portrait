@@ -388,7 +388,7 @@ section.index > article {
     z-index: 100;
 }
 
-.fixerus + .after_head {
+.after_head {
     display: block;
     position: relative;
     height: 160px;

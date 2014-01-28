@@ -8,7 +8,7 @@
     <body>
         <div class="universe">
             <div class="wrapper">
-                <div class="header" id="fixed-main-menu">
+                <div class="header fixerus" id="fixed-main-menu">
                     <div class="centrator">
                         
                         <ul class="head-ul">
