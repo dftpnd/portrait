@@ -419,7 +419,7 @@
     <div class="anchor"></div>
 </article>
 
-<article class="in_scrollspy centrator" id="test_6">
+<article class="in_scrollspy centrator" id="footer">
 
 </article>
 

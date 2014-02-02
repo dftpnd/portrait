@@ -46,9 +46,7 @@
         <?php echo $content; ?>
         <div class="acnhor"></div>
     </div>
-    <div class="footer centrator">
 
-    </div>
 </div>
 
 </body>
