@@ -205,8 +205,9 @@ h3 {
     margin: 5px 0;
 }
 
-.footer {
+#footer {
     height: 200px;
+    background: seagreen;
 }
 
 /*index*/
