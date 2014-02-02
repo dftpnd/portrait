@@ -4,6 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="language" content="ru"/>
     <title>База отдыха Илеть</title>
+    <link href="/favicon.gif" rel="icon" type="image/x-icon"/>
+    <link href="/favicon.gif" rel="shortcut icon" type="image/x-icon"/>
 </head>
 <body>
 <div class="universe">
