@@ -206,7 +206,7 @@
                 <div class="pagination"></div>
 
 
-                <button class="cot-reservd-btn" data-toggle="modal" data-target="#myModal"></button>
+                <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal" data-target="#myModal"></button>
             </div>
         </div>
     </li>
@@ -245,7 +245,7 @@
                 <div class="pagination"></div>
 
 
-                <button class="cot-reservd-btn" data-toggle="modal" data-target="#myModal"></button>
+                <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal" data-target="#myModal"></button>
             </div>
         </div>
     </li>
@@ -282,7 +282,7 @@
                 </div>
                 <div class="pagination"></div>
 
-                <button class="cot-reservd-btn" data-toggle="modal" data-target="#myModal"></button>
+                <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal" data-target="#myModal"></button>
             </div>
         </div>
     </li>
@@ -316,7 +316,7 @@
                     </div>
                     <div class="pagination"></div>
 
-                    <button class="cot-reservd-btn" data-toggle="modal" data-target="#myModal"></button>
+                    <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal" data-target="#myModal"></button>
                 </div>
             </div>
     </li>
@@ -356,7 +356,7 @@
                 </div>
                 <div class="pagination"></div>
 
-                <button class="cot-reservd-btn" data-toggle="modal" data-target="#myModal"></button>
+                <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal" data-target="#myModal"></button>
             </div>
         </div>
     </li>
@@ -369,26 +369,34 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content modal-zakaz">
 
             <h3 class="modal-title">Форма заказа</h3>
 
             <dl class="dl-horizontal">
                 <dt>Коттедж №<span class="required">*</span></dt>
-                <dd><input type="text"/></dd>
+                <dd>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </dd>
                 <dt>ФИО<span class="required">*</span></dt>
-                <dd><input type="text"/></dd>
+                <dd><input class="input-fio" type="text"/></dd>
                 <dt>Телефон<span class="required">*</span></dt>
                 <dd><input type="text"/></dd>
-                <dt>E-mail<span class="required">*</span></dt>
+                <dt>E-mail</dt>
                 <dd><input type="text"/></dd>
-                <dt>Дата бронировния<span class="required">*</span></dt>
+                <dt>Дата бронирования<span class="required">*</span></dt>
                 <dd><input type="text"/></dd>
 
             </dl>
 
             <!--                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-            <button class="cot-reservd-btn"></button>
+            <button class="cot-reservd-btn cot-reservd-pos-2"></button>
         </div>
         <!-- /.modal-content -->
     </div>
@@ -419,8 +427,31 @@
     <div class="anchor"></div>
 </article>
 
-<article class="in_scrollspy centrator" id="footer">
+<article class="in_scrollspy" id="footer">
+    <div class="centrator">
 
+        <ul class="head-ul">
+            <li class="logo">
+                <a href="/#main" id="linklogo">
+                    <div class="logo-img"></div>
+                    <div class="logo-text">
+                        <h3 class="turquoise">База отдыха <b>Илеть</b></h3>
+
+                        <h3 class="d-turquoise">в Марий Эл</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+            </li>
+            <li class="contacts">
+                <p>Остались вопросы? звони!</p>
+                <h2>+7 (962) 561-67-39</h2>
+
+                <button class="button"></button>
+            </li>
+            <li class="helper"></li>
+        </ul>
+    </div>
 </article>
 
 </section>

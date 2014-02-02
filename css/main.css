@@ -172,7 +172,7 @@ h3 {
     padding-top: 35px;
 }
 
-.contacts h2 {
+.contacts h2, .contacts p {
     color: #4a4a49;
     text-align: right;
     margin-top: -5px;
@@ -206,8 +206,15 @@ h3 {
 }
 
 #footer {
-    height: 200px;
-    background: seagreen;
+    height: 184px;
+    background: #fdf2d1;
+}
+#footer .contacts {
+    padding-top: 20px;
+}
+#footer .contacts  p{
+    font-weight: bold;
+    font-size: 18px;
 }
 
 /*index*/
@@ -831,11 +838,13 @@ h1, h2, h3 {
     background: url(../i/reservd-green.png) no-repeat;
     border: none;
     outline: none;
+    cursor: pointer;
+}
+.cot-reservd-pos {
     position: absolute;
     bottom: -20px;
     left: 50%;
     margin-left: -87px;
-    cursor: pointer;
 }
 
 .cot-reservd-btn:active{
@@ -997,6 +1006,7 @@ h1, h2, h3 {
 .modal-title {
     font-size: 24px;
     color: #252525;
+    margin-bottom: 20px;
 }
 
 .modal-body {
@@ -1038,7 +1048,7 @@ dd {
         width: 160px;
         overflow: hidden;
         clear: left;
-        text-align: right;
+        text-align: left;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
@@ -1066,4 +1076,27 @@ dd {
     .dl-horizontal dd:after {
         clear: both;
     }
+}
+.required{
+    color: #ff0000;
+}
+.modal-zakaz input{
+    border: 1px solid #919090;
+    font-size: 14px;
+    outline: medium none;
+    padding: 2px 0;
+    text-indent: 6px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.modal-zakaz .dl-horizontal dd{
+margin-bottom: 14px;
+}
+.input-fio{
+    width: 300px;
+}
+.cot-reservd-pos-2 {
+    display: block;
+    margin: 45px auto 0;
 }
