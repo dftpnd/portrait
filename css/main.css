@@ -183,6 +183,9 @@ h3 {
     background: url(../i/call-btn.png) no-repeat;
     width: 231px;
     height: 53px;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
 .contacts .button:active {
@@ -337,6 +340,10 @@ h3 {
     background: url(../i/reservd-btn.png) 0px 0px no-repeat;
     width: 216px;
     height: 53px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: block;
 }
 
 .button.reservd:active {
@@ -545,8 +552,12 @@ h1, h2, h3 {
     bottom: -30px;
     left: 50%;
     margin-left: -108px;
+    cursor: pointer;
 }
 
+.ask-btn:active {
+    bottom: -33px;
+}
 .reviews {
     background: #e4f8f8;
 }
@@ -726,13 +737,19 @@ h1, h2, h3 {
     height: 71px;
     float: right;
     margin-top: -3px;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
-
+.add_review:active {
+    background-position: 0px 3px;
+}
 .cottage h2 {
     font-size: 38px;
     color: #ffc81b;
     text-align: center;
     font-weight: normal;
+    margin-bottom: 30px;
 }
 
 .cottages-ul {
@@ -740,7 +757,8 @@ h1, h2, h3 {
 }
 
 .cottages-ul > li {
-    min-height: 470px;
+    height: 440px;
+    overflow: hidden;
     width: 50%;
     display: block;
     position: relative;
@@ -750,6 +768,8 @@ h1, h2, h3 {
     position: absolute;
     color: #252525;
     font-family: Calibri, sans-serif;
+    bottom: 50px;
+    top: 0;
 }
 
 .cottages-wrapp > div {
@@ -761,6 +781,7 @@ h1, h2, h3 {
     -webkit-border-radius: 23px;
     -moz-border-radius: 23px;
     border-radius: 23px;
+    height: 100%;
 }
 
 .cottages-ul > li:nth-child(2n-1) {
@@ -784,10 +805,11 @@ h1, h2, h3 {
 
 .cottages-wrapp h3 {
     font-size: 28px;
+    padding-bottom: 25px;
 }
 
 .cottages-wrapp p {
-    padding: 25px 0 20px;
+    padding-bottom: 20px;
 }
 
 .cott-descr li {
@@ -797,6 +819,10 @@ h1, h2, h3 {
 
 .cott-descr li:before {
     content: "-";
+}
+
+.cott-descr-marg{
+    margin-bottom: 18px;
 }
 
 .cot-reservd-btn {
@@ -809,6 +835,11 @@ h1, h2, h3 {
     bottom: -20px;
     left: 50%;
     margin-left: -87px;
+    cursor: pointer;
+}
+
+.cot-reservd-btn:active{
+    bottom: -22px;
 }
 
 /*----------------------------------------------------*/
@@ -885,7 +916,11 @@ h1, h2, h3 {
 
 .cot-gallery .fg-template {
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 10px;
+}
+
+.cot-gallery .fg-template a {
+    text-decoration: none;
 }
 
 /*-------------------------------------------*/

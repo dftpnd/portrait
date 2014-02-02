@@ -33,7 +33,7 @@
                     <li class="contacts">
                         <h2>+7 (962) 561-67-39</h2>
 
-                        <div class="button"></div>
+                        <button class="button"></button>
                     </li>
                     <li class="helper"></li>
                 </ul>
