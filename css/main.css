@@ -6,10 +6,7 @@
     src: url('../fonts/PT_Sans.woff');
 }
 
-*:after, *:before, * {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+* {
     margin: 0;
     padding: 0;
 }
@@ -102,8 +99,11 @@ h3 {
 }
 
 .header {
-    height: 160px;
     background: #FFF;
+}
+
+.header_control {
+    height: 160px;
 }
 
 .header .centrator {
@@ -124,9 +124,7 @@ h3 {
     height: 0;
     visibility: hidden;
 }
-.logo > a{
-    display: block;
-}
+
 .logo-img {
     background: url(../i/logo.png);
     width: 164px;
@@ -386,12 +384,13 @@ section.index > article {
     position: fixed;
     width: 100%;
     z-index: 100;
+    top: 0;
+    left: 0;
 }
 
-.after_head {
+#linklogo {
     display: block;
-    position: relative;
-    height: 160px;
+    text-decoration: none;
 }
 
 h1, h2, h3 {
@@ -740,29 +739,47 @@ h1, h2, h3 {
     position: relative;
 }
 
-.cottages-ul li {
-    float: left;
+.cottages-ul > li {
+    min-height: 470px;
+    width: 50%;
+    display: block;
     position: relative;
-    width: 48%;
-    margin-top: 2%;
-}
-
-.cottages-ul li:nth-child(2n+1) {
-    margin-right: 2%;
 }
 
 .cottages-wrapp {
-    /*position: absolute;*/
+    position: absolute;
     color: #252525;
     font-family: Calibri, sans-serif;
 }
 
 .cottages-wrapp > div {
     padding: 20px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     border: 7px solid #fad44a;
     -webkit-border-radius: 23px;
     -moz-border-radius: 23px;
     border-radius: 23px;
+}
+
+.cottages-ul > li:nth-child(2n-1) {
+    float: left;
+
+}
+
+.cottages-ul > li:nth-child(2n-1) .cottages-wrapp {
+    left: 0;
+    right: 25px;
+}
+
+.cottages-ul > li:nth-child(2n) {
+    float: right;
+}
+
+.cottages-ul > li:nth-child(2n) .cottages-wrapp {
+    left: 25px;
+    right: 0;
 }
 
 .cottages-wrapp h3 {
@@ -789,7 +806,7 @@ h1, h2, h3 {
     border: none;
     outline: none;
     position: absolute;
-    bottom: 30px;
+    bottom: -20px;
     left: 50%;
     margin-left: -87px;
 }
@@ -1014,8 +1031,4 @@ dd {
     .dl-horizontal dd:after {
         clear: both;
     }
-}
-
-#fixed-main-menu {
-
 }
