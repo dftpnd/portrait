@@ -73,7 +73,7 @@
         <div class="picterform">
             <form class="ask-form">
                 <h2 class="d-green">Появился вопрос? Задай!</h2>
-                <input class="input-name" placeholder="Введите ваше имя" type="text"/>
+                <input class="input-name" placeholder="Введите ваше имя и вопрос" type="text"/>
 
                 <div class="input-phone">
                     <div>

@@ -207,7 +207,6 @@ h3 {
 
 .footer {
     height: 200px;
-    background: black;
 }
 
 /*index*/
@@ -625,7 +624,7 @@ h1, h2, h3 {
 .city-map a {
     position: absolute;
     right: 40px;
-    bottom: 70px;
+    bottom: 50px;
     color: #259ab3;
 }
 
@@ -734,7 +733,7 @@ h1, h2, h3 {
 .add_review {
     background: url("../i/add_review.png") no-repeat;
     width: 174px;
-    height: 71px;
+    height: 47px;
     float: right;
     margin-top: -3px;
     border: none;
