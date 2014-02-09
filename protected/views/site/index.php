@@ -1,3 +1,5 @@
+
+
 <section class="index">
 <article class="in_scrollspy action" id="main">
     <div class="centrator">
@@ -85,7 +87,7 @@
                         <input placeholder="E-mail" type="text"/>
                     </div>
                 </div>
-                <button class="ask-btn"></button>
+                <button type="button" class="ask-btn"></button>
             </form>
         </div>
     </div>

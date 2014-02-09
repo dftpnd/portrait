@@ -75,7 +75,7 @@ h3 {
 }
 
 .centrator {
-    padding-top: 30px;
+    /*padding-top: 30px; no padding to centrator!*/
     width: 80%;
     margin: 0 auto;
     position: relative;
@@ -209,10 +209,12 @@ h3 {
     height: 184px;
     background: #fdf2d1;
 }
+
 #footer .contacts {
     padding-top: 20px;
 }
-#footer .contacts  p{
+
+#footer .contacts p {
     font-weight: bold;
     font-size: 18px;
 }
@@ -395,11 +397,48 @@ section.index > article {
 }
 
 .fixerus {
+    /*position: fixed;*/
+    /*width: 100%;*/
+    /*z-index: 100;*/
+    /*top: 0;*/
+    /*left: 0;*/
+}
+
+.help-menu {
     position: fixed;
     width: 100%;
     z-index: 100;
     top: 0;
     left: 0;
+    right: 0;
+    border: 1px solid black;
+    background: blue;
+    opacity: .1;
+    transition: all 1s ease-in-out;
+}
+
+.help-menu .active a {
+    background: yellow;
+}
+
+.help-menu a {
+    display: block;
+    background: #fff;
+}
+
+.help-menu ul {
+    text-align: justify;
+}
+
+.help-menu ul:after {
+    width: 100%;
+    content: '';
+    display: inline-block;
+}
+
+.help-menu li {
+    display: inline-block;
+    padding-top: 15px;
 }
 
 #linklogo {
@@ -565,6 +604,7 @@ h1, h2, h3 {
 .ask-btn:active {
     bottom: -33px;
 }
+
 .reviews {
     background: #e4f8f8;
 }
@@ -748,9 +788,11 @@ h1, h2, h3 {
     outline: none;
     cursor: pointer;
 }
+
 .add_review:active {
     background-position: 0px 3px;
 }
+
 .cottage h2 {
     font-size: 38px;
     color: #ffc81b;
@@ -828,7 +870,7 @@ h1, h2, h3 {
     content: "-";
 }
 
-.cott-descr-marg{
+.cott-descr-marg {
     margin-bottom: 18px;
 }
 
@@ -840,6 +882,7 @@ h1, h2, h3 {
     outline: none;
     cursor: pointer;
 }
+
 .cot-reservd-pos {
     position: absolute;
     bottom: -20px;
@@ -847,7 +890,7 @@ h1, h2, h3 {
     margin-left: -87px;
 }
 
-.cot-reservd-btn:active{
+.cot-reservd-btn:active {
     bottom: -22px;
 }
 
@@ -1077,10 +1120,12 @@ dd {
         clear: both;
     }
 }
-.required{
+
+.required {
     color: #ff0000;
 }
-.modal-zakaz input{
+
+.modal-zakaz input {
     border: 1px solid #919090;
     font-size: 14px;
     outline: medium none;
@@ -1090,12 +1135,15 @@ dd {
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
-.modal-zakaz .dl-horizontal dd{
-margin-bottom: 14px;
+
+.modal-zakaz .dl-horizontal dd {
+    margin-bottom: 14px;
 }
-.input-fio{
+
+.input-fio {
     width: 300px;
 }
+
 .cot-reservd-pos-2 {
     display: block;
     margin: 45px auto 0;

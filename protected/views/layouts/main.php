@@ -8,9 +8,27 @@
     <link href="/favicon.gif" rel="shortcut icon" type="image/x-icon"/>
 </head>
 <body>
+<div class="help-menu">
+    <ul class="centrator">
+        <li>
+            <a href="">О базе отдыха Илеть</a>
+        </li>
+        <li>
+            <a href="">Наши коттеджи</a>
+        </li>
+        <li>
+            <a href="">Календарь бронирования</a>
+        </li>
+        <li>
+            <a href="">Как до нас добраться</a>
+        </li>
+        <li>
+            <a href="">Наши партнеры</a>
+        </li>
+    </ul>
+</div>
 <div class="universe">
     <div class="wrapper">
-        <div class="header_control"></div>
         <div class="header fixerus header_control" id="fixed-main-menu">
             <div class="centrator">
 

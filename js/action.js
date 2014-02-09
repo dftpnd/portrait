@@ -4,9 +4,7 @@ var flag = true;
 $(function () {
     var header = $('#fixed-main-menu').height();
 
-    $(window).scroll(function () {
-        //watchMenu();
-    });
+
 
     $('.scrollmenu a, #linklogo').click(function () {
         flag = false;
