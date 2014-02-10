@@ -1148,3 +1148,46 @@ dd {
     display: block;
     margin: 45px auto 0;
 }
+
+.partners {
+    background: #eedc99;
+}
+
+.partners h2 {
+    color: #a08831;
+    font-size: 28px;
+    text-align: center;
+    font-weight: normal;
+    padding-bottom: 25px;
+}
+
+.partners ul li {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: #0099ff;
+}
+
+.partners ul {
+    text-align: center;
+}
+
+.container {
+    padding: 50px 0;
+}
+
+.calendar h2, .calendar h4 {
+    color: #616161;
+    text-align: center;
+    font-weight: normal;
+}
+
+.calendar h2 {
+    font-size: 28px;
+    padding-bottom: 15px;
+}
+
+.calendar h4 {
+    font-size: 22px;
+    font-style: italic;
+}
