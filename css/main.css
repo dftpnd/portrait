@@ -369,6 +369,9 @@ section.index > article {
 
 .nadstroika {
     height: 800px;
+    margin: 100px 0;
+    overflow: hidden;
+    position: relative;
 }
 
 /*main menu*/
