@@ -4,6 +4,10 @@
 	height: 400px;
 	width: 400px;
     background: #f2efe6;
+
+    -webkit-box-shadow: -4px 0px 5px 0px rgba(0, 0, 0, 0.42), 4px 0px 5px 0px rgba(0, 0, 0, 0.42);
+    -moz-box-shadow:    -4px 0px 5px 0px rgba(0, 0, 0, 0.42), 4px 0px 5px 0px rgba(0, 0, 0, 0.42);
+    box-shadow:         -4px 0px 5px 0px rgba(0, 0, 0, 0.42), 4px 0px 5px 0px rgba(0, 0, 0, 0.42);
 }
 
 .fc-calendar {
@@ -193,8 +197,9 @@
 
 .custom-header nav {
     position: absolute;
-    right: 20px;
-    top: 20px;
+    left: 50%;
+    margin-left: -110px;
+    top: 14px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -204,21 +209,10 @@
 }
 
 .custom-header nav span {
-    /*float: left;*/
-    width: 30px;
-    height: 30px;
+    float: left;
     position: relative;
     cursor: pointer;
-    background: black;
-    margin: 0 1px;
     font-size: 20px;
-    border-radius: 0 3px 3px 0;
-    box-shadow: inset 0 1px rgba(255,255,255,0.2);
-    display: inline-block;
-}
-
-.custom-header nav span:hover {
-    background: rgba(255,255,255,0.5);
 }
 
 .custom-header span:before {
@@ -364,4 +358,15 @@
 }
 .clips-right{
     right: 20px;
+}
+.custom-prev{
+    background: url("../../i/calendar.png") 0px 0px;
+    width: 17px;
+    height: 20px;
+    margin-right: 175px;
+}
+.custom-next{
+    background: url("../../i/calendar.png") 17px 0px;
+    width: 17px;
+    height: 20px;
 }

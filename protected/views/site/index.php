@@ -430,12 +430,10 @@
             <div class="custom-calendar-wrap custom-calendar-full">
                 <div class="custom-header clearfix">
                     <h3 class="custom-month-year">
-                        <nav>
-                            <span id="custom-prev" class="custom-prev"></span>
-                        </nav>
                         <span id="custom-month" class="custom-month"></span>
                         <span id="custom-year" class="custom-year"></span>
                         <nav>
+                            <span id="custom-prev" class="custom-prev"></span>
                             <span id="custom-next" class="custom-next"></span>
                         </nav>
                     </h3>
