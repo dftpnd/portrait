@@ -5,13 +5,12 @@ $(function () {
     var header = $('#fixed-main-menu').height();
 
 
-
     $('.scrollmenu a, #linklogo').click(function () {
         flag = false;
         var anchor = $(this).attr('href').substring(2);
         var offset = $('#' + anchor).offset();
         var caclculate_offset = offset.top - header;
-        $("html, body").animate({ scrollTop: caclculate_offset + "px" }, function(){
+        $("html, body").animate({ scrollTop: caclculate_offset + "px" }, function () {
             flag = true;
             putAnchor(anchor);
         });
@@ -25,7 +24,7 @@ $(function () {
         $('.in_scrollspy').each(function (i) {
             var position = $(this).position();
             $(this).scrollspy({
-                min: position.top - header ,
+                min: position.top - header,
                 max: position.top + $(this).height(),
                 onEnter: function (element, position) {
                     putAnchor(element.id);
@@ -146,21 +145,23 @@ function watchMenu() {
 
 }
 function putAnchor(anchor) {
-    if(flag){
-    history.pushState({
-        title: '', url: anchor
-    }, '', '#' + anchor);
+    if (flag) {
+        history.pushState({
+            title: '', url: anchor
+        }, '', '#' + anchor);
 
-    $('#fixed-main-menu li').removeClass('active');
+        $('#fixed-main-menu li').removeClass('active');
+        $('.help-menu li').removeClass('active');
 
-    var $li = $('#fixed-main-menu #link_' + anchor);
+
+        var $li = $('#fixed-main-menu #link_' + anchor);
 
 
-    if ($li.length != 0) {
-        $li.addClass('active');
-    }
+        if ($li.length != 0) {
+            $li.addClass('active');
+        }
 
-    flag = true;
+        flag = true;
     }
 }
 
