@@ -5,7 +5,7 @@ $(function () {
     var header = $('#fixed-main-menu').height();
 
 
-    $('.scrollmenu a, #linklogo').click(function () {
+    $('.scrollmenu a, #linklogo, .help-menu a').click(function () {
         flag = false;
         var anchor = $(this).attr('href').substring(2);
         var offset = $('#' + anchor).offset();
@@ -15,6 +15,18 @@ $(function () {
             putAnchor(anchor);
         });
         return false;
+    });
+
+    $(window).scroll(function () {
+        if ($(document).scrollTop() > $('#fixed-main-menu').height()) {
+            if (!$('.help-menu').hasClass('in_display')) {
+                $('.help-menu').addClass('in_display');
+            }
+        } else {
+            if ($('.help-menu').hasClass('in_display')) {
+                $('.help-menu').removeClass('in_display');
+            }
+        }
     });
 
     offset_menu = $('#fixed-main-menu').offset();

@@ -413,13 +413,18 @@ section.index > article {
     position: fixed;
     width: 100%;
     z-index: 100;
-    top: 0;
+    top: -50px;
     left: 0;
     right: 0;
-    border: 1px solid black;
     background: blue;
-    opacity: .1;
-    transition: all 1s ease-in-out;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    height: 50px;
+}
+
+.in_display {
+    opacity: 1;
+    top:0;
 }
 
 .help-menu .active a {
