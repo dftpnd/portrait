@@ -1,5 +1,3 @@
-
-
 <section class="index">
 <article class="in_scrollspy action" id="main">
     <div class="centrator">
@@ -408,19 +406,41 @@
 
 </div>
 </article>
-<article class="in_scrollspy centrator" id="reservation">
+
+<article class="partners">
+    <div class="centrator">
+        <div class="container">
+            <h2>Наши партнеры</h2>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</article>
+
+<article class="in_scrollspy centrator calendar" id="reservation">
     <div class="nadstroika">
         <div class="container">
+            <h2>Узнай свободен ли домик?</h2>
+            <h4>Календарь бронирования</h4>
+
             <div class="custom-calendar-wrap custom-calendar-full">
                 <div class="custom-header clearfix">
                     <h3 class="custom-month-year">
+                        <nav>
+                            <span id="custom-prev" class="custom-prev"></span>
+                        </nav>
                         <span id="custom-month" class="custom-month"></span>
                         <span id="custom-year" class="custom-year"></span>
                         <nav>
-                            <span id="custom-prev" class="custom-prev"></span>
                             <span id="custom-next" class="custom-next"></span>
                         </nav>
                     </h3>
+                    <div class="clips clips-left"></div>
+                    <div class="clips clips-right"></div>
                 </div>
                 <div id="calendar" class="fc-calendar-container"></div>
             </div>
@@ -447,6 +467,7 @@
             </li>
             <li class="contacts">
                 <p>Остались вопросы? звони!</p>
+
                 <h2>+7 (962) 561-67-39</h2>
 
                 <button class="button"></button>
