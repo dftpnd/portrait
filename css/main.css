@@ -818,7 +818,7 @@ h1, h2, h3 {
 .cottages-ul > li {
     height: 440px;
     overflow: hidden;
-    width: 50%;
+    width: 49%;
     display: block;
     position: relative;
 }
@@ -850,7 +850,7 @@ h1, h2, h3 {
 
 .cottages-ul > li:nth-child(2n-1) .cottages-wrapp {
     left: 0;
-    right: 25px;
+    right: 5px;
 }
 
 .cottages-ul > li:nth-child(2n) {
@@ -858,7 +858,7 @@ h1, h2, h3 {
 }
 
 .cottages-ul > li:nth-child(2n) .cottages-wrapp {
-    left: 25px;
+    left: 5px;
     right: 0;
 }
 
@@ -975,10 +975,17 @@ h1, h2, h3 {
 }
 
 /*-------------------------------------------*/
-
+.cot-gallery{
+	height: 130px;
+	overflow:hidden;
+}
 .cot-gallery .fg-template {
     display: inline-block;
     margin-top: 10px;
+	width: 32%;
+}
+.fg-template img{
+    width: 100%;
 }
 
 .cot-gallery .fg-template a {
