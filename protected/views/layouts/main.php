@@ -7,7 +7,7 @@
     <link href="/favicon.gif" rel="icon" type="image/x-icon"/>
     <link href="/favicon.gif" rel="shortcut icon" type="image/x-icon"/>
 </head>
-<body>
+<body class="overfloy_Y">
 <div class="help-menu">
     <ul class="centrator">
         <li id="hp-about">

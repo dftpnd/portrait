@@ -213,7 +213,8 @@
                     <div class="pagination"></div>
 
 
-                    <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal" data-target="#myModal"></button>
+                    <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal"
+                            data-target="#myModal"></button>
                 </div>
             </div>
         </li>
@@ -252,7 +253,8 @@
                     <div class="pagination"></div>
 
 
-                    <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal" data-target="#myModal"></button>
+                    <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal"
+                            data-target="#myModal"></button>
                 </div>
             </div>
         </li>
@@ -289,7 +291,8 @@
                     </div>
                     <div class="pagination"></div>
 
-                    <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal" data-target="#myModal"></button>
+                    <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal"
+                            data-target="#myModal"></button>
                 </div>
             </div>
         </li>
@@ -364,7 +367,8 @@
                     </div>
                     <div class="pagination"></div>
 
-                    <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal" data-target="#myModal"></button>
+                    <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal"
+                            data-target="#myModal"></button>
                 </div>
             </div>
         </li>
@@ -372,14 +376,14 @@
 
     </ul>
 </div>
-
+</div>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content modal-zakaz">
-
+<div id="myModal" class="modal fade" tabindex="1" data-width="760">
+    <div class="modal-content">
+        <button type="button" class="close review_close" data-dismiss="modal" aria-hidden="true"></button>
+        <div class="anchor"></div>
+        <div class="modal-body review-modal">
             <h3 class="modal-title">Форма заказа</h3>
 
             <dl class="dl-horizontal">
@@ -403,17 +407,11 @@
                 <dd><input type="text"/></dd>
 
             </dl>
-
-            <!--                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
             <button class="cot-reservd-btn cot-reservd-pos-2"></button>
         </div>
-        <!-- /.modal-content -->
     </div>
-    <!-- /.modal-dialog -->
 </div>
 <div class="anchor"></div>
-
-</div>
 </article>
 
 <article class="partners">
