@@ -27,8 +27,8 @@ $(function () {
     };
 
     contentNormalWidt = function () {
-        $('body').css('width', 'auto');
-        $('.help-menu').css('width', 'auto');
+        $('body').css('width', '100%');
+        $('.help-menu').css('width', '100%');
     }
 
 

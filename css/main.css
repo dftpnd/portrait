@@ -728,7 +728,7 @@ h1, h2, h3 {
 }
 
 .arrow-left, .arrow-right {
-    background: url("../i/arrows.png") no-repeat;
+    background: url("../i/arrows.png") no-repeat!important;
     width: 11px;
     height: 54px;
     position: absolute;
@@ -737,12 +737,12 @@ h1, h2, h3 {
 }
 
 .arrow-left {
-    background-position: 0px 0px;
+    background-position: 0px 0px!important;
     left: 0px;
 }
 
 .arrow-right {
-    background-position: -11px 0px;
+    background-position: -11px 0px!important;
     right: 0px;
 }
 
@@ -1100,7 +1100,7 @@ dd {
     text-align: center;
 }
 
-.container {
+.container-block {
     padding: 50px 0;
 }
 

@@ -36,7 +36,7 @@
 </article>
 <article class="in_scrollspy about" id="about">
     <div class="centrator">
-        <div class="container">
+        <div class="container-block">
             <h1>О базе отдыха Илеть</h1>
             <ul class="abt-ul">
                 <li>
@@ -72,7 +72,7 @@
 </article>
 <article class="in_scrollspy centrator" id="wherewe">
     <div class="centerator">
-        <div class="container">
+        <div class="container-block">
             <div class="picterform">
                 <form class="ask-form">
                     <h2 class="d-green">Появился вопрос? Задай!</h2>
@@ -97,7 +97,7 @@
 </article>
 <article class="in_scrollspy reviews" id="test_4">
     <div class="centrator">
-        <div class="container">
+        <div class="container-block">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/dashed.png"/>
 
             <div class="city">
@@ -176,7 +176,7 @@
 </article>
 <article id="ourhome" class="in_scrollspy">
 <div class="centrator cottage">
-<div class="container">
+<div class="container-block">
     <h2>Наши коттеджи</h2>
     <ul class="cottages-ul">
         <li>
@@ -411,7 +411,7 @@
 
 <article class="partners">
     <div class="centrator">
-        <div class="container">
+        <div class="container-block">
             <h2>Наши партнеры</h2>
             <ul>
                 <li></li>
@@ -425,7 +425,7 @@
 
 <article class="in_scrollspy centrator calendar" id="reservation">
     <div class="nadstroika">
-        <div class="container">
+        <div class="container-block">
             <h2>Узнай свободен ли домик?</h2>
             <h4>Календарь бронирования</h4>
 
