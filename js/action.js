@@ -3,15 +3,16 @@ var flag = true;
 
 $(function () {
 
-
-    $('.modal').on('show.bs.modal', function () {
+    function openModal($modal) {
         contentAutoWidth();
-        //$(window).bind("resize", contentAutoWidth);
-    });
+        $modal.modal('show');
+    }
+
 
     $('.modal').on('hide', function () {
         contentNormalWidt();
         //$(window).unbind("resize", contentAutoWidth);
+        //$(window).bind("resize", contentAutoWidth);
     });
 
     contentAutoWidth = function () {
@@ -129,7 +130,9 @@ $(function () {
         return false;
     });
 
-
+    $('.home-btn').click(function () {
+        openModal($('#home-modal'));
+    })
 });
 function sender($el) {
     $el.addClass('loading');

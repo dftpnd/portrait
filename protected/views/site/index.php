@@ -213,8 +213,7 @@
                     <div class="pagination"></div>
 
 
-                    <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal"
-                            data-target="#myModal"></button>
+                    <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button" ></button>
                 </div>
             </div>
         </li>
@@ -253,8 +252,7 @@
                     <div class="pagination"></div>
 
 
-                    <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal"
-                            data-target="#myModal"></button>
+                    <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button" ></button>
                 </div>
             </div>
         </li>
@@ -291,8 +289,7 @@
                     </div>
                     <div class="pagination"></div>
 
-                    <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal"
-                            data-target="#myModal"></button>
+                    <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button"  ></button>
                 </div>
             </div>
         </li>
@@ -326,8 +323,7 @@
                         </div>
                         <div class="pagination"></div>
 
-                        <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal"
-                                data-target="#myModal"></button>
+                        <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button"  ></button>
                     </div>
                 </div>
         </li>
@@ -367,8 +363,7 @@
                     </div>
                     <div class="pagination"></div>
 
-                    <button class="cot-reservd-btn cot-reservd-pos" data-toggle="modal"
-                            data-target="#myModal"></button>
+                    <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button"  ></button>
                 </div>
             </div>
         </li>
@@ -379,7 +374,7 @@
 </div>
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" tabindex="1" data-width="auto">
+<div id="home-modal" class="modal fade" tabindex="1" data-width="auto">
     <div class="modal-content">
         <button type="button" class="close review_close" data-dismiss="modal" aria-hidden="true"></button>
         <div class="anchor"></div>
