@@ -992,7 +992,7 @@ h1, h2, h3 {
     text-decoration: none;
 }
 .overfloy_Y{
-    overflow-y: scroll!important;
+    /*overflow-y: scroll!important;*/
 }
 dl {
     margin-top: 0;

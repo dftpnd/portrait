@@ -379,7 +379,7 @@
 </div>
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" tabindex="1" data-width="760">
+<div id="myModal" class="modal fade" tabindex="1" data-width="auto">
     <div class="modal-content">
         <button type="button" class="close review_close" data-dismiss="modal" aria-hidden="true"></button>
         <div class="anchor"></div>

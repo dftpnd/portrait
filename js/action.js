@@ -6,12 +6,12 @@ $(function () {
 
     $('.modal').on('show.bs.modal', function () {
         contentAutoWidth();
-        $(window).bind("resize", contentAutoWidth);
+        //$(window).bind("resize", contentAutoWidth);
     });
 
     $('.modal').on('hide', function () {
         contentNormalWidt();
-        $(window).unbind("resize", contentAutoWidth);
+        //$(window).unbind("resize", contentAutoWidth);
     });
 
     contentAutoWidth = function () {
@@ -19,15 +19,11 @@ $(function () {
         $('body').css('width', w + 'px');
         $('.help-menu').css('width', w + 'px');
 
-        $('body').removeClass('overfloy_Y');
     };
 
     contentNormalWidt = function () {
-        $('body').addClass('overfloy_Y');
-
         $('body').css('width', 'auto');
         $('.help-menu').css('width', 'auto');
-
     }
 
 
