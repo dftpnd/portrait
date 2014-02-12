@@ -10,9 +10,13 @@ $(function () {
 
 
     $('.modal').on('hide', function () {
-        contentNormalWidt();
+        //contentNormalWidt();
         //$(window).unbind("resize", contentAutoWidth);
         //$(window).bind("resize", contentAutoWidth);
+    });
+
+    $('body').on('hidden', '.modal', function () {
+        contentNormalWidt();
     });
 
     contentAutoWidth = function () {
