@@ -337,8 +337,6 @@ img {
 }
 
 hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
     border: 0;
     border-top: 1px solid #eee
 }
@@ -355,7 +353,7 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
     font-weight: 500;
     line-height: 1.1;
     color: inherit

@@ -7,7 +7,18 @@
         </p>
 
         <div class="act-price">
-            <span class="active">1100 р</span> <span class="no-price">вместо</span> <span class="no-price"><hr>2200p</span>
+            <div>
+                <span class="active">2000 р</span>
+                <span class="no-price">вместо</span>
+                <div class="no-price hr"><hr>4000p</div>
+                <span class="no-price">в будни</span>
+            </div>
+            <div>
+                <span class="active">3000 р</span>
+                <span class="no-price">вместо</span>
+                <span class="no-price hr"><hr>6000p</span>
+                <span class="no-price">в выходные!</span>
+            </div>
         </div>
         <div class="action-bg">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/action-bg.jpg"/>
@@ -176,138 +187,27 @@
 </article>
 <article id="ourhome" class="in_scrollspy">
 <div class="centrator cottage">
-<div class="container-block">
-    <h2>Наши коттеджи</h2>
-    <ul class="cottages-ul">
-        <li>
-            <div class="cottages-wrapp">
-                <div>
-                    <h3>Коттедж № 1</h3>
+    <div class="container-block">
+        <h2>Наши коттеджи</h2>
+        <ul class="cottages-ul">
+            <li>
+                <div class="cottages-wrapp">
+                    <div>
+                        <h3>Коттедж № 1</h3>
 
-                    <p>Просторный коттедж для шумных компаний.</p>
-                    <ul class="cott-descr cott-descr-marg">
-                        <li>Большой зал для застолья.</li>
-                        <li>12 спальных мест</li>
-                        <li>Кухонные приборы, бытовая техника</li>
-                    </ul>
-                    <div class="cot-gallery">
-                        <div class="fg-template">
-                            <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                               rel="prettyPhoto[gallery2]">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery1.png"/>
-                            </a>
-                        </div>
-                        <div class="fg-template">
-                            <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                               rel="prettyPhoto[gallery2]">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery2.png"/>
-                            </a>
-                        </div>
-                        <div class="fg-template">
-                            <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                               rel="prettyPhoto[gallery2]">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery3.png"/>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pagination"></div>
-
-
-                    <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button" ></button>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="cottages-wrapp">
-                <div>
-                    <h3>Коттедж № 2</h3>
-
-                    <div>Идеально подходит для влюбленной пары или небольшой компании.</div>
-                    <div>В доме есть:</div>
-                    <ul class="cott-descr">
-                        <li>душевая кабина</li>
-                        <li>оборудованная кухня</li>
-                        <li>9 спальных мест</li>
-                    </ul>
-                    <div class="cot-gallery">
-                        <div class="fg-template">
-                            <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                               rel="prettyPhoto[gallery2]">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery1.png"/>
-                            </a>
-                        </div>
-                        <div class="fg-template">
-                            <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                               rel="prettyPhoto[gallery2]">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery2.png"/>
-                            </a>
-                        </div>
-                        <div class="fg-template">
-                            <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                               rel="prettyPhoto[gallery2]">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery3.png"/>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pagination"></div>
-
-
-                    <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button" ></button>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="cottages-wrapp">
-                <div>
-                    <h3>Коттедж № 3</h3>
-
-                    <p>Просторный коттедж для шумных компаний.</p>
-                    <ul class="cott-descr  cott-descr-marg">
-                        <li>Большой зал для застолья.</li>
-                        <li>12 спальных мест</li>
-                        <li>Кухонные приборы, бытовая техника</li>
-                    </ul>
-                    <div class="cot-gallery">
-                        <div class="fg-template">
-                            <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                               rel="prettyPhoto[gallery2]">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery1.png"/>
-                            </a>
-                        </div>
-                        <div class="fg-template">
-                            <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                               rel="prettyPhoto[gallery2]">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery2.png"/>
-                            </a>
-                        </div>
-                        <div class="fg-template">
-                            <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                               rel="prettyPhoto[gallery2]">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery3.png"/>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pagination"></div>
-
-                    <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button"  ></button>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="cottages-wrapp">
-                <div>
-                    <h3>Коттедж № 4</h3>
-
-                    <p>Просторный коттедж для шумных компаний.</p>
-                    <ul class="cott-descr cott-descr-marg">
-                        <li>Большой зал для застолья.</li>
-                        <li>12 спальных мест</li>
-                        <li>Кухонные приборы, бытовая техника</li>
-                    </ul>
-                    <div class="cot-gallery">
-                        <div class="fg-template">
-                            <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-
+                        <p>Просторный коттедж для шумных компаний.</p>
+                        <ul class="cott-descr cott-descr-marg">
+                            <li>Большой зал для застолья.</li>
+                            <li>12 спальных мест</li>
+                            <li>Кухонные приборы, бытовая техника</li>
+                        </ul>
+                        <div class="cot-gallery">
+                            <div class="fg-template">
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+                                   rel="prettyPhoto[gallery2]">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery1.png"/>
+                                </a>
+                            </div>
                             <div class="fg-template">
                                 <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
                                    rel="prettyPhoto[gallery2]">
@@ -323,54 +223,165 @@
                         </div>
                         <div class="pagination"></div>
 
-                        <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button"  ></button>
+
+                        <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button"></button>
                     </div>
                 </div>
-        </li>
-        <li>
-            <div class="cottages-wrapp">
-                <div>
-                    <h3>Коттедж № 5</h3>
+            </li>
+            <li>
+                <div class="cottages-wrapp">
+                    <div>
+                        <h3>Коттедж № 2</h3>
 
-                    <p>Просторный коттедж для шумных компаний.</p>
-                    <ul class="cott-descr  cott-descr-marg">
-                        <li>Большой зал для застолья.</li>
-                        <li>12 спальных мест</li>
-                        <li>Кухонные приборы, бытовая техника</li>
-                    </ul>
-                    <div class="cot-gallery">
-                        <div class="fg-template">
-                            <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                               rel="prettyPhoto[gallery2]">
-                                <img
-                                    src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery1.png"/>
-                            </a>
+                        <div>Идеально подходит для влюбленной пары или небольшой компании.</div>
+                        <div>В доме есть:</div>
+                        <ul class="cott-descr">
+                            <li>душевая кабина</li>
+                            <li>оборудованная кухня</li>
+                            <li>9 спальных мест</li>
+                        </ul>
+                        <div class="cot-gallery">
+                            <div class="fg-template">
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+                                   rel="prettyPhoto[gallery2]">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery1.png"/>
+                                </a>
+                            </div>
+                            <div class="fg-template">
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+                                   rel="prettyPhoto[gallery2]">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery2.png"/>
+                                </a>
+                            </div>
+                            <div class="fg-template">
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+                                   rel="prettyPhoto[gallery2]">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery3.png"/>
+                                </a>
+                            </div>
                         </div>
-                        <div class="fg-template">
-                            <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                               rel="prettyPhoto[gallery2]">
-                                <img
-                                    src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery2.png"/>
-                            </a>
+                        <div class="pagination"></div>
+
+
+                        <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button"></button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="cottages-wrapp">
+                    <div>
+                        <h3>Коттедж № 3</h3>
+
+                        <p>Просторный коттедж для шумных компаний.</p>
+                        <ul class="cott-descr  cott-descr-marg">
+                            <li>Большой зал для застолья.</li>
+                            <li>12 спальных мест</li>
+                            <li>Кухонные приборы, бытовая техника</li>
+                        </ul>
+                        <div class="cot-gallery">
+                            <div class="fg-template">
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+                                   rel="prettyPhoto[gallery2]">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery1.png"/>
+                                </a>
+                            </div>
+                            <div class="fg-template">
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+                                   rel="prettyPhoto[gallery2]">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery2.png"/>
+                                </a>
+                            </div>
+                            <div class="fg-template">
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+                                   rel="prettyPhoto[gallery2]">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery3.png"/>
+                                </a>
+                            </div>
                         </div>
-                        <div class="fg-template">
-                            <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                               rel="prettyPhoto[gallery2]">
-                                <img
-                                    src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery3.png"/>
-                            </a>
+                        <div class="pagination"></div>
+
+                        <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button"></button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="cottages-wrapp">
+                    <div>
+                        <h3>Коттедж № 4</h3>
+
+                        <p>Просторный коттедж для шумных компаний.</p>
+                        <ul class="cott-descr cott-descr-marg">
+                            <li>Большой зал для застолья.</li>
+                            <li>12 спальных мест</li>
+                            <li>Кухонные приборы, бытовая техника</li>
+                        </ul>
+                        <div class="cot-gallery">
+                            <div class="fg-template">
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+
+                                <div class="fg-template">
+                                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+                                       rel="prettyPhoto[gallery2]">
+                                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery2.png"/>
+                                    </a>
+                                </div>
+                                <div class="fg-template">
+                                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+                                       rel="prettyPhoto[gallery2]">
+                                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery3.png"/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="pagination"></div>
+
+                            <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button"></button>
                         </div>
                     </div>
-                    <div class="pagination"></div>
+            </li>
+            <li>
+                <div class="cottages-wrapp">
+                    <div>
+                        <h3>Коттедж № 5</h3>
 
-                    <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button"  ></button>
+                        <p>Просторный коттедж для шумных компаний.</p>
+                        <ul class="cott-descr  cott-descr-marg">
+                            <li>Большой зал для застолья.</li>
+                            <li>12 спальных мест</li>
+                            <li>Кухонные приборы, бытовая техника</li>
+                        </ul>
+                        <div class="cot-gallery">
+                            <div class="fg-template">
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+                                   rel="prettyPhoto[gallery2]">
+                                    <img
+                                        src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery1.png"/>
+                                </a>
+                            </div>
+                            <div class="fg-template">
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+                                   rel="prettyPhoto[gallery2]">
+                                    <img
+                                        src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery2.png"/>
+                                </a>
+                            </div>
+                            <div class="fg-template">
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+                                   rel="prettyPhoto[gallery2]">
+                                    <img
+                                        src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery3.png"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pagination"></div>
+
+                        <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button"></button>
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
 
-    </ul>
-</div>
+        </ul>
+    </div>
 </div>
 
 <!-- Modal -->
@@ -409,20 +420,6 @@
 <div class="anchor"></div>
 </article>
 
-<article class="partners">
-    <div class="centrator">
-        <div class="container-block">
-            <h2>Наши партнеры</h2>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-    </div>
-</article>
-
 <article class="in_scrollspy centrator calendar" id="reservation">
     <div class="nadstroika">
         <div class="container-block">
@@ -451,31 +448,57 @@
 </article>
 
 <article class="in_scrollspy" id="footer">
-    <div class="centrator">
+    <div class="footer-contacts">
+        <div class="centrator">
 
-        <ul class="head-ul">
-            <li class="logo">
-                <a href="/#main" id="linklogo">
-                    <div class="logo-img"></div>
-                    <div class="logo-text">
-                        <h3 class="turquoise">База отдыха <b>Илеть</b></h3>
+            <ul class="head-ul">
+                <li class="logo">
+                    <a href="/#main" id="linklogo">
+                        <div class="logo-img"></div>
+                        <div class="logo-text">
+                            <h3 class="turquoise">База отдыха <b>Илеть</b></h3>
 
-                        <h3 class="d-turquoise">в Марий Эл</h3>
-                    </div>
-                </a>
-            </li>
-            <li>
-            </li>
-            <li class="contacts">
-                <p>Остались вопросы? звони!</p>
+                            <h3 class="d-turquoise">в Марий Эл</h3>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                </li>
+                <li class="contacts">
+                    <h2>+7 (962) 561-67-39</h2>
 
-                <h2>+7 (962) 561-67-39</h2>
-
-                <button class="button"></button>
-            </li>
-            <li class="helper"></li>
-        </ul>
+                    <button class="button"></button>
+                </li>
+                <li class="helper"></li>
+            </ul>
+        </div>
     </div>
+    <div class="footer-partners">
+        <div class="centrator">
+            <div class="partners-left">
+                <span>Наши партнеры:</span>
+
+                <div class="sport_academy"></div>
+                <div class="volg_travel"></div>
+                <div class="pingvin"></div>
+            </div>
+            <div class="partners-right">
+                <a class="vk" href="#">
+                    <div></div>
+                </a>
+                <a class="inst" href="#">
+                    <div></div>
+                </a>
+
+                <p>Сайт разработан “Там то там то”</p>
+
+                <p>&copy; 2014</p>
+
+            </div>
+            <div class="anchor"></div>
+        </div>
+    </div>
+
 </article>
 
 </section>
