@@ -143,6 +143,10 @@ $(function () {
     $('.ask-btn').click(function () {
         openModal($('#ask-modal'));
     });
+
+    $('.callback-bottom').click(function () {
+        openModal($('#callback-modal-bottom'));
+    });
 });
 function sender($el) {
     $el.addClass('loading');

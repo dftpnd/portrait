@@ -35,8 +35,14 @@
 
                 <p>50% на вторые сутки!</p>
             </div>
-            <input type="text" class="default-field" placeholder="*Ваше имя"/>
-            <input type="text" class="default-field" placeholder="*Ваш телефон"/>
+            <div class="error-field">
+                <p class="error-text">Поле обязательно для заполнения!</p>
+                <input type="text" class="default-field" placeholder="*Ваше имя"/>
+            </div>
+            <div>
+                <p class="error-text hidden">Поле обязательно для заполнения!</p>
+                <input type="text" class="default-field" placeholder="*Ваш телефон"/>
+            </div>
 
             <p class="inp_descr">*Ваши данные в безопасности</p>
 
@@ -500,10 +506,32 @@
                 <li class="contacts">
                     <h2>+7 (962) 561-67-39</h2>
 
-                    <button class="button"></button>
+                    <button class="button callback-bottom"></button>
                 </li>
                 <li class="helper"></li>
             </ul>
+
+            <!-- Modal -->
+            <div id="callback-modal-bottom" class="modal callback-modal" tabindex="1" data-width="300">
+                <div class="modal-content">
+                    <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
+                    <div class="anchor"></div>
+                    <div class="modal-body">
+                        <h4>Оставьте номер,</h4>
+                        <p class="callback-title">мы перезвоним Вам сами</p>
+                        <div class="error-field">
+                            <p class="error-text">Поле обязательно для заполнения!</p>
+                            <input type="text" placeholder="*Ваше имя" class=""/>
+                        </div>
+                        <div class="error-text">
+                            <p class="hidden">Поле обязательно для заполнения!</p>
+                            <input type="text" placeholder="*Ваш телефон" class=""/>
+                        </div>
+                        <button class="callback-modal-btn"></button>
+                    </div>
+                    <div class="bottom-link"></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="footer-partners">

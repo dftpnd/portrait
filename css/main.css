@@ -198,7 +198,7 @@ h3 {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    padding: 10px 0;
+    padding: 8px 0;
     color: #9a9999;
     font-size: 16px;
     text-indent: 6px;
@@ -423,6 +423,7 @@ div.hr {
 
 .window input {
     width: 100%;
+    margin-top: 20px;
 }
 
 .w_info {
@@ -442,6 +443,23 @@ div.hr {
 
 .w_info p:last-child {
     width: auto;
+}
+
+.error-field {
+    position: relative;
+}
+
+.error-field p.error-text {
+    color: #fe4302;
+    font-size: 16px;
+    padding-left: 10px;
+    position: absolute;
+}
+
+.error-field input {
+    border: 1px solid #fe4302 !important;
+    background: url("../i/error.png") no-repeat 96% center;
+    background-color: #fff;
 }
 
 .inp_descr {
@@ -1243,7 +1261,7 @@ dd {
     right: 0;
 }
 
-#callback-modal input {
+.callback-modal input {
     display: block;
     border: 1px solid #b9b5b5;
     font-size: 16px;
@@ -1255,20 +1273,23 @@ dd {
     -moz-border-radius: 5px;
     border-radius: 5px;
     width: 100%;
-    margin: 20px 0;
+    margin-top: 20px;
 }
-#callback-modal h4, #callback-modal p,
-#reservd-modal h4, #ask-modal h4{
+
+.callback-modal h4, .callback-modal .callback-title,
+#reservd-modal h4, #ask-modal h4 {
     color: #555555;
     text-align: center;
 }
-#callback-modal h4, #reservd-modal h4,
-#ask-modal h4{
+
+.callback-modal h4, #reservd-modal h4,
+#ask-modal h4 {
     font-size: 25px;
 }
 
-#callback-modal p {
+.callback-modal .callback-title {
     font-size: 19px;
+    margin-bottom: 35px;
 }
 
 .callback-modal-btn {
@@ -1285,7 +1306,8 @@ dd {
 .callback-modal-btn:active {
     top: 2px;
 }
-.modal .btn-close{
+
+.modal .btn-close {
     background: url('../i/btn-close.png') no-repeat;
     width: 14px;
     height: 14px;
@@ -1294,7 +1316,8 @@ dd {
     margin-right: 12px;
     margin-top: 12px;
 }
-#callback-modal .link{
+
+.callback-modal .link {
     background: url('../i/top.png') no-repeat;
     width: 30px;
     height: 16px;
@@ -1304,12 +1327,18 @@ dd {
     top: -16px;
     right: 35px;
 }
-#reservd-modal p, #ask-modal p{
+
+#reservd-modal p, #ask-modal p {
     font-size: 16px;
     text-align: center;
     color: #9a9999;
     margin-top: 30px;
 }
-#reservd-modal .modal-body, #ask-modal .modal-body{
+
+#reservd-modal .modal-body, #ask-modal .modal-body {
     padding: 20px 40px 30px;
+}
+
+.callback-modal p.error-text {
+    top: -20px;
 }

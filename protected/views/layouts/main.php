@@ -54,16 +54,22 @@
                 </ul>
             </div>
             <!-- Modal -->
-            <div id="callback-modal" class="modal" tabindex="1" data-width="auto">
+            <div id="callback-modal" class="modal callback-modal" tabindex="1" data-width="300">
                 <div class="modal-content">
                     <div class="link"></div>
                     <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
                     <div class="anchor"></div>
                     <div class="modal-body">
                         <h4>Оставьте номер,</h4>
-                        <p>мы перезвоним Вам сами</p>
-                        <input type="text" placeholder="*Ваше имя" class=""/>
-                        <input type="text" placeholder="*Ваш телефон" class=""/>
+                        <p class="callback-title">мы перезвоним Вам сами</p>
+                        <div class="error-field">
+                            <p class="error-text">Поле обязательно для заполнения!</p>
+                            <input type="text" placeholder="*Ваше имя" class=""/>
+                        </div>
+                        <div class="error-text">
+                            <p class="hidden">Поле обязательно для заполнения!</p>
+                            <input type="text" placeholder="*Ваш телефон" class=""/>
+                        </div>
                         <button class="callback-modal-btn"></button>
                     </div>
                 </div>
