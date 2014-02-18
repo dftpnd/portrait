@@ -13,17 +13,14 @@
         <li id="hp-about">
             <a href="#about">О базе отдыха Илеть</a>
         </li>
+        <li id="hp-wherewe">
+            <a href="#wherewe">Как до нас добраться</a>
+        </li>
         <li id="hp-ourhome">
             <a href="#ourhome">Наши коттеджи</a>
         </li>
         <li id="hp-reservation">
             <a href="#reservation">Календарь бронирования</a>
-        </li>
-        <li id="hp-wherewe">
-            <a href="#wherewe">Как до нас добраться</a>
-        </li>
-        <li id="hp-partnerships">
-            <a href="#partnerships">Наши партнеры</a>
         </li>
     </ul>
 </div>

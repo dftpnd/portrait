@@ -81,7 +81,7 @@
     </div>
     <div class="anchor"></div>
 </article>
-<article class="in_scrollspy centrator" id="wherewe">
+<article class="in_scrollspy reviews" id="wherewe">
     <div class="centerator">
         <div class="container-block">
             <div class="picterform">
@@ -105,8 +105,6 @@
         </div>
     </div>
     <div class="anchor"></div>
-</article>
-<article class="in_scrollspy reviews" id="test_4">
     <div class="centrator">
         <div class="container-block">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/dashed.png"/>
