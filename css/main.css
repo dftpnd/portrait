@@ -293,10 +293,12 @@ h3 {
     float: right;
     text-align: right
 }
-.vk, .inst{
+
+.vk, .inst {
     display: inline-block;
     margin-top: 28px;
 }
+
 .vk div {
     background: url("../i/cc.png") 0px 0px no-repeat;
     height: 27px;
@@ -309,10 +311,10 @@ h3 {
     width: 27px;
     margin-left: 10px;
 }
-.partners-right p{
+
+.partners-right p {
     font-size: 11px;
-    color: #b5b5b5;
-    ;
+    color: #b5b5b5;;
 }
 
 /*index*/
@@ -333,17 +335,21 @@ h3 {
 .act-price {
     position: absolute;
 }
+
 .act-price .active {
     color: #fe4902;
     padding-right: 30px;
     font-weight: bold;
 }
-.act-price div:first-child span.active{
+
+.act-price div:first-child span.active {
     font-size: 42px;
 }
-.act-price div:last-child span.active{
+
+.act-price div:last-child span.active {
     font-size: 30px;
 }
+
 .big-tit {
     font-size: 42px;
     color: #4a4a49;
@@ -368,18 +374,17 @@ h3 {
     position: absolute;
     bottom: 18px;
     left: -8px;
-    border: 1px solid #989897!important;
+    border: 1px solid #989897 !important;
     border-bottom: none;
     -webkit-transform: rotate(160deg);
     -moz-transform: rotate(160deg);
     -ms-transform: rotate(160deg);
     -o-transform: rotate(160deg);
 }
-div.hr{
+
+div.hr {
     display: inline-block;
 }
-
-
 
 .action-bg {
     position: relative;
@@ -475,9 +480,9 @@ section.index > article {
     height: 850px;
     position: relative;
     margin: 0 auto 100px;
-    width: -moz-calc(100% -20px);
-    width: -webkit-calc(100% -20px);
-    width: calc(100% -20px);
+    width: -moz-calc(100% - 20px);
+    width: -webkit-calc(100% - 20px);
+    width: calc(100% - 20px);
 }
 
 /*main menu*/
@@ -522,7 +527,7 @@ section.index > article {
     right: 0;
     background: blue;
     opacity: 0;
-    transition: all 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
     height: 50px;
 }
 

@@ -21,8 +21,9 @@ $(function () {
 
     contentAutoWidth = function () {
         var w = $(window).width();
-        $('body').css('width', w + 'px');
         $('.help-menu').css('width', w + 'px');
+        $('body').css('width', w + 'px');
+
 
     };
 
