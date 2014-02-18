@@ -389,7 +389,7 @@ div.hr {
 .action-bg {
     position: relative;
     top: 20px;
-    left: -75px;
+    left: -45px;
     right: 0px;
     z-index: 5;
 }
@@ -409,7 +409,7 @@ div.hr {
     border-radius: 15px;
     position: absolute;
     right: 35px;
-    top: 190px;
+    top: 240px;
     background: rgb(220, 224, 35); /* Old browsers */
     background: -moz-radial-gradient(center, ellipse cover, rgba(220, 224, 35, 1) 0%, rgba(93, 147, 42, 1) 92%); /* FF3.6+ */
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(220, 224, 35, 1)), color-stop(92%, rgba(93, 147, 42, 1))); /* Chrome,Safari4+ */
@@ -462,10 +462,11 @@ div.hr {
     outline: none;
     cursor: pointer;
     display: block;
+    position: relative;
 }
 
 .button.reservd:active {
-    background-position: 0px -53px;
+    top: 2px;
 }
 
 section.index {
@@ -1256,11 +1257,13 @@ dd {
     width: 100%;
     margin: 20px 0;
 }
-#callback-modal h4, #callback-modal p {
+#callback-modal h4, #callback-modal p,
+#reservd-modal h4, #ask-modal h4{
     color: #555555;
     text-align: center;
 }
-#callback-modal h4 {
+#callback-modal h4, #reservd-modal h4,
+#ask-modal h4{
     font-size: 25px;
 }
 
@@ -1282,7 +1285,7 @@ dd {
 .callback-modal-btn:active {
     top: 2px;
 }
-#callback-modal .btn-close{
+.modal .btn-close{
     background: url('../i/btn-close.png') no-repeat;
     width: 14px;
     height: 14px;
@@ -1297,4 +1300,16 @@ dd {
     height: 16px;
     display: block;
     content: '';
+    position: absolute;
+    top: -16px;
+    right: 35px;
+}
+#reservd-modal p, #ask-modal p{
+    font-size: 16px;
+    text-align: center;
+    color: #9a9999;
+    margin-top: 30px;
+}
+#reservd-modal .modal-body, #ask-modal .modal-body{
+    padding: 20px 40px 30px;
 }

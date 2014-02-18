@@ -135,6 +135,14 @@ $(function () {
     $('.callback-btn').click(function () {
         openModal($('#callback-modal'));
     });
+
+    $('.reservd').click(function () {
+        openModal($('#reservd-modal'));
+    });
+
+    $('.ask-btn').click(function () {
+        openModal($('#ask-modal'));
+    });
 });
 function sender($el) {
     $el.addClass('loading');

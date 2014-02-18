@@ -35,16 +35,28 @@
 
                 <p>50% на вторые сутки!</p>
             </div>
-            <input type="text" class="default-field" placeholder="Ваше имя"/>
+            <input type="text" class="default-field" placeholder="*Ваше имя"/>
             <input type="text" class="default-field" placeholder="*Ваш телефон"/>
 
             <p class="inp_descr">*Ваши данные в безопасности</p>
-            <input type="text" class="default-field" placeholder="Дата бронирования"/>
-
-            <p class="inp_descr">C вами свяжется наш менеджер<br>
-                в течении 15ти минут</p>
 
             <button class="button reservd"></button>
+        </div>
+        <div class="anchor"></div>
+
+        <!-- Modal -->
+        <div id="reservd-modal" class="modal fade" tabindex="1" data-width="360">
+            <div class="modal-content">
+                <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
+                <div class="anchor"></div>
+                <div class="modal-body">
+                    <h4>Заявка отправлена!</h4>
+
+                    <p class="">Наш менеджер свяжется с вами
+                        в течении 15ти минут и ответит
+                        на все ваши вопросы</p>
+                </div>
+            </div>
         </div>
         <div class="anchor"></div>
     </div>
@@ -107,6 +119,21 @@
                 </form>
             </div>
         </div>
+
+        <!-- Modal -->
+        <div id="ask-modal" class="modal fade" tabindex="1" data-width="360">
+            <div class="modal-content">
+                <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
+                <div class="anchor"></div>
+                <div class="modal-body">
+                    <h4>Вопрос отправлен!</h4>
+
+                    <p class="">Наш менеджер свяжется с вами
+                        в течении 15ти минут.</p>
+                </div>
+            </div>
+        </div>
+        <div class="anchor"></div>
     </div>
     <div class="anchor"></div>
     <div class="reviews">
