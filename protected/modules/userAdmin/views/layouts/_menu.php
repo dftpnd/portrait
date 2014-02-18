@@ -16,11 +16,6 @@
                 'active' => (Yii::app()->controller->getId() == 'admin' && Yii::app()->controller->getAction()->getId() == 'calendar')
             ),
             array(
-                'label' => 'srbac',
-                'url' => Yii::app()->urlManager->createUrl('/srbac/authitem/manage'),
-                'active' => (Yii::app()->controller->getId() == 'authitem')
-            ),
-            array(
                 'label' => 'Выход',
                 'url' => Yii::app()->urlManager->createUrl('/site/logout'),
             ),
