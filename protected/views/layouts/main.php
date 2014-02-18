@@ -55,14 +55,15 @@
             </div>
             <!-- Modal -->
             <div id="callback-modal" class="modal" tabindex="1" data-width="auto">
+                <div class="link"></div>
                 <div class="modal-content">
-                    <button type="button" class="close review_close" data-dismiss="modal" aria-hidden="true"></button>
+                    <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
                     <div class="anchor"></div>
-                    <div class="modal-body review-modal">
+                    <div class="modal-body">
                         <h4>Оставьте номер,</h4>
                         <p>мы перезвоним Вам сами</p>
-                        <input type="text" class=""/>
-                        <input type="text" class=""/>
+                        <input type="text" placeholder="*Ваше имя" class=""/>
+                        <input type="text" placeholder="*Ваш телефон" class=""/>
                         <button class="callback-modal-btn"></button>
                     </div>
                 </div>

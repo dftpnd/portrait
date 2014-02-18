@@ -1244,6 +1244,17 @@ dd {
 
 #callback-modal input {
     display: block;
+    border: 1px solid #b9b5b5;
+    font-size: 16px;
+    color: #9a9999;
+    outline: medium none;
+    padding: 5px 0;
+    text-indent: 6px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width: 100%;
+    margin: 20px 0;
 }
 #callback-modal h4, #callback-modal p {
     color: #555555;
@@ -1261,7 +1272,7 @@ dd {
     background: url('../i/callback.png') no-repeat;
     width: 174px;
     height: 41px;
-    margin: 0 auto;
+    margin: 35px auto 0;
     border: none;
     outline: none;
     display: block;
@@ -1270,4 +1281,20 @@ dd {
 
 .callback-modal-btn:active {
     top: 2px;
+}
+#callback-modal .btn-close{
+    background: url('../i/btn-close.png') no-repeat;
+    width: 14px;
+    height: 14px;
+    outline: none;
+    opacity: 1;
+    margin-right: 12px;
+    margin-top: 12px;
+}
+#callback-modal .link{
+    background: url('../i/top.png') no-repeat;
+    width: 30px;
+    height: 16px;
+    display: block;
+    content: '';
 }
