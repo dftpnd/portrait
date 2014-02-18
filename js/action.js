@@ -137,7 +137,11 @@ $(function () {
 
     $('.home-btn').click(function () {
         openModal($('#home-modal'));
-    })
+    });
+
+    $('.callback-btn').click(function () {
+        openModal($('#callback-modal'));
+    });
 });
 function sender($el) {
     $el.addClass('loading');

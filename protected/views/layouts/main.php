@@ -48,10 +48,24 @@
                     <li class="contacts">
                         <h2>+7 (962) 561-67-39</h2>
 
-                        <button class="button"></button>
+                        <button class="button callback-btn"></button>
                     </li>
                     <li class="helper"></li>
                 </ul>
+            </div>
+            <!-- Modal -->
+            <div id="callback-modal" class="modal" tabindex="1" data-width="auto">
+                <div class="modal-content">
+                    <button type="button" class="close review_close" data-dismiss="modal" aria-hidden="true"></button>
+                    <div class="anchor"></div>
+                    <div class="modal-body review-modal">
+                        <h4>Оставьте номер,</h4>
+                        <p>мы перезвоним Вам сами</p>
+                        <input type="text" class=""/>
+                        <input type="text" class=""/>
+                        <button class="callback-modal-btn"></button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="after_head"></div>

@@ -531,8 +531,8 @@ section.index > article {
     height: 50px;
 
     -webkit-box-shadow: 0px 1px 11px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    0px 1px 11px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         0px 1px 11px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 0px 1px 11px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 0px 1px 11px 0px rgba(50, 50, 50, 0.75);
 }
 
 .in_display {
@@ -1235,4 +1235,39 @@ dd {
 .calendar h4 {
     font-size: 22px;
     font-style: italic;
+}
+
+.callback-form {
+    position: absolute;
+    right: 0;
+}
+
+#callback-modal input {
+    display: block;
+}
+#callback-modal h4, #callback-modal p {
+    color: #555555;
+    text-align: center;
+}
+#callback-modal h4 {
+    font-size: 25px;
+}
+
+#callback-modal p {
+    font-size: 19px;
+}
+
+.callback-modal-btn {
+    background: url('../i/callback.png') no-repeat;
+    width: 174px;
+    height: 41px;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    display: block;
+    position: relative;
+}
+
+.callback-modal-btn:active {
+    top: 2px;
 }

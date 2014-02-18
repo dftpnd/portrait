@@ -10,7 +10,11 @@
             <div>
                 <span class="active">2000 р</span>
                 <span class="no-price">вместо</span>
-                <div class="no-price hr"><hr>4000p</div>
+
+                <div class="no-price hr">
+                    <hr>
+                    4000p
+                </div>
                 <span class="no-price">в будни</span>
             </div>
             <div>
@@ -81,7 +85,7 @@
     </div>
     <div class="anchor"></div>
 </article>
-<article class="in_scrollspy reviews" id="wherewe">
+<article class="in_scrollspy" id="wherewe">
     <div class="centerator">
         <div class="container-block">
             <div class="picterform">
@@ -105,80 +109,84 @@
         </div>
     </div>
     <div class="anchor"></div>
-    <div class="centrator">
-        <div class="container-block">
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/dashed.png"/>
+    <div class="reviews">
+        <div class="centrator">
+            <div class="container-block">
+                <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/dashed.png"/>
 
-            <div class="city">
-                <div class="city-title">
-                    <div></div>
-                    <h2>Близлежащие города</h2>
-                </div>
-                <div class="city-descr">
+                <div class="city">
+                    <div class="city-title">
+                        <div></div>
+                        <h2>Близлежащие города</h2>
+                    </div>
+                    <div class="city-descr">
                     <span class="d-gray">Близкое расстояние от таких городов как:<br>
                     Казань</span><span class="gray">(70км),</span> <span class="d-gray">Волжск</span>
-                    <span class="gray">(25км),</span> <span class="d-gray">Йошкар-Ола и Чебоксары</span><span
-                        class="gray"> (80 км)</span>
-                </div>
-                <div class="city-map">
-                    <a href="#">подробная карта</a>
-                </div>
-            </div>
-            <div class="reviews-box">
-                <h2>Отзывы <span>отдохнувших у нас</span></h2>
-
-                <div id="myCarousel" class="carousel comment_wrapp">
-                    <div class="carousel-inner">
-                        <div class="active item">
-                            <div class="comment">
-                                Если честно, это единственные курсы которые я прошла до конца, раньше я ходила в
-                                художественную
-                                школу, но не закончила ее, так как мне было не интересно заниматься одним и тем же делом
-                                все
-                                время,
-                                училась на курсах дизайнера, тоже ничего не вышло. А фото — это то, что меня вдохновило
-                                по
-                                полной
-                                программе! Галия, огромное спасибо тебе за такие чудесные курсы, за такое здоровское
-                                время,
-                                которое
-                                мы с тобой провели. Спасибо!
-                            </div>
-                            <div class="avatar"></div>
-                            <div class="reviews-info">
-                                <p class="reviews-name">Понтелеймон Третьяковскийийий,</p>
-
-                                <p class="reviews-city">Казань</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="comment">
-                                1
-                            </div>
-                            <div class="avatar"></div>
-                            <div class="reviews-info">
-                                <p class="reviews-name">Asdsd asdasd,</p>
-
-                                <p class="reviews-city">Казань</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="comment">
-                                2
-                            </div>
-                            <div class="avatar"></div>
-                            <div class="reviews-info">
-                                <p class="reviews-name">sdfsd sdfsdf,</p>
-
-                                <p class="reviews-city">dfsdf</p>
-                            </div>
-                        </div>
+                        <span class="gray">(25км),</span> <span class="d-gray">Йошкар-Ола и Чебоксары</span><span
+                            class="gray"> (80 км)</span>
                     </div>
-                    <a class="carousel-control left arrow-left" href="#myCarousel" data-slide="prev"></a>
-                    <a class="carousel-control right arrow-right" href="#myCarousel" data-slide="next"></a>
+                    <div class="city-map">
+                        <a href="#">подробная карта</a>
+                    </div>
                 </div>
-                <button class="add_review"></button>
-                <div class="anchor"></div>
+                <div class="reviews-box">
+                    <h2>Отзывы <span>отдохнувших у нас</span></h2>
+
+                    <div id="myCarousel" class="carousel comment_wrapp">
+                        <div class="carousel-inner">
+                            <div class="active item">
+                                <div class="comment">
+                                    Если честно, это единственные курсы которые я прошла до конца, раньше я ходила в
+                                    художественную
+                                    школу, но не закончила ее, так как мне было не интересно заниматься одним и тем же
+                                    делом
+                                    все
+                                    время,
+                                    училась на курсах дизайнера, тоже ничего не вышло. А фото — это то, что меня
+                                    вдохновило
+                                    по
+                                    полной
+                                    программе! Галия, огромное спасибо тебе за такие чудесные курсы, за такое здоровское
+                                    время,
+                                    которое
+                                    мы с тобой провели. Спасибо!
+                                </div>
+                                <div class="avatar"></div>
+                                <div class="reviews-info">
+                                    <p class="reviews-name">Понтелеймон Третьяковскийийий,</p>
+
+                                    <p class="reviews-city">Казань</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="comment">
+                                    1
+                                </div>
+                                <div class="avatar"></div>
+                                <div class="reviews-info">
+                                    <p class="reviews-name">Asdsd asdasd,</p>
+
+                                    <p class="reviews-city">Казань</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="comment">
+                                    2
+                                </div>
+                                <div class="avatar"></div>
+                                <div class="reviews-info">
+                                    <p class="reviews-name">sdfsd sdfsdf,</p>
+
+                                    <p class="reviews-city">dfsdf</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control left arrow-left" href="#myCarousel" data-slide="prev"></a>
+                        <a class="carousel-control right arrow-right" href="#myCarousel" data-slide="next"></a>
+                    </div>
+                    <button class="add_review"></button>
+                    <div class="anchor"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -383,7 +391,7 @@
 </div>
 
 <!-- Modal -->
-<div id="home-modal" class="modal fade" tabindex="1" data-width="auto">
+<div id="home-modal" class="modal fade modal-zakaz" tabindex="1" data-width="auto">
     <div class="modal-content">
         <button type="button" class="close review_close" data-dismiss="modal" aria-hidden="true"></button>
         <div class="anchor"></div>
