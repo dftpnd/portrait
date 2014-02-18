@@ -1,9 +1,10 @@
 <?php
 
-class AdminController extends Controller
+class AdminController extends CController
 {
     public function init()
     {
+
         $cs = Yii::app()->clientScript;
         $cs->registerCoreScript('jquery');
         $cs->registerCoreScript('jquery.ui');
