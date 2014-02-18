@@ -11,16 +11,16 @@
 <div class="help-menu">
     <ul class="centrator">
         <li id="hp-about">
-            <a href="#about">О базе отдыха Илеть</a>
+            <a href="/#about">О базе отдыха Илеть</a>
         </li>
         <li id="hp-wherewe">
-            <a href="#wherewe">Как до нас добраться</a>
+            <a href="/#wherewe">Как до нас добраться</a>
         </li>
         <li id="hp-ourhome">
-            <a href="#ourhome">Наши коттеджи</a>
+            <a href="/#ourhome">Наши коттеджи</a>
         </li>
         <li id="hp-reservation">
-            <a href="#reservation">Календарь бронирования</a>
+            <a href="/#reservation">Календарь бронирования</a>
         </li>
     </ul>
 </div>
