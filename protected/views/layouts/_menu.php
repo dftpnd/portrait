@@ -15,13 +15,10 @@
             <a href="/#wherewe">Как до нас добраться</a>
         </li>
         <li id="link_reviw">
-            <a href="/#reviw">Галерея отзывов</a>
+            <a href="/#wherewe">Галерея отзывов</a>
         </li>
         <li id="link_partnerships">
-            <a href="/#partnerships">Наши партнеры</a>
+            <a href="/#footer">Наши партнеры</a>
         </li>
-        <!-- <li>
-            <a href="/site/login">Вход</a>
-        </li>-->
     </ul>
 </div>
