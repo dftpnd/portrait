@@ -36,11 +36,6 @@ h2 {
     font-size: 24px;
 }
 
-h3 {
-    font-size: 19px;
-    font-weight: normal;
-}
-
 .turquoise {
     color: #23baa7;
 }
@@ -1135,9 +1130,9 @@ dl {
     margin-bottom: 20px;
 }
 
-dt,
-dd {
+dt, dd {
     line-height: 1.428571429;
+    font-weight: normal;
 }
 
 dt {
@@ -1189,7 +1184,7 @@ dd {
     color: #ff0000;
 }
 
-.modal-zakaz input {
+.modal-zakaz input, .modal-zakaz textarea {
     border: 1px solid #919090;
     font-size: 14px;
     outline: medium none;
@@ -1198,6 +1193,10 @@ dd {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
+}
+
+.modal-zakaz textarea {
+    width: 100%;
 }
 
 .modal-zakaz .dl-horizontal dd {
@@ -1211,6 +1210,11 @@ dd {
 .cot-reservd-pos-2 {
     display: block;
     margin: 45px auto 0;
+    position: relative;
+}
+
+.cot-reservd-pos-2:active {
+    top: 2px;
 }
 
 .partners {
@@ -1325,6 +1329,7 @@ dd {
     top: -16px;
     right: 35px;
 }
+
 .callback-modal .bottom-link {
     background: url('../i/top.png') no-repeat;
     width: 30px;
@@ -1332,10 +1337,11 @@ dd {
     position: absolute;
     bottom: -16px;
     right: 35px;
-    transform:rotate(-180deg);
-    -ms-transform:rotate(-180deg);
-    -webkit-transform:rotate(-180deg);
+    transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
 }
+
 #reservd-modal p, #ask-modal p {
     font-size: 16px;
     text-align: center;
@@ -1350,17 +1356,45 @@ dd {
 .callback-modal p.error-text {
     top: -20px;
 }
+
 #callback-modal {
     left: auto;
     bottom: auto;
     right: 11%;
-    margin-top: 0px!important;
+    margin-top: 0px !important;
     top: 105px;
 }
-#callback-modal-bottom{
+
+.modalWrap {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#callback-modal-bottom {
     left: auto;
     bottom: 260px;
     right: 11%;
-    margin-top: 0px!important;
+    margin-top: 0px !important;
     top: auto;
+}
+
+.modal-title {
+    padding-bottom: 20px;
+}
+
+.add-btn {
+    background: url('../i/add.png') no-repeat;
+    width: 174px;
+    height: 41px;
+    margin: 45px auto 0;
+    position: relative;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: block;
+}
+
+.add-btn:active {
+    top: 2px;
 }

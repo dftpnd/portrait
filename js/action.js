@@ -147,6 +147,10 @@ $(function () {
     $('.callback-bottom').click(function () {
         openModal($('#callback-modal-bottom'));
     });
+
+    $('.add_review').click(function () {
+        openModal($('#review-modal'));
+    });
 });
 function sender($el) {
     $el.addClass('loading');

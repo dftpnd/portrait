@@ -223,6 +223,26 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div id="review-modal" class="modal fade modal-zakaz" tabindex="1" data-width="auto">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <div class="anchor"></div>
+            <div class="modal-body review-modal">
+                <h3 class="modal-title">Добавить отзыв</h3>
+
+                <dl class="dl-horizontal">
+                    <dt>ФИО<span class="required">*</span></dt>
+                    <dd><input class="input-fio" type="text"/></dd>
+                    <dt>Отзыв</dt>
+                    <dd><textarea></textarea></dd>
+                </dl>
+                <button class="add-btn"></button>
+            </div>
+        </div>
+    </div>
+    <div class="anchor"></div>
 </article>
 <article id="ourhome" class="in_scrollspy">
 <div class="centrator cottage">
@@ -518,7 +538,9 @@
                     <div class="anchor"></div>
                     <div class="modal-body">
                         <h4>Оставьте номер,</h4>
+
                         <p class="callback-title">мы перезвоним Вам сами</p>
+
                         <div class="error-field">
                             <p class="error-text">Поле обязательно для заполнения!</p>
                             <input type="text" placeholder="*Ваше имя" class=""/>
