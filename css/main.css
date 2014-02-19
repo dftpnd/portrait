@@ -1437,3 +1437,6 @@ dd {
 .fc-calendar .fc-row > div.fc-free{
     background: #f0e7ca;
 }
+.review-modal{
+    padding-top: 0;
+}

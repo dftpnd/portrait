@@ -227,7 +227,7 @@
     <!-- Modal -->
     <div id="review-modal" class="modal fade modal-zakaz" tabindex="1" data-width="auto">
         <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
             <div class="anchor"></div>
             <div class="modal-body review-modal">
                 <h3 class="modal-title">Добавить отзыв</h3>
@@ -446,7 +446,7 @@
 <!-- Modal -->
 <div id="home-modal" class="modal fade modal-zakaz" tabindex="1" data-width="auto">
     <div class="modal-content">
-        <button type="button" class="close review_close" data-dismiss="modal" aria-hidden="true"></button>
+        <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
         <div class="anchor"></div>
         <div class="modal-body review-modal">
             <h3 class="modal-title">Форма заказа</h3>
