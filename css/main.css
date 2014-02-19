@@ -1398,3 +1398,42 @@ dd {
 .add-btn:active {
     top: 2px;
 }
+
+.house-comment {
+    bottom: 38px;
+    left:40px;
+    position: absolute;
+}
+
+.house-img-free, .house-img-full {
+    display: inline-block;
+    background: url('../i/houses.png') no-repeat;
+    height: 29px;
+    width: 20px;
+    vertical-align: -8px;
+}
+
+.house-img-free {
+    background-position: 0px 0px;
+}
+
+.house-img-full {
+    background-position: -21px 0px;
+    margin-left: 40px;
+}
+.house-comment span{
+    font-style: italic;
+    color: #616161;
+}
+.house-comment span:before{
+    display: inline-block;
+    content: "-";
+    color: #c7bd9f;
+    padding: 0 10px;
+}
+.fc-calendar .fc-row > div.fc-full{
+    background: #ffe2e3;
+}
+.fc-calendar .fc-row > div.fc-free{
+    background: #f0e7ca;
+}

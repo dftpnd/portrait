@@ -499,6 +499,12 @@
                     <div class="clips clips-right"></div>
                 </div>
                 <div id="calendar" class="fc-calendar-container"></div>
+                <div class="house-comment">
+                    <div class="house-img-free"></div>
+                    <span>коттедж свободен</span>
+                    <div class="house-img-full"></div>
+                    <span>коттедж занят</span>
+                </div>
                 <div class="calendar-shawdow"><span></span></div>
             </div>
         </div>
