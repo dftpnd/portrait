@@ -603,7 +603,7 @@
 
         var cal = $('#calendar').calendario({
                 onDayClick: function ($el, $contentEl, dateProperties) {
-                    onDayClickUser($el, dateProperties);
+                   // onDayClickUser($el, dateProperties);
                 },
                 caldata: codropsEvents
             }),

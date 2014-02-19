@@ -146,6 +146,9 @@ $(function () {
 
     $('.add_review').click(function () {
         openModal($('#review-modal'));
+    })
+    $(document).on('click', '.cl-home-btn', function () {
+        openModal($('#home-modal'));
     });
 });
 
@@ -173,31 +176,6 @@ function addZero(num) {
     return num;
 }
 
-function onDayClickUser($el, dateProperties) {
-    openModal($('#home-modal'));
-    /*
-     var t = '.';
-
-     var datapick = new Object();
-
-     datapick.datapick = addZero(dateProperties.day) + t + addZero(dateProperties.month) + t + dateProperties.year;
-     datapick.day = dateProperties.day;
-     datapick.month = dateProperties.month;
-     datapick.year = dateProperties.year;
-
-     $.ajax({
-     url: '/site/CalendarDoor',
-     type: 'POST',
-     dataType: 'html',
-     data: ({
-     datapick: datapick
-     }),
-     success: function (data) {
-     openDoor(data);
-     }
-     });
-     */
-}
 function watchMenu() {
 
     if (($(document).scrollTop() ) > (offset_menu.top)) {
@@ -228,16 +206,46 @@ function putAnchor(anchor) {
     }
 }
 
+
+inArray = Array.prototype.indexOf ?
+    function (arr, val) {
+        return arr.indexOf(val) != -1
+    } :
+    function (arr, val) {
+        var i = arr.length
+        while (i--) {
+            if (arr[i] === val) return true
+        }
+        return false
+    }
+
 var Box = {
     that: {},
     init: function ($items) {
         that = this;
-        that.appendBox($items)
+        that.appendBox($items);
     },
     appendBox: function ($items) {
+
         $.each($items, function (k, el) {
             if (that.isAvalible($(el))) {
                 $(el).append('<div class="td-box-calendar"></div>');
+                $data = $(el).find(".data-dom");
+
+
+                if ($data.length != 0) {
+                    var homs = new Array();
+                    $.each($data, function (i, el) {
+                        var home_id = $(el).text();
+                        homs[i] = parseInt(home_id, 10);
+                    });
+
+                    that.addCell($(el).find('.td-box-calendar'), homs);
+                } else {
+                    that.addCell($(el).find('.td-box-calendar'), []);
+                }
+
+
             }
         });
     },
@@ -250,6 +258,18 @@ var Box = {
             }
         } else {
             return false;
+        }
+    },
+    addCell: function ($el, data) {
+        var i = 1;
+        while (i <= 5) {
+            var doble_class = '';
+            if ($.inArray(i, data) != -1) {
+                doble_class = "home-broned";
+            }
+
+            $el.append('<button class="cl-home-btn ' + doble_class + '">' + i + '</button>');
+            i++;
         }
     }
 }

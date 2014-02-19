@@ -162,7 +162,7 @@ class Datapick extends CActiveRecord
             }
         }
 
-        return json_encode($response);
+        return CJSON::encode($response);
 
     }
 

@@ -300,7 +300,6 @@
 .fc-calendar .fc-row > div {
     box-shadow: -1px 0 0 #c7bd9f;
     border: none;
-    cursor: pointer;
 }
 
 .fc-calendar .fc-row > div:first-child {
