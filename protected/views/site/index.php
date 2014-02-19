@@ -500,6 +500,7 @@
                 <div class="house-comment">
                     <div class="house-img-free"></div>
                     <span>коттедж свободен</span>
+
                     <div class="house-img-full"></div>
                     <span>коттедж занят</span>
                 </div>
@@ -616,32 +617,13 @@
         function updateMonthYear() {
             $month.html(cal.getMonthName());
             $year.html(cal.getYear());
-            addEventTd();
+            Box.init($('.fc-row > div'))
         }
 
-
-        addEventTd();
-
-        function addEventTd(){
-
-            $('.fc-row > div').hover(function () {
-                $(this).append('<div class="tb-box-calendar">test</div>');
-            }, function () {
-                $(this).find('.tb-box-calendar').remove();
-            });
-
-
-
-        }
-
-
+        Box.init($('.fc-row > div'));
 
 
     });
-
-
-
-
 
 
 </script>

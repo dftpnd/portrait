@@ -1401,7 +1401,7 @@ dd {
 
 .house-comment {
     bottom: 38px;
-    left:40px;
+    left: 40px;
     position: absolute;
 }
 
@@ -1421,26 +1421,52 @@ dd {
     background-position: -21px 0px;
     margin-left: 40px;
 }
-.house-comment span{
+
+.house-comment span {
     font-style: italic;
     color: #616161;
 }
-.house-comment span:before{
+
+.house-comment span:before {
     display: inline-block;
     content: "-";
     color: #c7bd9f;
     padding: 0 10px;
 }
-.fc-calendar .fc-row > div.fc-full{
+
+.fc-calendar .fc-row > div.fc-full {
     background: #ffe2e3;
 }
-.fc-calendar .fc-row > div.fc-free{
+
+.fc-calendar .fc-row > div.fc-free {
     background: #f0e7ca;
 }
-.review-modal{
+
+.review-modal {
     padding-top: 0;
 }
+
 .fc-calendar .fc-row > div:nth-child(6) .fc-date,
 .fc-calendar .fc-row > div:nth-child(7) .fc-date {
     color: #b0282d;
+}
+
+.td-box-calendar{
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    border:1px dashed black;
+    border-radius: 10px;
+    margin: 0!important;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+.td-box-calendar:hover{
+    opacity: 1;
+}
+
+.data-dom {
+    display: none;
 }

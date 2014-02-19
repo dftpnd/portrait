@@ -34,7 +34,7 @@ class Datapick extends CActiveRecord
         // will receive user inputs.
         return array(
             array('datapick, year, day, month', 'required'),
-            array('datapick, year, day, month, created, status', 'length', 'max' => 255),
+            array('datapick, year, day, month, created, status, home_id', 'length', 'max' => 255),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('id, datapick, year, day, month', 'safe', 'on' => 'search'),
@@ -63,7 +63,8 @@ class Datapick extends CActiveRecord
             'day' => 'Day',
             'month' => 'Month',
             'created' => 'Дата создания',
-            'status' => 'Статус'
+            'status' => 'Статус',
+            'home_id' => 'home_id'
         );
     }
 
@@ -144,7 +145,6 @@ class Datapick extends CActiveRecord
 
     public function jsonePrepeare($data)
     {
-
         $response = array();
 
         if (!empty($data)) {
@@ -153,9 +153,9 @@ class Datapick extends CActiveRecord
                 $date = self::dateFormator($datapick->month, $datapick->day, $datapick->year);
 
                 if (isset($response[$date])) {
-                    $response[$date] .= self::tagWrapper('dom');
+                    $response[$date] .= self::tagWrapper($datapick->home_id);
                 } else {
-                    $response[$date] = self::tagWrapper('dom');
+                    $response[$date] = self::tagWrapper($datapick->home_id);
                 }
 
 
@@ -167,7 +167,8 @@ class Datapick extends CActiveRecord
     }
 
 
-    public static function tagWrapper($home_id){
-        return '<div class="data-dom">' .$home_id .'</div>';
+    public static function tagWrapper($home_id)
+    {
+        return '<div class="data-dom">' . $home_id . '</div>';
     }
 }

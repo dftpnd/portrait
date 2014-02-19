@@ -4,7 +4,6 @@ var flag = true;
 $(function () {
 
 
-
     $('body').on('hidden', '.modal', function () {
         contentNormalWidt();
     });
@@ -177,27 +176,27 @@ function addZero(num) {
 function onDayClickUser($el, dateProperties) {
     openModal($('#home-modal'));
     /*
-    var t = '.';
+     var t = '.';
 
-    var datapick = new Object();
+     var datapick = new Object();
 
-    datapick.datapick = addZero(dateProperties.day) + t + addZero(dateProperties.month) + t + dateProperties.year;
-    datapick.day = dateProperties.day;
-    datapick.month = dateProperties.month;
-    datapick.year = dateProperties.year;
+     datapick.datapick = addZero(dateProperties.day) + t + addZero(dateProperties.month) + t + dateProperties.year;
+     datapick.day = dateProperties.day;
+     datapick.month = dateProperties.month;
+     datapick.year = dateProperties.year;
 
-    $.ajax({
-        url: '/site/CalendarDoor',
-        type: 'POST',
-        dataType: 'html',
-        data: ({
-            datapick: datapick
-        }),
-        success: function (data) {
-            openDoor(data);
-        }
-    });
-    */
+     $.ajax({
+     url: '/site/CalendarDoor',
+     type: 'POST',
+     dataType: 'html',
+     data: ({
+     datapick: datapick
+     }),
+     success: function (data) {
+     openDoor(data);
+     }
+     });
+     */
 }
 function watchMenu() {
 
@@ -216,7 +215,6 @@ function putAnchor(anchor) {
         }, '', '#' + anchor);
 
 
-
         $('.help-menu li').removeClass('active');
 
         var $li = $('#hp-' + anchor);
@@ -230,3 +228,28 @@ function putAnchor(anchor) {
     }
 }
 
+var Box = {
+    that: {},
+    init: function ($items) {
+        that = this;
+        that.appendBox($items)
+    },
+    appendBox: function ($items) {
+        $.each($items, function (k, el) {
+            if (that.isAvalible($(el))) {
+                $(el).append('<div class="td-box-calendar"></div>');
+            }
+        });
+    },
+    isAvalible: function ($el) {
+        if ($el.length != 0) {
+            if ($el.find('.fc-date').length != 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+}
