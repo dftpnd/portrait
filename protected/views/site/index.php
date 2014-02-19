@@ -594,9 +594,8 @@
 
 
 <script type="text/javascript">
-    //    $('.carousel').carousel();
-
     var codropsEvents = <?php echo $datapicks; ?>;
+
 
     $(function () {
 
@@ -619,13 +618,32 @@
         function updateMonthYear() {
             $month.html(cal.getMonthName());
             $year.html(cal.getYear());
+            addEventTd();
         }
+
+
+        addEventTd();
+
+        function addEventTd(){
+
+            $('.fc-row > div').hover(function () {
+                $(this).append('<div class="tb-box-calendar">test</div>');
+            }, function () {
+                $(this).find('.tb-box-calendar').remove();
+            });
+
+
+
+        }
+
+
 
 
     });
 
 
-    $('#myModal').modal('hide');
+
+
 
 
 </script>

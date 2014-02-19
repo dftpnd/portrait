@@ -19,6 +19,8 @@ class SiteController extends Controller
 
         $datapicks = Datapick::model()->jsonePrepeare(Datapick::model()->findAllByAttributes(array('status' => Datapick::STATUS_APPROVED)));
 
+
+
         $this->render('index', array('datapicks' => $datapicks));
     }
 

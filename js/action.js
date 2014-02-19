@@ -3,10 +3,7 @@ var flag = true;
 
 $(function () {
 
-    function openModal($modal) {
-        contentAutoWidth();
-        $modal.modal('show');
-    }
+
 
     $('body').on('hidden', '.modal', function () {
         contentNormalWidt();
@@ -152,6 +149,12 @@ $(function () {
         openModal($('#review-modal'));
     });
 });
+
+function openModal($modal) {
+    contentAutoWidth();
+    $modal.modal('show');
+}
+
 function sender($el) {
     $el.addClass('loading');
 
@@ -172,6 +175,8 @@ function addZero(num) {
 }
 
 function onDayClickUser($el, dateProperties) {
+    openModal($('#home-modal'));
+    /*
     var t = '.';
 
     var datapick = new Object();
@@ -192,6 +197,7 @@ function onDayClickUser($el, dateProperties) {
             openDoor(data);
         }
     });
+    */
 }
 function watchMenu() {
 

@@ -153,9 +153,9 @@ class Datapick extends CActiveRecord
                 $date = self::dateFormator($datapick->month, $datapick->day, $datapick->year);
 
                 if (isset($response[$date])) {
-                    $response[$date] = $response[$date] . '<br/>' . $datapick->created;
+                    $response[$date] .= self::tagWrapper('dom');
                 } else {
-                    $response[$date] = $datapick->created;
+                    $response[$date] = self::tagWrapper('dom');
                 }
 
 
@@ -164,5 +164,10 @@ class Datapick extends CActiveRecord
 
         return json_encode($response);
 
+    }
+
+
+    public static function tagWrapper($home_id){
+        return '<div class="data-dom">' .$home_id .'</div>';
     }
 }
