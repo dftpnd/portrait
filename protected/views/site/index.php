@@ -24,9 +24,7 @@
                 <span class="no-price">в выходные!</span>
             </div>
         </div>
-        <div class="action-bg">
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/action-bg.jpg"/>
-        </div>
+        <div class="action-bg"></div>
         <div class="window">
             <div class="w_info">
                 <p>Подайте заявку прямо</p>

@@ -318,10 +318,6 @@ h2 {
     position: relative;
 }
 
-.action .centrator {
-    padding: 30px 0;
-}
-
 .act-price, .action-title {
     z-index: 15;
     position: relative;
@@ -382,11 +378,15 @@ div.hr {
 }
 
 .action-bg {
+    background: url("../i/action-bg.jpg") no-repeat;
+    width: 881px;
+    height: 511px;
     position: relative;
     top: 20px;
     left: -45px;
     right: 0px;
     z-index: 5;
+    margin-bottom: 50px;
 }
 
 .action-bg img {
@@ -404,7 +404,7 @@ div.hr {
     border-radius: 15px;
     position: absolute;
     right: 35px;
-    top: 240px;
+    top: 160px;
     background: rgb(220, 224, 35); /* Old browsers */
     background: -moz-radial-gradient(center, ellipse cover, rgba(220, 224, 35, 1) 0%, rgba(93, 147, 42, 1) 92%); /* FF3.6+ */
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(220, 224, 35, 1)), color-stop(92%, rgba(93, 147, 42, 1))); /* Chrome,Safari4+ */
@@ -1439,4 +1439,8 @@ dd {
 }
 .review-modal{
     padding-top: 0;
+}
+.fc-calendar .fc-row > div:nth-child(6) .fc-date,
+.fc-calendar .fc-row > div:nth-child(7) .fc-date {
+    color: #b0282d;
 }
