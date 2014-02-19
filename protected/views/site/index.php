@@ -375,25 +375,28 @@
                         <div class="cot-gallery">
                             <div class="fg-template">
                                 <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-
-                                <div class="fg-template">
-                                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                                       rel="prettyPhoto[gallery2]">
-                                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery2.png"/>
-                                    </a>
-                                </div>
-                                <div class="fg-template">
-                                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                                       rel="prettyPhoto[gallery2]">
-                                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery3.png"/>
-                                    </a>
-                                </div>
+                                   rel="prettyPhoto[gallery2]">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery1.png"/>
+                                </a>
                             </div>
-                            <div class="pagination"></div>
-
-                            <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button"></button>
+                            <div class="fg-template">
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+                                   rel="prettyPhoto[gallery2]">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery2.png"/>
+                                </a>
+                            </div>
+                            <div class="fg-template">
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
+                                   rel="prettyPhoto[gallery2]">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery3.png"/>
+                                </a>
+                            </div>
                         </div>
+                        <div class="pagination"></div>
+
+                        <button class="cot-reservd-btn cot-reservd-pos home-btn" type="button"></button>
                     </div>
+                </div>
             </li>
             <li>
                 <div class="cottages-wrapp">
@@ -500,6 +503,7 @@
                 <div class="house-comment">
                     <div class="house-img-free"></div>
                     <span>коттедж свободен</span>
+
                     <div class="house-img-full"></div>
                     <span>коттедж занят</span>
                 </div>
@@ -622,7 +626,7 @@
 
         addEventTd();
 
-        function addEventTd(){
+        function addEventTd() {
 
             $('.fc-row > div').hover(function () {
                 $(this).append('<div class="tb-box-calendar">test</div>');
@@ -631,17 +635,10 @@
             });
 
 
-
         }
 
 
-
-
     });
-
-
-
-
 
 
 </script>
