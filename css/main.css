@@ -1410,7 +1410,6 @@ dd {
     background: url('../i/houses.png') no-repeat;
     height: 29px;
     width: 20px;
-    vertical-align: -8px;
 }
 
 .house-img-free {
@@ -1419,7 +1418,15 @@ dd {
 
 .house-img-full {
     background-position: -21px 0px;
+}
+
+.house-comment .house-img-full {
     margin-left: 40px;
+}
+
+.house-comment .house-img-free,
+.house-comment .house-img-full {
+    vertical-align: -8px;
 }
 
 .house-comment span {
@@ -1451,19 +1458,20 @@ dd {
     color: #b0282d;
 }
 
-.td-box-calendar{
+.td-box-calendar {
     position: absolute;
     top: 5px;
     bottom: 5px;
     left: 5px;
     right: 5px;
-    border:1px dashed black;
+    border: 1px dashed black;
     border-radius: 10px;
-    margin: 0!important;
+    margin: 0 !important;
     opacity: 0;
     transition: all 0.2s linear;
 }
-.td-box-calendar:hover{
+
+.td-box-calendar:hover {
     opacity: 1;
 }
 
