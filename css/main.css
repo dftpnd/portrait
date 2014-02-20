@@ -1498,8 +1498,16 @@ dd {
     background-position: -23px 90%;
     width: 18px;
 }
-.map-detail-content{
-    /*width: 700px;*/
-    /*height: 500px;*/
-    /*border: 1px solid black;*/
+
+#map-detail {
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+
+#map-detail:hover {
+    border-bottom: 1px dotted transparent;
+}
+
+.home-broned {
+    cursor: default!important;
 }

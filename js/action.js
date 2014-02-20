@@ -1,5 +1,6 @@
 var offset_menu;
 var flag = true;
+var date_cliked = {};
 
 $(function () {
 
@@ -147,8 +148,14 @@ $(function () {
     $('.add_review').click(function () {
         openModal($('#review-modal'));
     })
-    $(document).on('click', '.cl-home-btn', function () {
-        openModal($('#home-modal'));
+    $(document).on('click', '.cl-home-btn:not(.home-broned)', function () {
+        var homde_id = $(this).val();
+        homeBron.open(homde_id, date_cliked);
+
+        $items = $(this).sibling('button');
+
+        $.each($items, function());
+
     });
 
     $('#map-detail').click(function () {
@@ -270,13 +277,53 @@ var Box = {
     addCell: function ($el, data) {
         var i = 1;
         while (i <= 5) {
-            var doble_class = '';
+            var doble_class = '', title = "";
             if ($.inArray(i, data) != -1) {
                 doble_class = "home-broned";
+                title = 'Домик уже занят';
+            } else {
+                title = 'Домик свободен';
             }
 
-            $el.append('<button class="cl-home-btn ' + doble_class + '" value="' + i + '">' + i + '</button>');
+            $el.append('<button title="' + title + '" class="cl-home-btn ' + doble_class + '" value="' + i + '">' + i + '</button>');
             i++;
         }
     }
+}
+
+var homeBron = {
+    that: {},
+    homde_id: null,
+    not_homde_id: null,
+    date: null,
+    $modal: function () {
+        return $('#home-modal');
+    },
+    open: function (home_id, date) {
+        that = this;
+        that.home_id = home_id;
+        that.date = date;
+
+        that.buildFragment(
+            function () {
+                openModal(that.$modal());
+            }
+        );
+    },
+    buildFragment: function (callback) {
+        that.buildSelect();
+        that.buildDatePicker();
+        callback();
+    },
+    buildSelect: function () {
+        $('#home-select option[value="' + that.home_id + '"]').attr('selected', 'selected')
+        $('#home-select').attr('disabled', 'disabled');
+    },
+    buildDatePicker: function () {
+
+    }
+
+
+
+
 }

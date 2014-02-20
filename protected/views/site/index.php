@@ -444,39 +444,7 @@
     </div>
 </div>
 
-<!-- Modal -->
-<div id="home-modal" class="modal fade modal-zakaz" tabindex="1" data-width="auto">
-    <div class="modal-content">
-        <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
-        <div class="anchor"></div>
-        <div class="modal-body review-modal">
-            <h3 class="modal-title">Форма заказа</h3>
 
-            <dl class="dl-horizontal">
-                <dt>Коттедж №<span class="required">*</span></dt>
-                <dd>
-                    <select>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </dd>
-                <dt>ФИО<span class="required">*</span></dt>
-                <dd><input class="input-fio" type="text"/></dd>
-                <dt>Телефон<span class="required">*</span></dt>
-                <dd><input type="text"/></dd>
-                <dt>E-mail</dt>
-                <dd><input type="text"/></dd>
-                <dt>Дата бронирования<span class="required">*</span></dt>
-                <dd><input type="text"/></dd>
-
-            </dl>
-            <button class="cot-reservd-btn cot-reservd-pos-2"></button>
-        </div>
-    </div>
-</div>
 <div class="anchor"></div>
 </article>
 
@@ -603,12 +571,47 @@
             <h3 class="modal-title">Как до нас добраться?</h3>
 
             <div class="map-detail-content">
-                <script type="text/javascript" charset="utf-8"
-                        src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=ZKSMoU93YgJx1P_bBdCL20NJ_9oXDEnJ&width=700&height=500"></script>
+<!--                <script type="text/javascript" charset="utf-8"-->
+<!--                        src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=ZKSMoU93YgJx1P_bBdCL20NJ_9oXDEnJ&width=700&height=500"></script>-->
             </div>
         </div>
     </div>
 </div>
+<!-- Modal -->
+<div id="home-modal" class="modal fade modal-zakaz" tabindex="1" data-width="auto">
+    <div class="modal-content">
+        <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
+        <div class="anchor"></div>
+        <div class="modal-body review-modal">
+            <h3 class="modal-title">Форма заказа</h3>
+
+            <dl class="dl-horizontal">
+                <dt>Коттедж №<span class="required">*</span></dt>
+                <dd>
+                    <select id="home-select">
+                        <option value="1" >1</option>
+                        <option value="2" >2</option>
+                        <option value="3" >3</option>
+                        <option value="4" >4</option>
+                        <option value="5" >5</option>
+                    </select>
+                </dd>
+                <dt>ФИО<span class="required">*</span></dt>
+                <dd><input class="input-fio" type="text"/></dd>
+                <dt>Телефон<span class="required">*</span></dt>
+                <dd><input type="text"/></dd>
+                <dt>E-mail</dt>
+                <dd><input type="text"/></dd>
+                <dt>Дата бронирования<span class="required">*</span></dt>
+                <dd><input type="text"/></dd>
+
+            </dl>
+            <button class="cot-reservd-btn cot-reservd-pos-2"></button>
+        </div>
+    </div>
+</div>
+
+
 <script type="text/javascript">
     var codropsEvents = <?php echo $datapicks; ?>;
 
@@ -617,7 +620,7 @@
 
         var cal = $('#calendar').calendario({
                 onDayClick: function ($el, $contentEl, dateProperties) {
-                    // onDayClickUser($el, dateProperties);
+                    date_cliked = dateProperties;
                 },
                 caldata: codropsEvents
             }),

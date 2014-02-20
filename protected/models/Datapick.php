@@ -161,14 +161,12 @@ class Datapick extends CActiveRecord
 
             }
         }
-
         return CJSON::encode($response);
-
     }
 
 
     public static function tagWrapper($home_id)
     {
-        return '<div class="data-dom">' . $home_id . '</div>';
+        return "<div class='data-dom'>$home_id</div>";
     }
 }
