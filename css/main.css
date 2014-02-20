@@ -1445,7 +1445,7 @@ dd {
     background: #ffe2e3;
 }
 
-.fc-calendar .fc-row > div.fc-free {
+.fc-calendar .fc-row > div.fc-content {
     background: #f0e7ca;
 }
 
@@ -1464,8 +1464,8 @@ dd {
     bottom: 5px;
     left: 5px;
     right: 5px;
-    border: 1px dashed black;
-    border-radius: 10px;
+    border: 1px dashed #cec5a6;
+    border-radius: 6px;
     margin: 0 !important;
     opacity: 0;
     transition: all 0.2s linear;
@@ -1478,9 +1478,19 @@ dd {
 .data-dom {
     display: none;
 }
-.cl-home-btn{
-
+.cl-home-btn, .home-broned{
+    border: none;
+    outline: none;
+    background: url('../i/houses.png') no-repeat;
+    height: 100%;
+    width: 20px;
+    margin-left: 3px;
+    font-size: 12px;
 }
-.home-broned{
-    background: red!important;
+.cl-home-btn {
+    background-position: 0px 90%;
+}
+
+.home-broned {
+    background-position: -21px 90%;
 }
