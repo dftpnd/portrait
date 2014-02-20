@@ -150,6 +150,13 @@ $(function () {
     $(document).on('click', '.cl-home-btn', function () {
         openModal($('#home-modal'));
     });
+
+    $('#map-detail').click(function () {
+        openModal($('#map-detail-modal'));
+        return false;
+    });
+
+
 });
 
 function openModal($modal) {

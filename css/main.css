@@ -1498,3 +1498,8 @@ dd {
     background-position: -23px 90%;
     width: 18px;
 }
+.map-detail-content{
+    /*width: 700px;*/
+    /*height: 500px;*/
+    /*border: 1px solid black;*/
+}

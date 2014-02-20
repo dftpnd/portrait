@@ -157,7 +157,7 @@
                             class="gray"> (80 км)</span>
                     </div>
                     <div class="city-map">
-                        <a href="#">подробная карта</a>
+                        <a href="#" id="map-detail">подробная карта</a>
                     </div>
                 </div>
                 <div class="reviews-box">
@@ -595,6 +595,20 @@
 </section>
 
 
+<div id="map-detail-modal" class="modal fade modal-zakaz" tabindex="1" data-width="auto">
+    <div class="modal-content">
+        <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
+        <div class="anchor"></div>
+        <div class="modal-body review-modal">
+            <h3 class="modal-title">Как до нас добраться?</h3>
+
+            <div class="map-detail-content">
+                <script type="text/javascript" charset="utf-8"
+                        src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=ZKSMoU93YgJx1P_bBdCL20NJ_9oXDEnJ&width=700&height=500"></script>
+            </div>
+        </div>
+    </div>
+</div>
 <script type="text/javascript">
     var codropsEvents = <?php echo $datapicks; ?>;
 
@@ -603,7 +617,7 @@
 
         var cal = $('#calendar').calendario({
                 onDayClick: function ($el, $contentEl, dateProperties) {
-                   // onDayClickUser($el, dateProperties);
+                    // onDayClickUser($el, dateProperties);
                 },
                 caldata: codropsEvents
             }),
