@@ -1494,6 +1494,10 @@ dd {
     width: 20px;
 }
 
+.cl-home-btn:hover {
+    background-position: -23px 90%;
+}
+
 .home-broned {
     background-position: -23px 90%;
     width: 18px;
@@ -1509,5 +1513,18 @@ dd {
 }
 
 .home-broned {
-    cursor: default!important;
+    cursor: default !important;
+}
+
+#home-modal-block {
+    display: block;
+}
+
+.fc-today .td-box-calendar {
+    opacity: 1 !important;
+    border: 1px dashed green;
+}
+
+.avalible_cell {
+    /*background: green;*/
 }

@@ -125,9 +125,6 @@ $(function () {
         return false;
     });
 
-    $('.home-btn').click(function () {
-        openModal($('#home-modal'));
-    });
 
     $('.callback-btn').click(function () {
         openModal($('#callback-modal'));
@@ -148,14 +145,31 @@ $(function () {
     $('.add_review').click(function () {
         openModal($('#review-modal'));
     })
+    $('.home-btn').click(function () {
+        openModal($('#home-modal'));
+
+        /*
+         var home_select = '1';
+         var home_removed = [];
+         var date_cliked = '';
+
+         homeBron.open(date_cliked, home_select, home_removed);
+         */
+    });
+
     $(document).on('click', '.cl-home-btn:not(.home-broned)', function () {
-        var homde_id = $(this).val();
-        homeBron.open(homde_id, date_cliked);
+        var home_select = $(this).val();
+        var home_removed = [];
 
-        $items = $(this).sibling('button');
+        var $items = $(this).siblings('button');
 
-        $.each($items, function(){});
+        $.each($items, function (i, el) {
+            if ($(el).hasClass('home-broned')) {
+                home_removed[i] = $(el).val();
+            }
+        });
 
+        homeBron.open(date_cliked, home_select, home_removed);
     });
 
     $('#map-detail').click(function () {
@@ -243,7 +257,9 @@ var Box = {
 
         $.each($items, function (k, el) {
             if (that.isAvalible($(el))) {
+                $(el).addClass('avalible_cell');
                 $(el).append('<div class="td-box-calendar"></div>');
+
                 $data = $(el).find(".data-dom");
 
 
@@ -262,11 +278,12 @@ var Box = {
 
             }
         });
+
     },
     isAvalible: function ($el) {
         if ($el.length != 0) {
             if ($el.find('.fc-date').length != 0) {
-                return true;
+                return that.avalibleCell($el)
             } else {
                 return false;
             }
@@ -288,21 +305,64 @@ var Box = {
             $el.append('<button title="' + title + '" class="cl-home-btn ' + doble_class + '" value="' + i + '">' + i + '</button>');
             i++;
         }
+    },
+    avalibleCell: function ($cell) {
+        var date = new Date(that.getDateCell($cell));
+        var today = new Date(that.getToday());
+
+        if (date >= today) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+    getDateCell: function ($cell) {
+        var dd = addZero($cell.find('.fc-date').text());
+        var mm = that.getNumberMounth($('#custom-month').text());
+        var yyyy = $('#custom-year').text();
+
+        return that.dateOneFormat(dd, mm, yyyy)
+    },
+    getNumberMounth: function (mounth_name) {
+        var mounths = ["январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"];
+        var mount_id = $.inArray(mounth_name, mounths) + 1;
+        return addZero(mount_id);
+    },
+    getToday: function () {
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+        return that.dateOneFormat(dd, mm, yyyy)
+    },
+    dateOneFormat: function (dd, mm, yyyy) {
+        return yyyy + '-' + mm + '-' + dd;
     }
+
 }
 
 var homeBron = {
     that: {},
-    homde_id: null,
-    not_homde_id: null,
-    date: null,
+    home_select: null,
+    home_removed: [],
+    date_select: null,
     $modal: function () {
         return $('#home-modal');
     },
-    open: function (home_id, date) {
+    open: function (date_select, home_select, home_removed) {
         that = this;
-        that.home_id = home_id;
-        that.date = date;
+        that.date_select = date_select;
+        that.home_select = home_select;
+        that.home_removed = home_removed;
+
+        $('#home-modal-container').html($('#home-modal-block').clone());
 
         that.buildFragment(
             function () {
@@ -316,13 +376,30 @@ var homeBron = {
         callback();
     },
     buildSelect: function () {
-        $('#home-select option[value="' + that.home_id + '"]').attr('selected', 'selected')
-        $('#home-select').attr('disabled', 'disabled');
+        if (that.home_removed.length != 0) {
+            $.each(that.home_removed, function (i, home_id) {
+                $('#home-modal .home-select option[value="' + home_id + '"]').remove();
+            });
+        }
+        $('#home-modal .home-select option[value="' + that.home_select + '"]').attr('selected', 'selected');
+        //$('#home-select').attr('disabled', 'disabled');
     },
     buildDatePicker: function () {
+        $('#home-modal .pick-date').val(that.dateFormat());
+        $('#home-modal .pick-date').attr('disabled', 'disabled')
+    },
+    dateFormat: function () {
 
+        if (that.date_select != null) {
+            if (typeof that.date_select == 'object') {
+                var month = addZero(that.date_select.month);
+                var day = addZero(that.date_select.day);
+                var year = that.date_select.year;
+
+                return day + '-' + month + '-' + year;
+            }
+        }
     }
-
 
 
 
