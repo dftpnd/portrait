@@ -555,8 +555,7 @@ section.index > article {
 }
 
 .help-menu .active a {
-    font-weight: bold;
-    text-decoration: underline;
+    background: yellow;
 }
 
 .help-menu a {
@@ -1480,19 +1479,22 @@ dd {
 .data-dom {
     display: none;
 }
-.cl-home-btn, .home-broned{
+
+.cl-home-btn, .home-broned {
     border: none;
     outline: none;
     background: url('../i/houses.png') no-repeat;
     height: 100%;
-    width: 20px;
     margin-left: 3px;
     font-size: 12px;
 }
+
 .cl-home-btn {
     background-position: 0px 90%;
+    width: 20px;
 }
 
 .home-broned {
-    background-position: -21px 90%;
+    background-position: -23px 90%;
+    width: 18px;
 }
