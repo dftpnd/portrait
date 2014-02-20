@@ -154,7 +154,7 @@ $(function () {
 
         $items = $(this).sibling('button');
 
-        $.each($items, function());
+        $.each($items, function(){});
 
     });
 
