@@ -35,7 +35,6 @@
 
 .fc-calendar .fc-row {
     width: 100%;
-    border-bottom: 1px solid #ddd;
 }
 
 .fc-four-rows .fc-row {
@@ -105,7 +104,7 @@
 }
 
 .fc-calendar .fc-row:last-child {
-    border-bottom: none;
+    /*border-bottom: none;*/
 }
 
 /*==========================================================================================*/
@@ -273,28 +272,17 @@
 }
 
 .fc-calendar .fc-row {
-    box-shadow: inset 0 -1px 0 #c7bd9f, inset 1px 0px 0 #c7bd9f, inset -1px 0 0 #c7bd9f;
-    border: none;
+    /*box-shadow: inset 0 -1px 0 #c7bd9f, inset 1px 0px 0 #c7bd9f, inset -1px 0 0 #c7bd9f;*/
+    border-bottom: 1px solid #c7bd9f;
+    border-right: 1px solid #c7bd9f;
 }
 
 .fc-calendar .fc-row:first-child {
-    box-shadow: inset 0 -1px 0 #c7bd9f, inset 1px 0px 0 #c7bd9f, inset -1px 0 0 #c7bd9f, inset 0 1px 0 #c7bd9f;
-}
+    border-top: 1px solid #c7bd9f;
 
-.fc-calendar .fc-row:first-child > div:first-child {
-    border-radius: 10px 0 0 0;
 }
-
-.fc-calendar .fc-row:first-child > div:last-child {
-    border-radius: 0 10px 0 0;
-}
-
-.fc-calendar .fc-row:last-child > div:first-child {
-    border-radius: 0 0 0 10px;
-}
-
-.fc-calendar .fc-row:last-child > div:last-child {
-    border-radius: 0 0 10px 0;
+.fc-calendar .fc-row > div:first-child {
+    border-left: 1px solid #c7bd9f;
 }
 
 .fc-calendar .fc-row > div {

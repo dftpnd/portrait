@@ -555,12 +555,14 @@ section.index > article {
 }
 
 .help-menu .active a {
-    background: yellow;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .help-menu a {
     display: block;
     background: #fff;
+    color: #0dbda7;
 }
 
 .help-menu ul {
@@ -1468,7 +1470,7 @@ dd {
     border-radius: 6px;
     margin: 0 !important;
     opacity: 0;
-    transition: all 0.2s linear;
+    /*transition: all 0.2s linear;*/
 }
 
 .td-box-calendar:hover {
