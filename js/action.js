@@ -268,7 +268,7 @@ var Box = {
                 doble_class = "home-broned";
             }
 
-            $el.append('<button class="cl-home-btn ' + doble_class + '">' + i + '</button>');
+            $el.append('<button class="cl-home-btn ' + doble_class + '" value="' + i + '"></button>');
             i++;
         }
     }
