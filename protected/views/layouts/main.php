@@ -6,8 +6,25 @@
     <title>База отдыха Илеть</title>
     <link href="/favicon.gif" rel="icon" type="image/x-icon"/>
     <link href="/favicon.gif" rel="shortcut icon" type="image/x-icon"/>
+
+
+    <script type="text/javascript"
+            src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBeYC5t9v6gdSm-utyFxVNbGoxZPv1YCD8&sensor=false">
+    </script>
+    <script type="text/javascript">
+        function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(-34.397, 150.644),
+                zoom: 8,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas"),
+                mapOptions);
+        }
+    </script>
 </head>
 <body class="">
+<div id="map_canvas" style="height: 500px"></div>
 <div class="help-menu">
     <ul class="centrator">
         <li id="hp-about">
@@ -61,7 +78,9 @@
                     <div class="anchor"></div>
                     <div class="modal-body">
                         <h4>Оставьте номер,</h4>
+
                         <p class="callback-title">мы перезвоним Вам сами</p>
+
                         <div class="error-field">
                             <p class="error-text">Поле обязательно для заполнения!</p>
                             <input type="text" placeholder="*Ваше имя" class=""/>
