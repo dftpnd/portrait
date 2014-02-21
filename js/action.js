@@ -146,15 +146,11 @@ $(function () {
         openModal($('#review-modal'));
     })
     $('.home-btn').click(function () {
-        openModal($('#home-modal'));
+        var home_select = $(this).data('home-id');
+        var home_removed = [];
+        var date_cliked = null;
 
-        /*
-         var home_select = '1';
-         var home_removed = [];
-         var date_cliked = '';
-
-         homeBron.open(date_cliked, home_select, home_removed);
-         */
+        homeBron.open(date_cliked, home_select, home_removed);
     });
 
     $(document).on('click', '.cl-home-btn:not(.home-broned)', function () {
@@ -362,7 +358,8 @@ var homeBron = {
         that.home_select = home_select;
         that.home_removed = home_removed;
 
-        $('#home-modal-container').html($('#home-modal-block').clone());
+        $('#home-modal-container').html(' ');
+        $('#home-modal-container').html($('.home-modal-block').clone());
 
         that.buildFragment(
             function () {
@@ -385,8 +382,12 @@ var homeBron = {
         //$('#home-select').attr('disabled', 'disabled');
     },
     buildDatePicker: function () {
-        $('#home-modal .pick-date').val(that.dateFormat());
-        $('#home-modal .pick-date').attr('disabled', 'disabled')
+        if (that.date_select != null) {
+            $('#home-modal .pick-date').val(that.dateFormat());
+            $('#home-modal .pick-date').attr('disabled', 'disabled')
+        } else {
+            $('#home-modal .pick-date').datepicker();
+        }
     },
     dateFormat: function () {
 
