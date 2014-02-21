@@ -566,7 +566,7 @@
 </article>
 
 </section>
-
+>
 
 <div id="map-detail-modal" class="modal fade modal-zakaz" tabindex="1" data-width="auto">
     <div class="modal-content">
