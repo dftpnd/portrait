@@ -12,7 +12,7 @@
     <script type="text/javascript">
         function initialize() {
             var mapOptions = {
-                center: new google.maps.LatLng(-34.397, 150.644),
+                center: new google.maps.LatLng(55.9407024, 48.1917855),
                 zoom: 8,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
