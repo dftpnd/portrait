@@ -6,9 +6,6 @@
     <title>База отдыха Илеть</title>
     <link href="/favicon.gif" rel="icon" type="image/x-icon"/>
     <link href="/favicon.gif" rel="shortcut icon" type="image/x-icon"/>
-
-
-
     <script type="text/javascript"
             src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBeYC5t9v6gdSm-utyFxVNbGoxZPv1YCD8&sensor=false">
     </script>
@@ -24,8 +21,7 @@
         }
     </script>
 </head>
-<body onload="initialize()">
-<div id="map_canvas" style="height: 500px"></div>
+<body>
 <div class="help-menu">
     <ul class="centrator">
         <li id="hp-about">

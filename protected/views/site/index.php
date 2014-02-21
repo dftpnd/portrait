@@ -573,11 +573,10 @@
         <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
         <div class="anchor"></div>
         <div class="modal-body review-modal">
-            <h3 class="modal-title">Как до нас добраться?</h3>
+            <h3 class="modal-title">Тут мы находимся</h3>
 
             <div class="map-detail-content">
-<!--                <script type="text/javascript" charset="utf-8"-->
-<!--                        src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=ZKSMoU93YgJx1P_bBdCL20NJ_9oXDEnJ&width=700&height=500"></script>-->
+                <div id="map_canvas" style="height: 500px"></div>
             </div>
         </div>
     </div>
