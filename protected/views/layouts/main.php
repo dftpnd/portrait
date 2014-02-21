@@ -8,9 +8,9 @@
     <link href="/favicon.gif" rel="shortcut icon" type="image/x-icon"/>
 
 
-    
+
     <script type="text/javascript"
-            src="http://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&sensor=SET_TO_TRUE_OR_FALSE">
+            src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBeYC5t9v6gdSm-utyFxVNbGoxZPv1YCD8&sensor=false">
     </script>
     <script type="text/javascript">
         function initialize() {
