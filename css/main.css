@@ -1940,3 +1940,8 @@ dd {
 #home-modal-container .home-modal-block {
     display: block;
 }
+
+#map_canvas {
+    width: 700px;
+    height: 500px;
+}

@@ -576,7 +576,7 @@
             <h3 class="modal-title">Тут мы находимся</h3>
 
             <div class="map-detail-content">
-                <div id="map_canvas" style="height: 500px"></div>
+                <div id="map_canvas"></div>
             </div>
         </div>
     </div>
