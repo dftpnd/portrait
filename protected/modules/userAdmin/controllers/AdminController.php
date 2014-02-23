@@ -103,9 +103,25 @@ class AdminController extends CController
     {
         $cs = Yii::app()->clientScript;
 
-        $cs->registerScriptFile('/js/uploder/vendor/jquery.ui.widget.js');
-        $cs->registerScriptFile('/js/uploder/jquery.iframe-transport.js');
-        $cs->registerScriptFile('/js/uploder/jquery.fileupload.js');
+
+        $cs->registerScriptFile($this->createUrl("/js/uploder/vendor/jquery.ui.widget.js"));
+
+        $cs->registerScriptFile($this->createUrl("/js/blueimp/tmpl.min.js"));
+        $cs->registerScriptFile($this->createUrl("/js/blueimp/load-image.min.js"));
+        $cs->registerScriptFile($this->createUrl("/js/blueimp/canvas-to-blob.min.js"));
+        $cs->registerScriptFile($this->createUrl("/js/blueimp/jquery.blueimp-gallery.min.js"));
+
+        ////////////////////
+
+        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.iframe-transport.js"));
+        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload.js"));
+        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-process.js"));
+        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-image.js"));
+        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-video.js"));
+        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-validate.js"));
+        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-ui.js"));
+        $cs->registerScriptFile($this->createUrl("/js/uploder/main.js"));
+
 
         $cs->registerCssFile('/css/uploder/jquery.fileupload.css');
 
@@ -127,15 +143,16 @@ class AdminController extends CController
 
     public function actionFileUpload()
     {
+//        $option = array(
+//            'upload_dir' => 'uploads',
+//            '' => '',
+//        );
 
-        $options = array(
-            'upload_dir' => '/uploads'
-        );
+        $upload_handler = new UploadHandler();
 
-        $uh = Yii::app()->uh->init($options);
+       // print_r($upload_handler);
 
 
-        // $upload_handler = new UploadHandler();
     }
 
 }
