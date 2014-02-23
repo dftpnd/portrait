@@ -143,16 +143,7 @@ class AdminController extends CController
 
     public function actionFileUpload()
     {
-//        $option = array(
-//            'upload_dir' => 'uploads',
-//            '' => '',
-//        );
-
         $upload_handler = new UploadHandler();
-
-       // print_r($upload_handler);
-
-
     }
 
 }
