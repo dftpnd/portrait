@@ -101,11 +101,20 @@ class AdminController extends CController
 
     public function actionHomes()
     {
-        $home_id = 1;
+        $cs = Yii::app()->clientScript;
 
+        $cs->registerScriptFile('/js/uploder/vendor/jquery.ui.widget.js');
+        $cs->registerScriptFile('/js/uploder/jquery.iframe-transport.js');
+        $cs->registerScriptFile('/js/uploder/jquery.fileupload.js');
+
+        $cs->registerCssFile('/css/uploder/jquery.fileupload.css');
+
+
+        $home_id = 1;
         if (isset($_GET['home_id'])) {
             $home_id = $_GET['home_id'];
         }
+
 
         $uploads = Upload::model()->findAllByAttributes(array('home_id' => $home_id));
 
@@ -113,6 +122,20 @@ class AdminController extends CController
             'uploads' => $uploads,
             'home_id' => $home_id
         ));
+    }
+
+
+    public function actionFileUpload()
+    {
+
+        $options = array(
+            'upload_dir' => '/uploads'
+        );
+
+        $uh = Yii::app()->uh->init($options);
+
+
+        // $upload_handler = new UploadHandler();
     }
 
 }

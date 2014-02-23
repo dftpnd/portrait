@@ -1469,7 +1469,7 @@ dd {
     border-radius: 6px;
     margin: 0 !important;
     opacity: 0;
-    /*transition: all 0.2s linear;*/
+    transition: opacity 0.3s linear;
 }
 
 .td-box-calendar:hover {

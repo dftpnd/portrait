@@ -29,11 +29,14 @@ return array(
         'ih' => array(
             'class' => 'CImageHandler',
         ),
-//        'mailer' => array(
-//            'class' => 'application.extensions.mailer.EMailer',
-//            'pathViews' => 'application.views.email',
-//            'pathLayouts' => 'application.views.email.layouts'
-//        ),
+        'uh' => array(
+            'class' => 'UploadHandler',
+        ),
+        'mailer' => array(
+            'class' => 'application.extensions.mailer.EMailer',
+            'pathViews' => 'application.views.email',
+            'pathLayouts' => 'application.views.email.layouts'
+        ),
         'authManager' => array(
             'class' => 'srbac.components.SDbAuthManager',
             'connectionID' => 'db',
