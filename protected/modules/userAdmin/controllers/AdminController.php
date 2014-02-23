@@ -112,7 +112,6 @@ class AdminController extends CController
         $cs->registerScriptFile($this->createUrl("/js/blueimp/jquery.blueimp-gallery.min.js"));
 
         ////////////////////
-
         $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.iframe-transport.js"));
         $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload.js"));
         $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-process.js"));
