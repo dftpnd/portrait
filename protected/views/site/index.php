@@ -568,7 +568,7 @@
 </section>
 
 
-<div id="map-detail-modal" class="modal fade modal-zakaz" tabindex="1" data-width="auto">
+<div id="map-detail-modal" class="modal fade modal-zakaz" tabindex="1" data-width="700">
     <div class="modal-content">
         <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
         <div class="anchor"></div>
