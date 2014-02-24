@@ -97,20 +97,22 @@ $(function () {
     $.fn.jax = function (complete, success) {
 
         var $element = $(this);
-        var data, url;
+        var data, url, type;
 
         $element.addClass('loading');
 
 
         if ($('#form-' + $element.attr('id')).length !== 0) {
-            data = $('#form-' + $element.attr('id')).serialize();
-            url = $('#form-' + $element.attr('id')).attr('action')
+            var $form = $('#form-' + $element.attr('id'));
+            data = $form.serialize();
+            url = $form.attr('action');
+            type = $form.attr('method');
         }
 
 
         $.ajax({
             url: url,
-            type: 'POST',
+            type: type,
             dataType: 'json',
             data: data,
             success: function (data) {
@@ -120,9 +122,11 @@ $(function () {
                     }
 
                 } else {
-//                    for (key in data.message) {
-//                        $('#jgrowl_error').jGrowl(data.message[key]);
-//                    }
+                    $.each(data.message, function (atrib, messages) {
+                        $.each(messages, function (i, msg) {
+                            alert(msg);
+                        });
+                    });
                 }
             },
             complete: function () {
@@ -199,7 +203,50 @@ $(function () {
         return false;
     });
 
+    $('#order-callback-top').click(function () {
+        $(this).jax(
+            function () {
 
+            },
+            function () {
+
+            }
+        );
+
+    });
+
+
+    $(document).on('click', '#bron-home', function () {
+        var $form = $('.modal .form-bron-home');
+        $.ajax({
+            url: $form.attr('action'),
+            type: $form.attr('method'),
+            dataType: 'json',
+            data: $form.serialize(),
+            success: function (data) {
+                if (data.status == "success") {
+                    $form.find('input').parent().removeClass('error-field');
+                    alert('Забронировано');
+                } else {
+                    for (key in data.message) {
+                        var $error_input = $form.find('.bh-' + key);
+                        $error_input.parent().addClass('error-field');
+                        //alert(data.message[key]);
+                    }
+                }
+            },
+            complete: function () {
+
+
+            },
+            error: function () {
+
+            }
+
+        });
+    });
+
+    $(".phone-mask").mask("(999) 999-9999");
 });
 
 function openModal($modal) {
@@ -207,18 +254,7 @@ function openModal($modal) {
     $modal.modal('show');
 }
 
-function sender($el) {
-    $el.addClass('loading');
 
-    $el.jax(function () {
-
-    }, function () {
-
-    });
-
-    return false;
-
-}
 function addZero(num) {
     if (num < 10) {
         num = "0" + num;
@@ -353,7 +389,7 @@ var Box = {
     getToday: function () {
         var today = new Date();
         var dd = today.getDate();
-        var mm = today.getMonth() + 1; //January is 0!
+        var mm = today.getMonth() + 1;
 
         var yyyy = today.getFullYear();
         if (dd < 10) {
@@ -390,6 +426,7 @@ var homeBron = {
         that.buildFragment(
             function () {
                 openModal(that.$modal());
+                that.$modal().find(".phone-mask").mask("(999) 999-9999");
             }
         );
     },
@@ -409,8 +446,11 @@ var homeBron = {
     },
     buildDatePicker: function () {
         if (that.date_select != null) {
-            $('#home-modal .pick-date').val(that.dateFormat());
-            $('#home-modal .pick-date').attr('disabled', 'disabled')
+            var date = that.dateFormat();
+            $('#home-modal .pick-date').val(date);
+            $('#home-modal .pick-date').parent().append('<input type="hidden" value="' + date + '" name="Datapick[datapick]" />');
+
+            $('#home-modal .pick-date').attr('disabled', 'disabled');
         } else {
             $('#home-modal .pick-date').datepicker();
         }
@@ -423,7 +463,7 @@ var homeBron = {
                 var day = addZero(that.date_select.day);
                 var year = that.date_select.year;
 
-                return day + '-' + month + '-' + year;
+                return day + '.' + month + '.' + year;
             }
         }
     }

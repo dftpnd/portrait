@@ -6,16 +6,19 @@
  * The followings are the available columns in table '{{datapick}}':
  * @property integer $id
  * @property string $datapick
- * @property string $year
- * @property string $day
- * @property string $month
+ * @property integer $created
+ * @property integer $status
+ * @property integer $home_id
+ * @property string $name
+ * @property string $phone
+ * @property string $email
  */
 class Datapick extends CActiveRecord
 {
+
     const STATUS_NEW = 1;
     const STATUS_APPROVED = 2;
     const STATUS_UNCHECKED = 3;
-
 
     /**
      * @return string the associated database table name
@@ -30,14 +33,12 @@ class Datapick extends CActiveRecord
      */
     public function rules()
     {
-        // NOTE: you should only define rules for those attributes that
-        // will receive user inputs.
         return array(
-            array('datapick, year, day, month', 'required'),
-            array('datapick, year, day, month, created, status, home_id', 'length', 'max' => 255),
-            // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-            array('id, datapick, year, day, month', 'safe', 'on' => 'search'),
+            array('datapick, name, phone', 'required'),
+            array('created, status, home_id', 'numerical', 'integerOnly' => true),
+            array('name, phone, email', 'length', 'max' => 255),
+
+            //
         );
     }
 
@@ -46,8 +47,6 @@ class Datapick extends CActiveRecord
      */
     public function relations()
     {
-        // NOTE: you may need to adjust the relation name and the related
-        // class name for the relations automatically generated below.
         return array();
     }
 
@@ -58,45 +57,14 @@ class Datapick extends CActiveRecord
     {
         return array(
             'id' => 'ID',
-            'datapick' => 'Выбраная дата',
-            'year' => 'Year',
-            'day' => 'Day',
-            'month' => 'Month',
-            'created' => 'Дата создания',
+            'created' => 'Created',
+            'datapick' => 'Дата бронирования',
             'status' => 'Статус',
-            'home_id' => 'home_id'
+            'home_id' => 'Номер домика',
+            'name' => 'ФИО',
+            'phone' => 'телефона',
+            'email' => 'E-mail',
         );
-    }
-
-    /**
-     * Retrieves a list of models based on the current search/filter conditions.
-     *
-     * Typical usecase:
-     * - Initialize the model fields with values from filter form.
-     * - Execute this method to get CActiveDataProvider instance which will filter
-     * models according to data in model fields.
-     * - Pass data provider to CGridView, CListView or any similar widget.
-     *
-     * @return CActiveDataProvider the data provider that can return the models
-     * based on the search/filter conditions.
-     */
-    public function search()
-    {
-        //$dataProvider= new CActiveDataProvider('Post');
-
-        $criteria = new CDbCriteria;
-        $criteria->order = 'status ASC,created DESC';
-        //$criteria->order = 'created DESC';
-
-        $criteria->compare('id', $this->id);
-        $criteria->compare('datapick', $this->datapick, true);
-        $criteria->compare('year', $this->year, true);
-        $criteria->compare('day', $this->day, true);
-        $criteria->compare('month', $this->month, true);
-
-        return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-        ));
     }
 
     /**
@@ -136,31 +104,22 @@ class Datapick extends CActiveRecord
         return $num;
     }
 
-    public static function dateFormator($month, $day, $year)
-    {
-        $d = '-';
-        $str = self::addZero($month) . $d . self::addZero($day) . $d . self::addZero($year);
-        return $str;
-    }
 
     public function jsonePrepeare($data)
     {
         $response = array();
-
         if (!empty($data)) {
             foreach ($data as $datapick) {
-
-                $date = self::dateFormator($datapick->month, $datapick->day, $datapick->year);
+                $date = DateTime::createFromFormat('d.m.Y', $datapick->datapick)->format('m-d-Y');
 
                 if (isset($response[$date])) {
                     $response[$date] .= self::tagWrapper($datapick->home_id);
                 } else {
                     $response[$date] = self::tagWrapper($datapick->home_id);
                 }
-
-
             }
         }
+
         return CJSON::encode($response);
     }
 
@@ -169,4 +128,61 @@ class Datapick extends CActiveRecord
     {
         return "<div class='data-dom'>$home_id</div>";
     }
+
+
+    protected function afterFind()
+    {
+        // convert to display format
+        $this->datapick = DateTime::createFromFormat('Y-m-d', $this->datapick)->format('d.m.Y');
+        parent::afterFind();
+    }
+
+    protected function beforeValidate()
+    {
+        return parent::beforeValidate();
+    }
+
+    protected function beforeSave()
+    {
+        $this->datapick = DateTime::createFromFormat('d.m.Y', $this->datapick)->format('Y-m-d');
+        return parent::beforeSave();
+    }
+
+    public function search()
+    {
+        //$dataProvider= new CActiveDataProvider('Post');
+
+        $criteria = new CDbCriteria;
+        $criteria->order = 'status ASC,created DESC';
+        $criteria->compare('id', $this->id);
+        $criteria->compare('datapick', $this->datapick, true);
+
+        return new CActiveDataProvider($this, array(
+            'criteria' => $criteria,
+        ));
+    }
+
+    public function confirmation()
+    {
+
+        if ($this->status == self::STATUS_APPROVED) {
+            $model_count = self::model()->countByAttributes(
+                array(
+                    'status' => $this->status,
+                    'datapick' => DateTime::createFromFormat('d.m.Y', $this->datapick)->format('Y-m-d'),
+                    'home_id' => $this->home_id
+                )
+            );
+
+            if ($model_count == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        return true;
+
+    }
+
 }

@@ -8,12 +8,21 @@ class AdminController extends CController
         $cs = Yii::app()->clientScript;
         $cs->registerCoreScript('jquery');
         $cs->registerCoreScript('jquery.ui');
-        $cs->registerScriptFile($this->createUrl('/js/action.js'));
-        $cs->registerScriptFile($this->createUrl('/js/admin.js'));
+        $cs->registerScriptFile($this->createUrl('/js/jquery.maskedinput.min.js'));
+
         $cs->registerCssFile($this->createUrl('/css/bootstrap.min.css'));
+
+        $cs->registerCssFile($this->createUrl('/css/main.css'));
+
+        $cs->registerScriptFile($this->createUrl('/js/action.js'));
+        $cs->registerScriptFile($this->createUrl('/js/bootstrap.min.js'));
+        $cs->registerScriptFile($this->createUrl('/js/bootstrap-modal.min.js'));
+
+
         $cs->registerCssFile($this->createUrl('/css/bootstrap-theme.min.css'));
         $cs->registerCssFile($this->createUrl('/css/jumbotron-narrow.css'));
         $cs->registerCssFile($this->createUrl('/css/admin.css'));
+        $cs->registerScriptFile($this->createUrl('/js/admin.js'));
 
     }
 
@@ -37,15 +46,7 @@ class AdminController extends CController
 
     public function actionCalendar()
     {
-        $cs = Yii::app()->clientScript;
-        $cs->registerCssFile($this->createUrl('/css/calendario/calendar.css'));
-
-        $cs->registerScriptFile($this->createUrl('/js/calendario/modernizr.custom.63321.js'));
-        $cs->registerScriptFile($this->createUrl('/js/calendario/jquery.calendario.js'));
-
-
         $datapick = new Datapick;
-
 
         $models = Datapick::model()->jsonePrepeare(Datapick::model()->findAllByAttributes(array('status' => Datapick::STATUS_APPROVED)));
 
@@ -68,18 +69,80 @@ class AdminController extends CController
 
         $model = Datapick::model()->findByPk($id);
 
-        echo $this->renderPartial('_popup_prepear', array('model' => $model));
+        $this->renderPartial('_popup_prepear', array('model' => $model));
 
     }
 
     public function actionPopupSender()
     {
+        $response = array('status' => 'success');
         $id = $_POST['datapick_id'];
         $model = Datapick::model()->findByPk($id);
         $model->attributes = $_POST['Datapick'];
-        $model->save();
-        echo json_encode(array('status' => 'success'));
 
+
+        if (!$model->confirmation()) {
+            $response = array(
+                'status' => 'error',
+                'message' => array(array("Домик №$model->home_id уже занят $model->datapick"))
+            );
+        } else {
+            if (!$model->save()) {
+                $response = array(
+                    'status' => 'error',
+                    'message' => $model->getErrors()
+                );
+            }
+        }
+
+
+        echo json_encode($response);
+    }
+
+    public function actionHomes()
+    {
+        $cs = Yii::app()->clientScript;
+
+
+        $cs->registerScriptFile($this->createUrl("/js/uploder/vendor/jquery.ui.widget.js"));
+
+        $cs->registerScriptFile($this->createUrl("/js/blueimp/tmpl.min.js"));
+        $cs->registerScriptFile($this->createUrl("/js/blueimp/load-image.min.js"));
+        $cs->registerScriptFile($this->createUrl("/js/blueimp/canvas-to-blob.min.js"));
+        $cs->registerScriptFile($this->createUrl("/js/blueimp/jquery.blueimp-gallery.min.js"));
+
+        ////////////////////
+        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.iframe-transport.js"));
+        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload.js"));
+        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-process.js"));
+        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-image.js"));
+        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-video.js"));
+        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-validate.js"));
+        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-ui.js"));
+        $cs->registerScriptFile($this->createUrl("/js/uploder/main.js"));
+
+
+        $cs->registerCssFile('/css/uploder/jquery.fileupload.css');
+
+
+        $home_id = 1;
+        if (isset($_GET['home_id'])) {
+            $home_id = $_GET['home_id'];
+        }
+
+
+        $uploads = Upload::model()->findAllByAttributes(array('home_id' => $home_id));
+
+        $this->render('homes', array(
+            'uploads' => $uploads,
+            'home_id' => $home_id
+        ));
+    }
+
+
+    public function actionFileUpload()
+    {
+        $upload_handler = new UploadHandler();
     }
 
 }

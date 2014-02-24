@@ -1,5 +1,8 @@
 /protected/config/database.php
 /uploads
 /nbproject
+/uploads
+
 /assets
+/files
 /.idea

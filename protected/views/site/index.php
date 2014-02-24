@@ -39,7 +39,7 @@
             </div>
             <div>
                 <p class="error-text hidden">Поле обязательно для заполнения!</p>
-                <input type="text" class="default-field" placeholder="*Ваш телефон"/>
+                <input type="text" class="default-field phone-mask" placeholder="*Ваш телефон"/>
             </div>
 
             <p class="inp_descr">*Ваши данные в безопасности</p>
@@ -111,7 +111,7 @@
 
                     <div class="input-phone">
                         <div>
-                            <input placeholder="Телефон" type="text"/>
+                            <input placeholder="Телефон" class="phone-mask" type="text"/>
                         </div>
                     </div>
                     <div class="input-mail">
@@ -528,7 +528,7 @@
                         </div>
                         <div class="error-text">
                             <p class="hidden">Поле обязательно для заполнения!</p>
-                            <input type="text" placeholder="*Ваш телефон" class=""/>
+                            <input type="text" placeholder="*Ваш телефон" class="phone-mask"/>
                         </div>
                         <button class="callback-modal-btn"></button>
                     </div>
@@ -588,34 +588,53 @@
         <div class="anchor"></div>
         <div class="modal-body review-modal">
             <div id="home-modal-container"></div>
-            <button class="cot-reservd-btn cot-reservd-pos-2"></button>
+            <button id="bron-home" class="cot-reservd-btn cot-reservd-pos-2"></button>
         </div>
     </div>
 </div>
 
 
 <div class="home-modal-block">
-    <h3 class="modal-title">Форма заказа</h3>
-    <dl class="dl-horizontal">
-        <dt>Коттедж №<span class="required">*</span></dt>
-        <dd>
-            <select class="home-select">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </dd>
-        <dt>ФИО<span class="required">*</span></dt>
-        <dd><input class="input-fio" type="text"/></dd>
-        <dt>Телефон<span class="required">*</span></dt>
-        <dd><input type="text"/></dd>
-        <dt>E-mail</dt>
-        <dd><input type="text"/></dd>
-        <dt>Дата бронирования<span class="required">*</span></dt>
-        <dd><input class="pick-date" type="text"/></dd>
-    </dl>
+    <form class="form-bron-home" method="POST" action="/site/homeBron">
+        <h3 class="modal-title">Форма заказа</h3>
+        <dl class="dl-horizontal">
+            <dt>Коттедж №<span class="required">*</span></dt>
+            <dd>
+                <select name="Datapick[home_id]" class="home-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </dd>
+            <dt>
+                ФИО
+                <span class="required">*</span>
+            </dt>
+            <dd>
+                <input class="bh-name" name="Datapick[name]" class="input-fio" type="text"/>
+            </dd>
+            <dt>
+                Телефон
+                <span class="required">*</span>
+            </dt>
+            <dd>
+                <input class="bh-phone phone-mask" name="Datapick[phone]" type="text"/>
+            </dd>
+            <dt>
+                E-mail
+            </dt>
+            <dd>
+                <input class="bh-email" name="Datapick[email]" type="text"/></dd>
+            <dt>
+                Дата бронирования<span class="required">*</span>
+            </dt>
+            <dd>
+                <input class="bh-datapick pick-date" name="Datapick[datapick]" type="text"/>
+            </dd>
+        </dl>
+    </form>
 </div>
 
 <script type="text/javascript">

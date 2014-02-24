@@ -1,9 +1,11 @@
-body{
-    padding: 0!important;
+body {
+    padding: 0 !important;
 }
-.header{
+
+.header {
     margin-top: 30px;
 }
+
 .wrapper {
     min-height: 100%;
     height: auto !important;
@@ -16,22 +18,26 @@ body{
     float: none;
     clear: both;
 }
-.anchor2:after{
+
+.anchor2:after {
     content: '.';
     font-size: 0px;
     color: transparent;
     float: none;
     clear: both;
 }
-.push{
+
+.push {
+    margin-top: 400px;
     height: 100px;
     float: none;
     clear: both;
 }
+
 .footer {
-    height: 100px!important;
-    padding: 0!important;
-    margin: 0!important;
+    height: 100px !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .nadstroika {
@@ -71,33 +77,44 @@ body{
 .row_status_1 {
     background: #dff0d8;
 }
+
 .row_status_2 {
 
 }
-.row_status_3{
+
+.row_status_3 {
     background: #f2dede;
 }
 
-.popup_prepear{
+.popup_prepear {
     cursor: pointer;
 }
-.door_but{
+
+.door_but {
     padding-top: 30px;
 }
-.door_but button{
+
+.door_but button {
     float: right;
 }
-.door_but button:last-child{
+
+.door_but button:last-child {
     margin-right: 10px;
 }
+
 .loading {
     background: url(../i/loader_button.gif) repeat !important;
     box-shadow: none;
     cursor: default !important;
 }
-.custom-calendar-wrap{
+
+.custom-calendar-wrap {
     width: 100%;
-    height: 500px!important;
-    position: relative!important;
+    height: 500px !important;
+    position: relative !important;
     border: 2px solid red;
+}
+
+.inserter {
+    width: 500px;
 }

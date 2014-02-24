@@ -24,6 +24,16 @@
         © BFP 2013
     </div>
 </div>
+
+<div id="modal" class="modal" tabindex="1" data-width="auto">
+    <div class="modal-content">
+        <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
+        <div class="anchor"></div>
+        <div class="modal-body">
+
+        </div>
+    </div>
+</div>
 </body>
 </html>
 

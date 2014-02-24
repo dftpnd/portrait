@@ -1,4 +1,5 @@
 <?php
+
 ini_set('date.timezone', 'Europe/Moscow');
 $yii = dirname(__FILE__) . '../../yii/framework/yii.php';
 $config = dirname(__FILE__) . '/protected/config/main.php';

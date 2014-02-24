@@ -2,19 +2,12 @@
 
 class SiteController extends Controller
 {
-
     public $layout = 'main';
     public $contacts;
 
 
     public function actionIndex()
     {
-        $cs = Yii::app()->clientScript;
-
-        $cs->registerScriptFile($this->createUrl('/js/jquery.calendario.js'));
-        $cs->registerScriptFile($this->createUrl('/js/jquery-scrollspy.js'));
-
-
         $datapicks = Datapick::model()->jsonePrepeare(Datapick::model()->findAllByAttributes(array('status' => Datapick::STATUS_APPROVED)));
         $this->render('index', array('datapicks' => $datapicks));
     }
@@ -69,6 +62,29 @@ class SiteController extends Controller
         echo $this->renderPartial('_calendar_door', array('datapick' => $datapick));
     }
 
+    public function actionOrderCallback($name, $phone)
+    {
+
+    }
+
+    public function actionHomeBron()
+    {
+        $response = array();
+        $response['status'] = 'success';
+
+        $datapick = new Datapick();
+        $datapick->attributes = $_POST['Datapick'];
+        $datapick->created = time();
+
+        if (!$datapick->save()) {
+            $datapick->getErrors();
+            $response['status'] = 'error';
+            $response['message'] = $datapick->getErrors();
+        }
+
+        echo CJSON::encode($response);
+
+    }
 
 
 }
