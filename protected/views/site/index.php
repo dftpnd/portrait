@@ -312,6 +312,7 @@
                                 <img src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_s.jpg"
                                      alt="Title #0"/>
                             </a>
+
                             <div class="caption">
                                 <div class="download">
                                     <a href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_b.jpg">Download
@@ -342,27 +343,29 @@
                 <li>12 спальных мест</li>
                 <li>Кухонные приборы, бытовая техника</li>
             </ul>
-            <div class="cot-gallery">
-                <div class="fg-template">
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                       rel="prettyPhoto[gallery2]">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery1.png"/>
-                    </a>
-                </div>
-                <div class="fg-template">
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                       rel="prettyPhoto[gallery2]">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery2.png"/>
-                    </a>
-                </div>
-                <div class="fg-template">
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                       rel="prettyPhoto[gallery2]">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery3.png"/>
-                    </a>
-                </div>
+            <div id="thumbs-3" class="navigation" data-home-id="3">
+                <ul class="thumbs noscript">
+                    <?php $i = 1;
+                    while ($i < 5): ?>
+                        <li>
+                            <a class="thumb" name="leaf"
+                               href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg" title="Title #0">
+                                <img src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_s.jpg"
+                                     alt="Title #0"/>
+                            </a>
+
+                            <div class="caption">
+                                <div class="download">
+                                    <a href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_b.jpg">Download
+                                        Original</a>
+                                </div>
+                                <div class="image-title">Title #0</div>
+                                <div class="image-desc">Description</div>
+                            </div>
+                        </li>
+                        <?php $i++; endwhile; ?>
+                </ul>
             </div>
-            <div class="pagination"></div>
 
             <button class="cot-reservd-btn cot-reservd-pos home-btn" data-home-id="3"
                     type="button"></button>
@@ -380,27 +383,29 @@
                 <li>12 спальных мест</li>
                 <li>Кухонные приборы, бытовая техника</li>
             </ul>
-            <div class="cot-gallery">
-                <div class="fg-template">
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                       rel="prettyPhoto[gallery2]">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery1.png"/>
-                    </a>
-                </div>
-                <div class="fg-template">
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                       rel="prettyPhoto[gallery2]">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery2.png"/>
-                    </a>
-                </div>
-                <div class="fg-template">
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                       rel="prettyPhoto[gallery2]">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery3.png"/>
-                    </a>
-                </div>
+            <div id="thumbs-4" class="navigation" data-home-id="4">
+                <ul class="thumbs noscript">
+                    <?php $i = 1;
+                    while ($i < 5): ?>
+                        <li>
+                            <a class="thumb" name="leaf"
+                               href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg" title="Title #0">
+                                <img src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_s.jpg"
+                                     alt="Title #0"/>
+                            </a>
+
+                            <div class="caption">
+                                <div class="download">
+                                    <a href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_b.jpg">Download
+                                        Original</a>
+                                </div>
+                                <div class="image-title">Title #0</div>
+                                <div class="image-desc">Description</div>
+                            </div>
+                        </li>
+                        <?php $i++; endwhile; ?>
+                </ul>
             </div>
-            <div class="pagination"></div>
 
             <button class="cot-reservd-btn cot-reservd-pos home-btn" data-home-id="4"
                     type="button"></button>
@@ -418,30 +423,29 @@
                 <li>12 спальных мест</li>
                 <li>Кухонные приборы, бытовая техника</li>
             </ul>
-            <div class="cot-gallery">
-                <div class="fg-template">
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                       rel="prettyPhoto[gallery2]">
-                        <img
-                            src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery1.png"/>
-                    </a>
-                </div>
-                <div class="fg-template">
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                       rel="prettyPhoto[gallery2]">
-                        <img
-                            src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery2.png"/>
-                    </a>
-                </div>
-                <div class="fg-template">
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/full-gallery1.png"
-                       rel="prettyPhoto[gallery2]">
-                        <img
-                            src="<?php echo Yii::app()->request->baseUrl; ?>/i/gallery/gallery3.png"/>
-                    </a>
-                </div>
+            <div id="thumbs-5" class="navigation" data-home-id="5">
+                <ul class="thumbs noscript">
+                    <?php $i = 1;
+                    while ($i < 5): ?>
+                        <li>
+                            <a class="thumb" name="leaf"
+                               href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg" title="Title #0">
+                                <img src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_s.jpg"
+                                     alt="Title #0"/>
+                            </a>
+
+                            <div class="caption">
+                                <div class="download">
+                                    <a href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_b.jpg">Download
+                                        Original</a>
+                                </div>
+                                <div class="image-title">Title #0</div>
+                                <div class="image-desc">Description</div>
+                            </div>
+                        </li>
+                        <?php $i++; endwhile; ?>
+                </ul>
             </div>
-            <div class="pagination"></div>
 
             <button class="cot-reservd-btn cot-reservd-pos home-btn" data-home-id="5"
                     type="button"></button>
@@ -598,8 +602,8 @@
     </div>
 </div>
 <?php $i = 1; ?>
-<?php while ($i <= 2): ?>
-    <div id="thumb-modal-<?php echo $i ?>" class="modal fade" tabindex="1" data-width="700">
+<?php while ($i <= 5): ?>
+    <div id="thumb-modal-<?php echo $i ?>" class="modal fade" tabindex="1" data-width="auto">
         <div class="modal-content">
             <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
             <div class="anchor"></div>

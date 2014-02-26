@@ -30,7 +30,7 @@ var date_cliked = {};
 $(function () {
     var onMouseOutOpacity = 0.67;
     var i = 1;
-    while (i <= 2) {
+    while (i <= 5) {
         $('#thumbs-' + i).galleriffic({
             delay: 0,
             numThumbs: 3,
@@ -68,6 +68,12 @@ $(function () {
         });
         i++;
     }
+
+    $('.thumb').click(function () {
+        var home_id = $(this).parents('.navigation').data('home-id');
+        openModal($('#thumb-modal-' + home_id));
+    })
+
 
     $('body').on('hidden', '.modal', function () {
         contentNormalWidt();
@@ -220,13 +226,6 @@ $(function () {
 
         homeBron.open(date_cliked, home_select, home_removed);
     });
-
-    /*
-     $('.thumb').click(function () {
-     var home_id = $(this).parents('.navigation').data('home-id');
-     openModal($('#thumb-modal-' + home_id));
-     })
-     */
 
 
     $(document).on('click', '.cl-home-btn:not(.home-broned)', function () {
