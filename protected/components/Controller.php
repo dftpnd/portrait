@@ -23,6 +23,17 @@ class Controller extends CController
         $cs->registerScriptFile($this->createUrl('/js/jquery-scrollspy.js'));
 
 
+
+
+        /*
+        $cs->registerCssFile($this->createUrl('/css/basic.css'));
+
+        $cs->registerCssFile($this->createUrl('/css/galleriffic-2.css'));
+        */
+        $cs->registerScriptFile($this->createUrl('/js/jquery.galleriffic.js'));
+        $cs->registerScriptFile($this->createUrl('/js/jquery.opacityrollover.js'));
+
+
     }
 
 }

@@ -28,7 +28,46 @@ var flag = true;
 var date_cliked = {};
 
 $(function () {
-
+    var onMouseOutOpacity = 0.67;
+    var i = 1;
+    while (i <= 2) {
+        $('#thumbs-' + i).galleriffic({
+            delay: 0,
+            numThumbs: 3,
+            preloadAhead: 10,
+            enableTopPager: false,
+            enableBottomPager: true,
+            maxPagesToShow: 10,
+            imageContainerSel: '#slideshow-' + i,
+            controlsContainerSel: '#controls-' + i,
+            captionContainerSel: '#caption-' + i,
+            loadingContainerSel: '#loading-' + i,
+            renderSSControls: true,
+            renderNavControls: true,
+            playLinkText: 'Play Slideshow',
+            pauseLinkText: 'Pause Slideshow',
+            prevLinkText: '&lsaquo; Previous Photo',
+            nextLinkText: 'Next Photo &rsaquo;',
+            nextPageLinkText: 'Next &rsaquo;',
+            prevPageLinkText: '&lsaquo; Prev',
+            enableHistory: false,
+            autoStart: false,
+            syncTransitions: false,
+            defaultTransitionDuration: 0,
+            onSlideChange: function (prevIndex, nextIndex) {
+                this.find('ul.thumbs').children()
+                    .eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+                    .eq(nextIndex).fadeTo('fast', 1.0);
+            },
+            onPageTransitionOut: function (callback) {
+                this.fadeTo('fast', 0.0, callback);
+            },
+            onPageTransitionIn: function () {
+                this.fadeTo('fast', 1.0);
+            }
+        });
+        i++;
+    }
 
     $('body').on('hidden', '.modal', function () {
         contentNormalWidt();
@@ -181,6 +220,14 @@ $(function () {
 
         homeBron.open(date_cliked, home_select, home_removed);
     });
+
+    /*
+     $('.thumb').click(function () {
+     var home_id = $(this).parents('.navigation').data('home-id');
+     openModal($('#thumb-modal-' + home_id));
+     })
+     */
+
 
     $(document).on('click', '.cl-home-btn:not(.home-broned)', function () {
         var home_select = $(this).val();

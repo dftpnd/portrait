@@ -1945,3 +1945,15 @@ dd {
     width: 700px;
     height: 500px;
 }
+
+#thumbs{
+    width: 100%!important;
+}
+.thumbs {
+    display: block;
+    width: 100%;
+}
+
+.thumbs li {
+    display: inline-block;
+}
