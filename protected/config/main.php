@@ -64,5 +64,8 @@ return array(
             ),
         ),
     ),
+    'aliases' => array(
+        'xupload' => 'ext.xupload'
+    ),
     'params' => require(dirname(__FILE__) . '/params.php'),
 );

@@ -7,6 +7,7 @@ class Controller extends CController
     public function init()
     {
         $cs = Yii::app()->clientScript;
+
         $cs->registerCoreScript('jquery');
         $cs->registerCoreScript('jquery.ui');
         $cs->registerScriptFile($this->createUrl('/js/jquery.maskedinput.min.js'));
@@ -22,6 +23,8 @@ class Controller extends CController
         $cs->registerScriptFile($this->createUrl('/js/jquery.calendario.js'));
         $cs->registerScriptFile($this->createUrl('/js/jquery-scrollspy.js'));
 
+        $cs->registerScriptFile($this->createUrl('/js/jquery.galleriffic.js'));
+        $cs->registerScriptFile($this->createUrl('/js/jquery.opacityrollover.js'));
 
     }
 

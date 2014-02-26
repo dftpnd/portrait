@@ -5,8 +5,8 @@
  *
  * The followings are the available columns in table '{{upload}}':
  * @property integer $id
- * @property string $name
  * @property integer $home_id
+ * @property string $file
  */
 class Upload extends CActiveRecord
 {
@@ -26,12 +26,12 @@ class Upload extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, home_id', 'required'),
+			array('home_id, file', 'required'),
 			array('home_id', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>255),
+			array('file', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, home_id', 'safe', 'on'=>'search'),
+			array('id, home_id, file', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,8 +53,8 @@ class Upload extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
 			'home_id' => 'Home',
+			'file' => 'File',
 		);
 	}
 
@@ -77,8 +77,8 @@ class Upload extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
 		$criteria->compare('home_id',$this->home_id);
+		$criteria->compare('file',$this->file,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
