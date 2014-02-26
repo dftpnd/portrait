@@ -143,6 +143,9 @@ class AdminController extends CController
     public function actionFileUpload()
     {
         $upload_handler = new UploadHandler();
+
+
+
     }
 
 }
