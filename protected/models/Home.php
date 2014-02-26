@@ -1,21 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "{{upload}}".
+ * This is the model class for table "{{home}}".
  *
- * The followings are the available columns in table '{{upload}}':
+ * The followings are the available columns in table '{{home}}':
  * @property integer $id
- * @property integer $home_id
- * @property string $file
+ * @property integer $name
+ * @property string $text
  */
-class Upload extends CActiveRecord
+class Home extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '{{upload}}';
+		return '{{home}}';
 	}
 
 	/**
@@ -26,12 +26,11 @@ class Upload extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('home_id, file', 'required'),
-			array('home_id', 'numerical', 'integerOnly'=>true),
-			array('file', 'length', 'max'=>255),
+			array('name, text', 'required'),
+			array('name', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, home_id, file', 'safe', 'on'=>'search'),
+			array('id, name, text', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,8 +52,8 @@ class Upload extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'home_id' => 'Home',
-			'file' => 'File',
+			'name' => 'Name',
+			'text' => 'Text',
 		);
 	}
 
@@ -77,8 +76,8 @@ class Upload extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('home_id',$this->home_id);
-		$criteria->compare('file',$this->file,true);
+		$criteria->compare('name',$this->name);
+		$criteria->compare('text',$this->text,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -89,7 +88,7 @@ class Upload extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Upload the static model class
+	 * @return Home the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

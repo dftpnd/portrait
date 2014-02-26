@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Фев 24 2014 г., 15:56
+-- Время создания: Фев 26 2014 г., 16:47
 -- Версия сервера: 5.5.34-0ubuntu0.13.10.1
 -- Версия PHP: 5.5.3-1ubuntu2
 
@@ -28,13 +28,26 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `gr_datapick` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
-  `datapick` varchar(255) NOT NULL,
-  `year` varchar(255) NOT NULL,
-  `day` varchar(255) NOT NULL,
-  `month` varchar(255) NOT NULL,
+  `datapick` date NOT NULL,
   `created` int(255) DEFAULT NULL,
   `status` int(10) NOT NULL DEFAULT '1',
   `home_id` int(11) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `gr_home`
+--
+
+CREATE TABLE IF NOT EXISTS `gr_home` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` int(11) NOT NULL,
+  `text` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -70,8 +83,8 @@ INSERT INTO `gr_lookup` (`id`, `name`, `code`, `type`, `position`) VALUES
 
 CREATE TABLE IF NOT EXISTS `gr_upload` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
   `home_id` int(11) NOT NULL,
+  `file` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
