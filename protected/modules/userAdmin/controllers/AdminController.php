@@ -129,28 +129,38 @@ class AdminController extends CController
     }
 
 
-    public function actionForm($home_id)
+    public function actionForm($home_id = 1)
     {
         $model = Home::model()->findByPk($home_id);
 
+
         Yii::import("xupload.models.XUploadForm");
-
         $photos = new XUploadForm;
-
+        //Check if the form has been submitted
+        if (isset($_POST['Home'])) {
+            //Assign our safe attributes
+            $model->attributes = $_POST['Home'];
+            //Start a transaction in case something goes wrong
+            $transaction = Yii::app()->db->beginTransaction();
+            try {
+                //Save the model to the database
+                if ($model->save()) {
+                    $transaction->commit();
+                }
+            } catch (Exception $e) {
+                $transaction->rollback();
+                Yii::app()->handleException($e);
+            }
+        }
         $this->render('form', array(
             'model' => $model,
             'photos' => $photos,
+            'files' => CJSON::encode($model->upload)
         ));
     }
 
     public function actionUpload()
     {
-<<<<<<< HEAD
-        $upload_handler = new UploadHandler();
-
-
-
-=======
         Yii::import("xupload.models.XUploadForm");
         //Here we define the paths where the files will be stored temporarily
         $path = Yii::app()->getBasePath() . "/../uploads/";
@@ -244,7 +254,6 @@ class AdminController extends CController
                 throw new CHttpException(500, "Could not upload file");
             }
         }
->>>>>>> 3dd948b82ea7e466f837381262bd701f1adbaee5
     }
 
 }

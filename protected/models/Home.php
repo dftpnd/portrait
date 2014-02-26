@@ -41,7 +41,9 @@ class Home extends CActiveRecord
     {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
-        return array();
+        return array(
+            'upload' => array(self::HAS_MANY, 'Upload', 'home_id'),
+        );
     }
 
     /**
@@ -102,11 +104,12 @@ class Home extends CActiveRecord
 
     public function addImages()
     {
+        $ds = DIRECTORY_SEPARATOR;
         //If we have pending images
         if (Yii::app()->user->hasState('images')) {
             $userImages = Yii::app()->user->getState('images');
             //Resolve the final path for our images
-            $path = Yii::app()->getBasePath() . "/../images/uploads/{$this->id}/";
+            $path = Yii::app()->getBasePath() . "{$ds}..{$ds}uploads{$ds}{$this->id}{$ds}";
             //Create the folder and give permissions if it doesnt exists
             if (!is_dir($path)) {
                 mkdir($path);
@@ -118,12 +121,12 @@ class Home extends CActiveRecord
                 if (is_file($image["path"])) {
                     if (rename($image["path"], $path . $image["filename"])) {
                         chmod($path . $image["filename"], 0777);
-                        $img = new Image();
+                        $img = new Upload();
+                        $img->source = $path . $image["filename"];
                         $img->size = $image["size"];
                         $img->mime = $image["mime"];
                         $img->name = $image["name"];
-                        $img->source = "/images/uploads/{$this->id}/" . $image["filename"];
-                        $img->somemodel_id = $this->id;
+                        $img->home_id = $this->id;
                         if (!$img->save()) {
                             //Its always good to log something
                             Yii::log("Could not save Image:\n" . CVarDumper::dumpAsString(
