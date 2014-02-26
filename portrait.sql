@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Фев 26 2014 г., 16:47
+-- Время создания: Фев 26 2014 г., 17:06
 -- Версия сервера: 5.5.34-0ubuntu0.13.10.1
 -- Версия PHP: 5.5.3-1ubuntu2
 
@@ -49,7 +49,18 @@ CREATE TABLE IF NOT EXISTS `gr_home` (
   `name` int(11) NOT NULL,
   `text` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Дамп данных таблицы `gr_home`
+--
+
+INSERT INTO `gr_home` (`id`, `name`, `text`) VALUES
+(1, 1, '1'),
+(2, 2, '2'),
+(3, 3, '3'),
+(4, 4, '4'),
+(5, 5, '5');
 
 -- --------------------------------------------------------
 

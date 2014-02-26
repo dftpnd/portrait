@@ -117,11 +117,6 @@ class AdminController extends CController
         Yii::import("xupload.models.XUploadForm");
         $model = new XUploadForm;
 
-        $home_id = 1;
-        if (isset($_GET['home_id'])) {
-            $home_id = $_GET['home_id'];
-        }
-
 
         $uploads = Upload::model()->findAllByAttributes(array('home_id' => $home_id));
 
@@ -134,103 +129,113 @@ class AdminController extends CController
     }
 
 
-    public function actionFileUpload()
+    public function actionForm($home_id)
     {
-        $upload_handler = new UploadHandler();
+        $model = Home::model()->findByPk($home_id);
 
-        var_dump($upload_handler);
+        Yii::import("xupload.models.XUploadForm");
 
+        $photos = new XUploadForm;
+
+        $this->render('form', array(
+            'model' => $model,
+            'photos' => $photos,
+        ));
     }
 
-    public function actionUpload( ) {
-        Yii::import( "xupload.models.XUploadForm" );
+    public function actionUpload()
+    {
+        Yii::import("xupload.models.XUploadForm");
         //Here we define the paths where the files will be stored temporarily
-        $path = realpath( Yii::app( )->getBasePath( )."/../images/uploads/tmp/" )."/";
-        $publicPath = Yii::app( )->getBaseUrl( )."/images/uploads/tmp/";
+        $path = Yii::app()->getBasePath() . "/../uploads/";
+
+
+        $publicPath = Yii::app()->getBaseUrl() . "/uploads/";
 
         //This is for IE which doens't handle 'Content-type: application/json' correctly
-        header( 'Vary: Accept' );
-        if( isset( $_SERVER['HTTP_ACCEPT'] )
-            && (strpos( $_SERVER['HTTP_ACCEPT'], 'application/json' ) !== false) ) {
-            header( 'Content-type: application/json' );
+        header('Vary: Accept');
+        if (isset($_SERVER['HTTP_ACCEPT'])
+            && (strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false)
+        ) {
+            header('Content-type: application/json');
         } else {
-            header( 'Content-type: text/plain' );
+            header('Content-type: text/plain');
         }
 
         //Here we check if we are deleting and uploaded file
-        if( isset( $_GET["_method"] ) ) {
-            if( $_GET["_method"] == "delete" ) {
-                if( $_GET["file"][0] !== '.' ) {
-                    $file = $path.$_GET["file"];
-                    if( is_file( $file ) ) {
-                        unlink( $file );
+        if (isset($_GET["_method"])) {
+            if ($_GET["_method"] == "delete") {
+                if ($_GET["file"][0] !== '.') {
+                    $file = $path . $_GET["file"];
+                    if (is_file($file)) {
+                        unlink($file);
                     }
                 }
-                echo json_encode( true );
+                echo json_encode(true);
             }
         } else {
             $model = new XUploadForm;
-            $model->file = CUploadedFile::getInstance( $model, 'file' );
+            $model->file = CUploadedFile::getInstance($model, 'file');
             //We check that the file was successfully uploaded
-            if( $model->file !== null ) {
+            if ($model->file !== null) {
                 //Grab some data
-                $model->mime_type = $model->file->getType( );
-                $model->size = $model->file->getSize( );
-                $model->name = $model->file->getName( );
+                $model->mime_type = $model->file->getType();
+                $model->size = $model->file->getSize();
+                $model->name = $model->file->getName();
                 //(optional) Generate a random name for our file
-                $filename = md5( Yii::app( )->user->id.microtime( ).$model->name);
-                $filename .= ".".$model->file->getExtensionName( );
-                if( $model->validate( ) ) {
+                $filename = md5(Yii::app()->user->id . microtime() . $model->name);
+                $filename .= "." . $model->file->getExtensionName();
+                if ($model->validate()) {
                     //Move our file to our temporary dir
-                    $model->file->saveAs( $path.$filename );
-                    chmod( $path.$filename, 0777 );
+                    $model->file->saveAs($path . $filename);
+                    chmod($path . $filename, 0777);
                     //here you can also generate the image versions you need
                     //using something like PHPThumb
 
 
                     //Now we need to save this path to the user's session
-                    if( Yii::app( )->user->hasState( 'images' ) ) {
-                        $userImages = Yii::app( )->user->getState( 'images' );
+                    if (Yii::app()->user->hasState('images')) {
+                        $userImages = Yii::app()->user->getState('images');
                     } else {
                         $userImages = array();
                     }
                     $userImages[] = array(
-                        "path" => $path.$filename,
+                        "path" => $path . $filename,
                         //the same file or a thumb version that you generated
-                        "thumb" => $path.$filename,
+                        "thumb" => $path . $filename,
                         "filename" => $filename,
                         'size' => $model->size,
                         'mime' => $model->mime_type,
                         'name' => $model->name,
                     );
-                    Yii::app( )->user->setState( 'images', $userImages );
+                    Yii::app()->user->setState('images', $userImages);
 
                     //Now we need to tell our widget that the upload was succesfull
                     //We do so, using the json structure defined in
                     // https://github.com/blueimp/jQuery-File-Upload/wiki/Setup
-                    echo json_encode( array( array(
+                    echo json_encode(array(array(
                         "name" => $model->name,
                         "type" => $model->mime_type,
                         "size" => $model->size,
-                        "url" => $publicPath.$filename,
-                        "thumbnail_url" => $publicPath."thumbs/$filename",
-                        "delete_url" => $this->createUrl( "upload", array(
+                        "url" => $publicPath . $filename,
+                        "thumbnail_url" => $publicPath . "thumbs/$filename",
+                        "delete_url" => $this->createUrl("upload", array(
                                 "_method" => "delete",
                                 "file" => $filename
-                            ) ),
+                            )),
                         "delete_type" => "POST"
-                    ) ) );
+                    )));
                 } else {
                     //If the upload failed for some reason we log some data and let the widget know
-                    echo json_encode( array(
-                        array( "error" => $model->getErrors( 'file' ),
-                        ) ) );
-                    Yii::log( "XUploadAction: ".CVarDumper::dumpAsString( $model->getErrors( ) ),
+                    echo json_encode(array(
+                        array("error" => $model->getErrors('file'),
+                        )));
+                    Yii::log("XUploadAction: " . CVarDumper::dumpAsString($model->getErrors()),
                         CLogger::LEVEL_ERROR, "xupload.actions.XUploadAction"
                     );
                 }
             } else {
-                throw new CHttpException( 500, "Could not upload file" );
+                throw new CHttpException(500, "Could not upload file");
             }
         }
     }
