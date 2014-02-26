@@ -1,3 +1,7 @@
+<script type="text/javascript">
+    var codropsEvents = <?php echo $datapicks; ?>;
+</script>
+
 <section class="index">
 <article class="in_scrollspy action" id="main">
     <div class="centrator">
@@ -666,32 +670,7 @@
     </form>
 </div>
 
-<script type="text/javascript">
-    var codropsEvents = <?php echo $datapicks; ?>;
-    $(function () {
-        var cal = $('#calendar').calendario({
-                onDayClick: function ($el, $contentEl, dateProperties) {
-                    date_cliked = dateProperties;
-                },
-                caldata: codropsEvents
-            }),
-            $month = $('#custom-month').html(cal.getMonthName()),
-            $year = $('#custom-year').html(cal.getYear());
-        $('#custom-next').on('click', function () {
-            cal.gotoNextMonth(updateMonthYear);
-        });
-        $('#custom-prev').on('click', function () {
-            cal.gotoPreviousMonth(updateMonthYear);
-        });
-        function updateMonthYear() {
-            $month.html(cal.getMonthName());
-            $year.html(cal.getYear());
-            Box.init($('.fc-row > div'))
-        }
 
-        Box.init($('.fc-row > div'));
-    });
-</script>
 
 
 

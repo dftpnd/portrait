@@ -2,6 +2,8 @@
 
 class AdminController extends CController
 {
+    public $layout = 'main';
+
     public function init()
     {
 
@@ -26,7 +28,17 @@ class AdminController extends CController
 
     }
 
-    public $layout = 'main';
+    public function actions()
+    {
+        return array(
+            'upload' => array(
+                'class' => 'xupload.actions.XUploadAction',
+                'path' => Yii::app()->getBasePath() . "/../uploads",
+                'publicPath' => Yii::app()->getBaseUrl() . "/uploads",
+            ),
+        );
+    }
+
 
     public function actionIndex()
     {
@@ -101,29 +113,9 @@ class AdminController extends CController
 
     public function actionHomes()
     {
-        $cs = Yii::app()->clientScript;
 
-
-        $cs->registerScriptFile($this->createUrl("/js/uploder/vendor/jquery.ui.widget.js"));
-
-        $cs->registerScriptFile($this->createUrl("/js/blueimp/tmpl.min.js"));
-        $cs->registerScriptFile($this->createUrl("/js/blueimp/load-image.min.js"));
-        $cs->registerScriptFile($this->createUrl("/js/blueimp/canvas-to-blob.min.js"));
-        $cs->registerScriptFile($this->createUrl("/js/blueimp/jquery.blueimp-gallery.min.js"));
-
-        ////////////////////
-        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.iframe-transport.js"));
-        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload.js"));
-        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-process.js"));
-        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-image.js"));
-        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-video.js"));
-        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-validate.js"));
-        $cs->registerScriptFile($this->createUrl("/js/uploder/jquery.fileupload-ui.js"));
-        $cs->registerScriptFile($this->createUrl("/js/uploder/main.js"));
-
-
-        $cs->registerCssFile('/css/uploder/jquery.fileupload.css');
-
+        Yii::import("xupload.models.XUploadForm");
+        $model = new XUploadForm;
 
         $home_id = 1;
         if (isset($_GET['home_id'])) {
@@ -135,7 +127,9 @@ class AdminController extends CController
 
         $this->render('homes', array(
             'uploads' => $uploads,
-            'home_id' => $home_id
+            'model' => $model,
+            'home_id' => $home_id,
+            'model' => $model,
         ));
     }
 
@@ -143,6 +137,9 @@ class AdminController extends CController
     public function actionFileUpload()
     {
         $upload_handler = new UploadHandler();
+
+        var_dump($upload_handler);
+
     }
 
 }
