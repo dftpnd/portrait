@@ -115,22 +115,7 @@ class AdminController extends CController
         echo json_encode($response);
     }
 
-    public function actionHomes()
-    {
 
-        Yii::import("xupload.models.XUploadForm");
-        $model = new XUploadForm;
-
-
-        $uploads = Upload::model()->findAllByAttributes(array('home_id' => $home_id));
-
-        $this->render('homes', array(
-            'uploads' => $uploads,
-            'model' => $model,
-            'home_id' => $home_id,
-            'model' => $model,
-        ));
-    }
 
 
     public function actionForm($home_id = 1)
@@ -155,10 +140,14 @@ class AdminController extends CController
                 $transaction->rollback();
                 Yii::app()->handleException($e);
             }
+
+            echo CJSON::encode(array('status' => 'success'));
+            Yii::app()->end();
         }
         $this->render('form', array(
             'model' => $model,
             'photos' => $photos,
+            'home_id' => $home_id,
             'files' => CJSON::encode($model->upload)
         ));
     }

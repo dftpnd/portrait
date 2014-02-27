@@ -52,7 +52,7 @@ $(function () {
     });
 
     $(document).on("change", "#select-home-id", function () {
-        $('form').submit();
+        $(this).parents('form').submit();
     });
 
 
