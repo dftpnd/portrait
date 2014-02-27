@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Фев 26 2014 г., 17:06
+-- Время создания: Фев 27 2014 г., 14:02
 -- Версия сервера: 5.5.34-0ubuntu0.13.10.1
 -- Версия PHP: 5.5.3-1ubuntu2
 
@@ -95,7 +95,10 @@ INSERT INTO `gr_lookup` (`id`, `name`, `code`, `type`, `position`) VALUES
 CREATE TABLE IF NOT EXISTS `gr_upload` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `home_id` int(11) NOT NULL,
-  `file` varchar(255) NOT NULL,
+  `size` varchar(255) NOT NULL,
+  `mime` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `source` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
