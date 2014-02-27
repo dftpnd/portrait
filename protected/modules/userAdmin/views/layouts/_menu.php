@@ -17,7 +17,7 @@
             ),
             array(
                 'label' => 'Домики',
-                'url' => Yii::app()->urlManager->createUrl('/userAdmin/admin/homes'),
+                'url' => Yii::app()->urlManager->createUrl('/userAdmin/admin/form'),
                 'active' => (Yii::app()->controller->getId() == 'admin' && Yii::app()->controller->getAction()->getId() == 'homes')
             ),
             array(

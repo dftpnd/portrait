@@ -6,6 +6,10 @@ class AdminController extends CController
 
     public function init()
     {
+        if (Yii::app()->user->isGuest) {
+            Yii::app()->getController()->redirect('/site/login');
+            Yii::app()->end();
+        }
 
         $cs = Yii::app()->clientScript;
         $cs->registerCoreScript('jquery');
