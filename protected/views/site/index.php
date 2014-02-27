@@ -42,7 +42,7 @@
                 <input type="text" class="default-field" placeholder="*Ваше имя"/>
             </div>
             <div>
-                <p class="error-text hidden">Поле обязательно для заполнения!</p>
+                <p class="error-text">Поле обязательно для заполнения!</p>
                 <input type="text" class="default-field phone-mask" placeholder="*Ваш телефон"/>
             </div>
 
@@ -539,8 +539,8 @@
                             <p class="error-text">Поле обязательно для заполнения!</p>
                             <input type="text" placeholder="*Ваше имя" class=""/>
                         </div>
-                        <div class="error-text">
-                            <p class="hidden">Поле обязательно для заполнения!</p>
+                        <div class="">
+                            <p class="error-text">Поле обязательно для заполнения!</p>
                             <input type="text" placeholder="*Ваш телефон" class="phone-mask"/>
                         </div>
                         <button class="callback-modal-btn"></button>
