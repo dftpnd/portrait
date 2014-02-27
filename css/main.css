@@ -1,6 +1,28 @@
 /*setting*/
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic-ext);
-
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('PT Sans'), local('PTSans-Regular'), url('../fonts/PT_Sans_400.woff') format('woff');
+}
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('PT Sans Bold'), local('PTSans-Bold'), url('../fonts/PT_Sans_700.woff') format('woff');
+}
+@font-face {
+    font-family: 'PT Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: local('PT Sans Italic'), local('PTSans-Italic'), url('../fonts/PT_Sans_400_ital.woff') format('woff');
+}
+@font-face {
+    font-family: 'PT Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: local('PT Sans Bold Italic'), local('PTSans-BoldItalic'), url('../fonts/PT_Sans_700_ital.woff') format('woff');
+}
 @font-face {
     font-family: 'PT Sans';
     src: url('../fonts/PT_Sans.woff');
