@@ -6,8 +6,25 @@
     <title>База отдыха Илеть</title>
     <link href="/favicon.gif" rel="icon" type="image/x-icon"/>
     <link href="/favicon.gif" rel="shortcut icon" type="image/x-icon"/>
+    <?php if (false): ?>
+        <script type="text/javascript"
+                src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBeYC5t9v6gdSm-utyFxVNbGoxZPv1YCD8&sensor=false">
+        </script>
+        <!--    http://maps.google.com/maps/api/geocode/xml?address=%D0%9C%D0%B0%D1%80%D0%B8-%D0%9B%D1%83%D0%B3%D0%BE%D0%B2%D0%B0%D1%8F&sensor=false-->
+        <script type="text/javascript">
+            function initialize() {
+                var mapOptions = {
+                    center: new google.maps.LatLng(55.9407024, 48.1917855),
+                    zoom: 15,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("map_canvas"),
+                    mapOptions);
+            }
+        </script>
+    <?php endif; ?>
 </head>
-<body class="">
+<body>
 <div class="help-menu">
     <ul class="centrator">
         <li id="hp-about">
@@ -61,16 +78,21 @@
                     <div class="anchor"></div>
                     <div class="modal-body">
                         <h4>Оставьте номер,</h4>
-                        <p class="callback-title">мы перезвоним Вам сами</p>
-                        <div class="error-field">
-                            <p class="error-text">Поле обязательно для заполнения!</p>
-                            <input type="text" placeholder="*Ваше имя" class=""/>
-                        </div>
-                        <div class="error-text">
-                            <p class="hidden">Поле обязательно для заполнения!</p>
-                            <input type="text" placeholder="*Ваш телефон" class=""/>
-                        </div>
-                        <button class="callback-modal-btn"></button>
+
+                        <form id="form-order-callback-top" action="/site/orderCallback" method="GET">
+                            <p class="callback-title">мы перезвоним Вам сами</p>
+
+                            <div class="error-field">
+                                <p class="error-text">Поле обязательно для заполнения!</p>
+                                <input name="name" type="text" placeholder="*Ваше имя" class=""/>
+                            </div>
+                            <div class="error-text">
+                                <p class="hidden">Поле обязательно для заполнения!</p>
+                                <input name="phone" type="text" placeholder="*Ваш телефон"
+                                       class="phone-mask"/>
+                            </div>
+                            <button id="order-callback-top" class="callback-modal-btn" type="button"></button>
+                        </form>
                     </div>
                 </div>
             </div>

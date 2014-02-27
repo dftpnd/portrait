@@ -1,14 +1,55 @@
 <?php
 
-class qqUploadedFileXhr {
+/****************************************
+ * Example of how to use this uploader class...
+ * You can uncomment the following lines (minus the require) to use these as your defaults.
+ *
+ * // list of valid extensions, ex. array("jpeg", "xml", "bmp")
+ * $allowedExtensions = array();
+ * // max file size in bytes
+ * $sizeLimit = 10 * 1024 * 1024;
+ * //the input name set in the javascript
+ * $inputName = 'qqfile'
+ *
+ * require('valums-file-uploader/server/php.php');
+ * $uploader = new qqFileUploader($allowedExtensions, $sizeLimit, $inputName);
+ *
+ * // Call handleUpload() with the name of the folder, relative to PHP's getcwd()
+ * $result = $uploader->handleUpload('uploads/');
+ *
+ * // to pass data through iframe you will need to encode all html tags
+ * header("Content-Type: text/plain");
+ * echo htmlspecialchars(json_encode($result), ENT_NOQUOTES);
+ *
+ * /******************************************/
 
-    // public $filename='';
 
-    function save($path) {
+/**
+ * Handle file uploads via XMLHttpRequest
+ */
+class qqUploadedFileXhr
+{
+    private $inputName;
+
+    /**
+     * @param string $inputName ; defaults to the javascript default: 'qqfile'
+     */
+    public function __construct($inputName = 'qqfile')
+    {
+        $this->inputName = $inputName;
+    }
+
+    /**
+     * Save the file to the specified path
+     * @return boolean TRUE on success
+     */
+    public function save($path)
+    {
         $input = fopen("php://input", "r");
         $temp = tmpfile();
         $realSize = stream_copy_to_stream($input, $temp);
         fclose($input);
+
         if ($realSize != $this->getSize()) {
             return false;
         }
@@ -17,215 +58,223 @@ class qqUploadedFileXhr {
         fseek($temp, 0, SEEK_SET);
         stream_copy_to_stream($temp, $target);
         fclose($target);
+
         return true;
     }
 
-    function getName() {
-        return $_GET['qqfile'];
+    /**
+     * Get the original filename
+     * @return string filename
+     */
+    public function getName()
+    {
+        return $_GET[$this->inputName];
     }
 
-    function getSize() {
+    /**
+     * Get the file size
+     * @return integer file-size in byte
+     */
+    public function getSize()
+    {
         if (isset($_SERVER["CONTENT_LENGTH"])) {
-            return (int) $_SERVER["CONTENT_LENGTH"];
+            return (int)$_SERVER["CONTENT_LENGTH"];
         } else {
             throw new Exception('Getting content length is not supported.');
         }
     }
-
 }
 
 /**
-
-
  * Handle file uploads via regular form post (uses the $_FILES array)
-
-
  */
-class qqUploadedFileForm {
+class qqUploadedFileForm
+{
+    private $inputName;
 
-    function save($path) {
-        if (!move_uploaded_file($_FILES['qqfile']['tmp_name'], $path)) {
-            return false;
-        }
-        return true;
+    /**
+     * @param string $inputName ; defaults to the javascript default: 'qqfile'
+     */
+    public function __construct($inputName = 'qqfile')
+    {
+        $this->inputName = $inputName;
     }
 
-    function getName() {
-        return $_FILES['qqfile']['name'];
+    /**
+     * Save the file to the specified path
+     * @return boolean TRUE on success
+     */
+    public function save($path)
+    {
+        return move_uploaded_file($_FILES[$this->inputName]['tmp_name'], $path);
     }
 
-    function getSize() {
-        return $_FILES['qqfile']['size'];
+    /**
+     * Get the original filename
+     * @return string filename
+     */
+    public function getName()
+    {
+        return $_FILES[$this->inputName]['name'];
     }
 
+    /**
+     * Get the file size
+     * @return integer file-size in byte
+     */
+    public function getSize()
+    {
+        return $_FILES[$this->inputName]['size'];
+    }
 }
 
-class qqFileUploader {
-
-    private $allowedExtensions = array();
-    private $sizeLimit = 10485760;
+/**
+ * Class that encapsulates the file-upload internals
+ */
+class qqFileUploader
+{
+    private $allowedExtensions;
+    private $sizeLimit;
     private $file;
+    private $uploadName;
 
-    function __construct(array $allowedExtensions = array(), $sizeLimit = 10485760) {
+    /**
+     * @param array $allowedExtensions ; defaults to an empty array
+     * @param int $sizeLimit ; defaults to the server's upload_max_filesize setting
+     * @param string $inputName ; defaults to the javascript default: 'qqfile'
+     */
+    function __construct(array $allowedExtensions = null, $sizeLimit = null, $inputName = 'qqfile')
+    {
+        if ($allowedExtensions === null) {
+            $allowedExtensions = array();
+        }
+        if ($sizeLimit === null) {
+            $sizeLimit = $this->toBytes(ini_get('upload_max_filesize'));
+        }
+
         $allowedExtensions = array_map("strtolower", $allowedExtensions);
+
         $this->allowedExtensions = $allowedExtensions;
         $this->sizeLimit = $sizeLimit;
-        //$this->checkServerSettings();
 
-        if (isset($_GET['qqfile'])) {
-            $this->file = new qqUploadedFileXhr();
-        } elseif (isset($_FILES['qqfile'])) {
-            $this->file = new qqUploadedFileForm();
-        } else {
+        $this->checkServerSettings();
+
+        if (!isset($_SERVER['CONTENT_TYPE'])) {
             $this->file = false;
+        } else if (strpos(strtolower($_SERVER['CONTENT_TYPE']), 'multipart/') === 0) {
+            $this->file = new qqUploadedFileForm($inputName);
+        } else {
+            $this->file = new qqUploadedFileXhr($inputName);
         }
     }
 
-    private function checkServerSettings() {
+    /**
+     * Get the name of the uploaded file
+     * @return string
+     */
+    public function getUploadName()
+    {
+        if (isset($this->uploadName))
+            return $this->uploadName;
+    }
+
+    /**
+     * Get the original filename
+     * @return string filename
+     */
+    public function getName()
+    {
+        if ($this->file)
+            return $this->file->getName();
+    }
+
+    /**
+     * Internal function that checks if server's may sizes match the
+     * object's maximum size for uploads
+     */
+    private function checkServerSettings()
+    {
         $postSize = $this->toBytes(ini_get('post_max_size'));
         $uploadSize = $this->toBytes(ini_get('upload_max_filesize'));
+
         if ($postSize < $this->sizeLimit || $uploadSize < $this->sizeLimit) {
             $size = max(1, $this->sizeLimit / 1024 / 1024) . 'M';
-            die("{'error':'increase post_max_size and upload_max_filesize to $size'}");
+            die(json_encode(array('error' => 'increase post_max_size and upload_max_filesize to ' . $size)));
         }
     }
 
-    private function toBytes($str) {
+    /**
+     * Convert a given size with units to bytes
+     * @param string $str
+     */
+    private function toBytes($str)
+    {
         $val = trim($str);
         $last = strtolower($str[strlen($str) - 1]);
         switch ($last) {
-
-
-            case 'g': $val *= 1024;
-
-
-            case 'm': $val *= 1024;
-
-
-            case 'k': $val *= 1024;
+            case 'g':
+                $val *= 1024;
+            case 'm':
+                $val *= 1024;
+            case 'k':
+                $val *= 1024;
         }
-
-
         return $val;
     }
 
     /**
-
-
-     * Returns array('success'=>true) or array('error'=>'error message')
-
-
+     * Handle the uploaded file
+     * @param string $uploadDirectory
+     * @param string $replaceOldFile =true
+     * @returns array('success'=>true) or array('error'=>'error message')
      */
-    function handleUpload($uploadDirectory, $replaceOldFile = FALSE) {
+    function handleUpload($uploadDirectory, $replaceOldFile = FALSE)
+    {
         if (!is_writable($uploadDirectory)) {
-            return array('error' => "Server error. Upload directory($uploadDirectory) isn't writable.");
+            return array('error' => "Server error. Каталог не доступен для записи.");
         }
-//        var_dump($this->file);
-//        die();
+
         if (!$this->file) {
             return array('error' => 'No files were uploaded.');
         }
 
         $size = $this->file->getSize();
+
         if ($size == 0) {
-            return array('error' => 'File is empty');
+            return array('error' => 'Файл пустой');
         }
 
         if ($size > $this->sizeLimit) {
             return array('error' => 'Файл слишком большой');
         }
 
-        /*    не корректно работает с UTF-8
-          $pathinfo = pathinfo($this->file->getName());
-         */
-
-        $pathinfo = self::pathinfo_utf($this->file->getName());
-
-        //$filename = $pathinfo['filename'];
+        $pathinfo = pathinfo($this->file->getName());
+        $filename = $pathinfo['filename'];
         $filename = md5(uniqid());
+        $ext = @$pathinfo['extension']; // hide notices if extension is empty
 
-        if (isset($pathinfo['extension']))
-            $ext = $pathinfo['extension'];
-        else
-            $ext = '';
         if ($this->allowedExtensions && !in_array(strtolower($ext), $this->allowedExtensions)) {
             $these = implode(', ', $this->allowedExtensions);
-            return array('error' => 'Файл не соответствует расширениям ' . $these . '.');
+            return array('error' => 'Файл имеет недопустимое расширение, оно должно быть одним из' . $these . '.');
         }
+
+        $ext = ($ext == '') ? $ext : '.' . $ext;
+
         if (!$replaceOldFile) {
             /// don't overwrite previous files that were uploaded
-            while (file_exists($uploadDirectory . $filename . '.' . $ext)) {
+            while (file_exists($uploadDirectory . DIRECTORY_SEPARATOR . $filename . $ext)) {
                 $filename .= rand(10, 99);
             }
         }
 
+        $this->uploadName = $filename . $ext;
 
-
-
-
-        if ($this->file->save($uploadDirectory . $filename . '.' . $ext)) {
-
-
-            return array('success' => true, 'filename' => $filename . '.' . $ext, 'user_filename' => $pathinfo['filename'] . '.' . $ext, 'size' => $size, 'ext' => $ext);
+        if ($this->file->save($uploadDirectory . DIRECTORY_SEPARATOR . $filename . $ext)) {
+            return array('success' => true);
         } else {
-
-
             return array('error' => 'Could not save uploaded file.' .
                 'The upload was cancelled, or server error encountered');
         }
+
     }
-
-    private function pathinfo_utf($path) {
-
-
-        if (strpos($path, '/') !== false)
-            $basename = end(explode('/', $path));
-
-
-        elseif (strpos($path, '\\') !== false)
-            $basename = end(explode('\\', $path));
-
-
-        else {
-            $basename = $path;
-
-
-            $path = '/' . $path;
-        }
-
-
-        //return false;
-
-
-        if (empty($basename))
-            return false;
-
-
-
-
-
-        $dirname = substr($path, 0, strlen($path) - strlen($basename) - 1);
-        $extension = '12';
-        if (strpos($basename, '.') !== false) {
-            $a = explode('.', $basename);
-            $bn = end($a);
-            $extension = $bn;
-            $filename = substr($basename, 0, strlen($basename) - strlen($extension) - 1);
-        } else {
-            $extension = '';
-            $filename = $basename;
-        }
-
-        return array
-            (
-            'dirname' => $dirname,
-            'basename' => $basename,
-            'extension' => $extension,
-            'filename' => $filename
-        );
-    }
-
 }
-?>
-
-

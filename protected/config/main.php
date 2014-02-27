@@ -18,29 +18,6 @@ return array(
     ),
     'defaultController' => 'site',
     'modules' => array(
-        'srbac' => array(
-            'userclass' => 'User',
-            'userid' => 'id',
-            'username' => 'username',
-            'debug' => false,
-            'delimeter' => "@",
-            'pageSize' => 10,
-            'superUser' => 'Authority',
-            'css' => 'srbac.css',
-            'layout' => 'application.modules.userAdmin.views.layouts.main',
-            'notAuthorizedView' => 'srbac.views.authitem.unauthorized',
-            //'alwaysAllowed'=>array(),
-            'userActions' => array('show', 'View', 'List'),
-            'listBoxNumberOfLines' => 15,
-            'imagesPath' => 'srbac.images',
-            'imagesPack' => 'tango',
-            'iconText' => false,
-            'header' => 'srbac.views.authitem.header',
-            'footer' => 'srbac.views.authitem.footer',
-            'showHeader' => true,
-            'showFooter' => true,
-            'alwaysAllowedPath' => 'srbac.components',
-        ),
         'gii' => array(
             'class' => 'system.gii.GiiModule',
             'password' => '7878',
@@ -52,11 +29,14 @@ return array(
         'ih' => array(
             'class' => 'CImageHandler',
         ),
-//        'mailer' => array(
-//            'class' => 'application.extensions.mailer.EMailer',
-//            'pathViews' => 'application.views.email',
-//            'pathLayouts' => 'application.views.email.layouts'
-//        ),
+        'uh' => array(
+            'class' => 'UploadHandler',
+        ),
+        'mailer' => array(
+            'class' => 'application.extensions.mailer.EMailer',
+            'pathViews' => 'application.views.email',
+            'pathLayouts' => 'application.views.email.layouts'
+        ),
         'authManager' => array(
             'class' => 'srbac.components.SDbAuthManager',
             'connectionID' => 'db',
@@ -83,6 +63,9 @@ return array(
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ),
         ),
+    ),
+    'aliases' => array(
+        'xupload' => 'ext.xupload'
     ),
     'params' => require(dirname(__FILE__) . '/params.php'),
 );

@@ -15,8 +15,14 @@ function updateUser() {
         }
     });
 }
+function openDoor(html) {
+    $('#modal .modal-body').html(html);
+    $('#modal').modal('show');
+}
+function closeDoor() {
+    $('#modal').modal('hide');
+}
 $(function () {
-
 
 
     $("body").on("click", ".popup_prepear", function () {
@@ -34,4 +40,21 @@ $(function () {
         });
     });
 
+    $(document).on("click", "#popup-sender", function () {
+        $(this).jax(
+            function () {
+
+            },
+            function () {
+                closeDoor();
+            }
+        );
+    });
+
+    $(document).on("change", "#select-home-id", function () {
+        $(this).parents('form').submit();
+    });
+
+
 })
+

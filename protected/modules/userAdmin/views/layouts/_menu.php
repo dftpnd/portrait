@@ -16,6 +16,11 @@
                 'active' => (Yii::app()->controller->getId() == 'admin' && Yii::app()->controller->getAction()->getId() == 'calendar')
             ),
             array(
+                'label' => 'Домики',
+                'url' => Yii::app()->urlManager->createUrl('/userAdmin/admin/form'),
+                'active' => (Yii::app()->controller->getId() == 'admin' && Yii::app()->controller->getAction()->getId() == 'form')
+            ),
+            array(
                 'label' => 'Выход',
                 'url' => Yii::app()->urlManager->createUrl('/site/logout'),
             ),
