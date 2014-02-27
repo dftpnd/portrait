@@ -15,6 +15,7 @@ class Controller extends CController
         $cs->registerCssFile($this->createUrl('/css/bootstrap.min.css'));
 
         $cs->registerCssFile($this->createUrl('/css/main.css'));
+        $cs->registerCssFile($this->createUrl('/css/jquery-ui.css'));
 
         $cs->registerScriptFile($this->createUrl('/js/action.js'));
         $cs->registerScriptFile($this->createUrl('/js/bootstrap.min.js'));

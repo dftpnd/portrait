@@ -3,7 +3,25 @@
     font-family: 'PT Sans';
     font-style: normal;
     font-weight: 400;
-    src: local('PT Sans'), local('PTSans-Regular'), url(../fonts/yrzXiAvgeQQdopyG8QSg8Q.woff) format('woff');
+    src: local('PT Sans'), local('PTSans-Regular'), url('../fonts/PT_Sans_400.woff') format('woff');
+}
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('PT Sans Bold'), local('PTSans-Bold'), url('../fonts/PT_Sans_700.woff') format('woff');
+}
+@font-face {
+    font-family: 'PT Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: local('PT Sans Italic'), local('PTSans-Italic'), url('../fonts/PT_Sans_400_ital.woff') format('woff');
+}
+@font-face {
+    font-family: 'PT Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: local('PT Sans Bold Italic'), local('PTSans-BoldItalic'), url('../fonts/PT_Sans_700_ital.woff') format('woff');
 }
 
 * {
@@ -443,8 +461,11 @@ div.hr {
 .error-field {
     position: relative;
 }
-
+.error-text{
+    display: none;
+}
 .error-field p.error-text {
+    display: block;
     color: #fe4302;
     font-size: 16px;
     padding-left: 10px;
@@ -1037,19 +1058,7 @@ h1, h2, h3 {
     margin: 20px 0;
 }
 
-.pagination ul {
-    display: inline-block;
-    *display: inline;
-    margin-bottom: 0;
-    margin-left: 0;
-    *zoom: 1;
-}
-
-.pagination ul > li {
-    display: inline;
-}
-
-.pagination ul > li > a {
+.pagination a, .pagination span {
     float: left;
     padding: 4px 10px;
     line-height: 20px;
@@ -1063,40 +1072,40 @@ h1, h2, h3 {
     font-family: Calibri, sans-serif;
 }
 
-.pagination ul > li:last-child > a, .pagination ul > li:first-child > a {
+.pagination a:last-child, .pagination a:first-child {
     font-size: 18px;
     font-family: serif;
     color: #86b234;
     background-color: #e5f4c9;
 }
 
-.pagination ul > li:last-child > a:hover,
-.pagination ul > li:first-child > a:hover {
+.pagination a:last-child:hover,
+.pagination a:first-child:hover {
     background-color: #e5f4c9;
 }
 
-.pagination ul > li:last-child > a {
+.pagination a:last-child {
     margin-left: 4px;
 }
 
-.pagination ul > li:first-child > a {
+.pagination a:first-child {
     margin-right: 4px;
 }
 
-.pagination ul > li > a:hover,
-.pagination ul > li > a:focus,
-.pagination ul > .active > a {
+.pagination a:hover,
+.pagination a:focus,
+.pagination .current {
     background-color: #fad44a;
 }
 
-.pagination ul > .active > a {
+.pagination .current {
     color: #252525;
     cursor: default;
 }
 
-.pagination ul > .disabled > a,
-.pagination ul > .disabled > a:hover,
-.pagination ul > .disabled > a:focus {
+.pagination .disabled,
+.pagination .disabled:hover,
+.pagination .disabled:focus {
     color: #252525;
     cursor: default;
     background-color: transparent;
