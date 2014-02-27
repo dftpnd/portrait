@@ -116,11 +116,13 @@ class AdminController extends CController
     }
 
 
-
-
     public function actionForm($home_id = 1)
     {
-        $model = Home::model()->findByPk($home_id);
+        $criteria = new CDbCriteria;
+        $criteria->compare('t.id', $home_id);
+        $criteria->order  = 'upload.created DESC';
+
+        $model = Home::model()->with('upload')->find($criteria);
 
 
         Yii::import("xupload.models.XUploadForm");
@@ -196,10 +198,21 @@ class AdminController extends CController
                 $filename .= "." . $model->file->getExtensionName();
                 if ($model->validate()) {
                     //Move our file to our temporary dir
-                    $model->file->saveAs($path . $filename);
-                    chmod($path . $filename, 0777);
-                    //here you can also generate the image versions you need
-                    //using something like PHPThumb
+                    $cource = $path . $filename;
+                    $model->file->saveAs($cource);
+                    chmod($cource, 0777);
+
+
+                    $thumb_file = $path . 'thumbs' . DIRECTORY_SEPARATOR . $filename;
+
+
+                    if (!copy($cource, $thumb_file)) {
+                        die("не удалось скопировать");
+                    }
+
+                    Yii::app()->ih->load($thumb_file)
+                        ->resize(Upload::width, Upload::height, true)
+                        ->save(false, false, 100);
 
 
                     //Now we need to save this path to the user's session

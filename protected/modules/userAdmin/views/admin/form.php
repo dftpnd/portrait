@@ -1,4 +1,4 @@
-<div>
+<div class="row">
     <form method="get" action="/userAdmin/admin/form">
         <select id="select-home-id" name="home_id">
             <?php $i = 1; ?>
@@ -15,9 +15,6 @@
         </select>
     </form>
     <hr/>
-
-    <?php $this->renderPartial('_upload', array('home_id' => $home_id)); ?>
-    <?php // $this->renderPartial('_uploads', array('uploads' => $uploads)); ?>
 </div>
 
 <?php
@@ -29,9 +26,9 @@ $form = $this->beginWidget('CActiveForm', array(
 ));
 ?>
 <div class="row" style="display: none">
-    <?php  echo $form->labelEx($model, 'name'); ?>
-    <?php  echo $form->textField($model, 'name'); ?>
-    <?php  echo $form->error($model, 'name'); ?>
+    <?php echo $form->labelEx($model, 'name'); ?>
+    <?php echo $form->textField($model, 'name'); ?>
+    <?php echo $form->error($model, 'name'); ?>
 </div>
 
 <div class="row">
@@ -60,23 +57,24 @@ $form = $this->beginWidget('CActiveForm', array(
             <tr class="template-download fade in" style="height: 66px;">
                 <td class="preview">
 
-                    <a download="Screenshot from 2014-02-14 14:35:42.png" rel="gallery"
-                       title="<?php echo $file->name; ?>" href="<?php echo $file->source; ?>">
-                        <img src="<?php echo $file->source; ?>">
+                    <a download="/uploads/<?php echo $file->home_id; ?>/<?php echo $file->source; ?>" rel="gallery"
+                       title="<?php echo $file->name; ?>"
+                       href="/uploads/<?php echo $file->home_id; ?>/<?php echo $file->source; ?>">
+                        <img src="/uploads/thumbs/<?php echo $file->source; ?>">
                     </a>
                 </td>
                 <td class="name">
-                    <a download="Screenshot from 2014-02-14 14:35:42.png" rel="gallery"
-                       title="Screenshot from 2014-02-14 14:35:42.png" href="<?php echo $file->source; ?>">Screenshot
-                        from 2014-02-14 14:35:42.png</a>
+                    <a download="/uploads/<?php echo $file->home_id; ?>/<?php echo $file->source; ?>" rel="gallery"
+                       title="<?php echo $file->name; ?>"
+                       href="/uploads/<?php echo $file->home_id; ?>/<?php echo $file->source; ?>"><?php echo $file->name; ?></a>
                 </td>
                 <td class="size">
-                    <span>266.63 KB</span>
+                    <span><?php echo $file->size; ?> B</span>
                 </td>
                 <td colspan="2"></td>
                 <td class="delete">
                     <button class="btn btn-danger"
-                            data-url="/userAdmin/admin/upload/_method/delete/file/<?php echo $file->name; ?>"
+                            data-url="/userAdmin/admin/upload/_method/delete/file/<?php echo $file->id; ?>"
                             data-type="POST">
                         <i class="icon-trash icon-white"></i>
                         <span>Удалить</span>
@@ -88,6 +86,7 @@ $form = $this->beginWidget('CActiveForm', array(
         <?php endforeach; ?>
         </tbody>
     </table>
+    <button id="home-update" class="btn btn-default start" type="submit" style="float: right">Сохранить</button>
+    <div class="anchor"></div>
 </div>
 
-<button id="home-update" type="submit">Submit</button>

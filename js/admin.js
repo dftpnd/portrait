@@ -55,6 +55,12 @@ $(function () {
         $(this).parents('form').submit();
     });
 
+    $('#home-update').click(function () {
+        $(this).jax(function () {
+        }, function () {
+            location.reload();
+        });
+    });
 
 })
 

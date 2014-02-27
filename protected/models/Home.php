@@ -122,7 +122,7 @@ class Home extends CActiveRecord
                     if (rename($image["path"], $path . $image["filename"])) {
                         chmod($path . $image["filename"], 0777);
                         $img = new Upload();
-                        $img->source = $path . $image["filename"];
+                        $img->source = $image["filename"];
                         $img->size = $image["size"];
                         $img->mime = $image["mime"];
                         $img->name = $image["name"];
