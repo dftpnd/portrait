@@ -243,7 +243,12 @@ $(function () {
 
     $('.add_review').click(function () {
         openModal($('#review-modal'));
-    })
+    });
+
+    $('#home-update').click(function () {
+        $(this).jax();
+    });
+
     $('.home-btn').click(function () {
         var home_select = $(this).data('home-id');
         var home_removed = [];

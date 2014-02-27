@@ -6,7 +6,10 @@
  * The followings are the available columns in table '{{upload}}':
  * @property integer $id
  * @property integer $home_id
- * @property string $file
+ * @property string $size
+ * @property string $mime
+ * @property string $name
+ * @property string $source
  */
 class Upload extends CActiveRecord
 {
@@ -26,12 +29,12 @@ class Upload extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('home_id, file', 'required'),
+			array('home_id, size, mime, name, source', 'required'),
 			array('home_id', 'numerical', 'integerOnly'=>true),
-			array('file', 'length', 'max'=>255),
+			array('size, mime, name, source', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, home_id, file', 'safe', 'on'=>'search'),
+			array('id, home_id, size, mime, name, source', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,7 +57,10 @@ class Upload extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'home_id' => 'Home',
-			'file' => 'File',
+			'size' => 'Size',
+			'mime' => 'Mime',
+			'name' => 'Name',
+			'source' => 'Source',
 		);
 	}
 
@@ -78,7 +84,10 @@ class Upload extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('home_id',$this->home_id);
-		$criteria->compare('file',$this->file,true);
+		$criteria->compare('size',$this->size,true);
+		$criteria->compare('mime',$this->mime,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('source',$this->source,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

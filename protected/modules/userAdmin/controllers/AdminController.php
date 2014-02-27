@@ -129,17 +129,33 @@ class AdminController extends CController
     }
 
 
-    public function actionForm($home_id)
+    public function actionForm($home_id = 1)
     {
         $model = Home::model()->findByPk($home_id);
 
+
         Yii::import("xupload.models.XUploadForm");
-
         $photos = new XUploadForm;
-
+        //Check if the form has been submitted
+        if (isset($_POST['Home'])) {
+            //Assign our safe attributes
+            $model->attributes = $_POST['Home'];
+            //Start a transaction in case something goes wrong
+            $transaction = Yii::app()->db->beginTransaction();
+            try {
+                //Save the model to the database
+                if ($model->save()) {
+                    $transaction->commit();
+                }
+            } catch (Exception $e) {
+                $transaction->rollback();
+                Yii::app()->handleException($e);
+            }
+        }
         $this->render('form', array(
             'model' => $model,
             'photos' => $photos,
+            'files' => CJSON::encode($model->upload)
         ));
     }
 
