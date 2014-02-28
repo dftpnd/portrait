@@ -1127,6 +1127,15 @@ h1, h2, h3 {
     width: 100%;
 }
 
+.thumbs li{
+    margin-top: 10px;
+    width: 32%;
+}
+.thumbs li img{
+    width: 100%;
+    max-height: 80px;
+}
+
 .cot-gallery .fg-template a {
     text-decoration: none;
 }
@@ -1965,4 +1974,18 @@ dd {
 
 .thumbs li {
     display: inline-block;
+}
+.thumb-modal .modal-content {
+    position: relative;
+    background: none;
+    border: none;
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0px 0px 0px 7px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow:    0px 0px 0px 7px rgba(0, 0, 0, 0.45);
+    box-shadow:         0px 0px 0px 7px rgba(0, 0, 0, 0.45);
+    background-clip: padding-box;
+}
+.thumb-modal .modal-body {
+    padding: 0px;
 }

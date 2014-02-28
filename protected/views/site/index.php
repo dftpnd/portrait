@@ -607,18 +607,18 @@
 </div>
 <?php $i = 1; ?>
 <?php while ($i <= 5): ?>
-    <div id="thumb-modal-<?php echo $i ?>" class="modal fade" tabindex="1" data-width="auto">
+    <div id="thumb-modal-<?php echo $i ?>" class="modal fade thumb-modal" tabindex="1" data-width="auto">
         <div class="modal-content">
-            <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
-            <div class="anchor"></div>
             <div class="modal-body">
                 <div id="gallery-<?php echo $i ?>" class="content">
-                    <div id="controls-<?php echo $i ?>" class="controls"></div>
                     <div class="slideshow-container">
                         <div id="loading-<?php echo $i ?>" class="loader"></div>
                         <div id="slideshow-<?php echo $i ?>" class="slideshow"></div>
                     </div>
-                    <div id="caption-<?php echo $i ?>" class="caption-container"></div>
+                    <div id="controls-<?php echo $i ?>" class="controls"></div>
+                    <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
+                    <div class="anchor"></div>
+<!--                    <div id="caption---><?php //echo $i ?><!--" class="caption-container"></div>-->
                 </div>
             </div>
         </div>
