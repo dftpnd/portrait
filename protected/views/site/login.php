@@ -56,7 +56,7 @@
                                     success: function (data) {
                                         if (data.status == "success") {
                                             $('#enterbtn').removeClass('loading');
-                                            window.location = ('/userAdmin/admin');
+                                            window.location = ('/userAdmin/admin/calendar');
                                         }
                                         else {
                                             $('#enterbtn').removeClass('loading');

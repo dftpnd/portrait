@@ -4,21 +4,25 @@
     $this->widget('zii.widgets.CMenu', array(
         'htmlOptions' => array('class' => 'nav nav-pills pull-right'),
         'items' => array(
-
             array(
-                'label' => 'Учетные данные',
-                'url' => Yii::app()->urlManager->createUrl('/userAdmin/admin/index'),
-                'active' => (Yii::app()->controller->getId() == 'admin' && Yii::app()->controller->getAction()->getId() == 'index')
-            ),
-            array(
-                'label' => 'Календарь',
+                'label' => 'Заявки',
                 'url' => Yii::app()->urlManager->createUrl('/userAdmin/admin/calendar'),
                 'active' => (Yii::app()->controller->getId() == 'admin' && Yii::app()->controller->getAction()->getId() == 'calendar')
+            ),
+            array(
+                'label' => 'Обратный звонок',
+                'url' => Yii::app()->urlManager->createUrl('/userAdmin/admin/callback'),
+                'active' => (Yii::app()->controller->getId() == 'admin' && Yii::app()->controller->getAction()->getId() == 'callback')
             ),
             array(
                 'label' => 'Домики',
                 'url' => Yii::app()->urlManager->createUrl('/userAdmin/admin/form'),
                 'active' => (Yii::app()->controller->getId() == 'admin' && Yii::app()->controller->getAction()->getId() == 'form')
+            ),
+            array(
+                'label' => 'Учетные данные',
+                'url' => Yii::app()->urlManager->createUrl('/userAdmin/admin/index'),
+                'active' => (Yii::app()->controller->getId() == 'admin' && Yii::app()->controller->getAction()->getId() == 'index')
             ),
             array(
                 'label' => 'Выход',

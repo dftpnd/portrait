@@ -270,4 +270,13 @@ class AdminController extends CController
         echo CJSON::encode(array('status' => 'success'));
     }
 
+    public function actionCallback()
+    {
+        $callback = new Callback();
+        $this->render('callback', array(
+            'callback' => $callback
+        ));
+    }
+
+
 }

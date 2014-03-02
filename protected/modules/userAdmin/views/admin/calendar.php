@@ -1,5 +1,4 @@
 <div class="jumbotron">
-    <h1>Список ..</h1>
     <?php
     //    array(
     //        'name' => 'status',
@@ -29,8 +28,16 @@
                 'filter' => Lookup::items('datapickStatus'),
             ),
             array(
-                'name' => '№ домика',
+                'name' => 'Домик',
                 'value' => '$data->home_id',
+            ),
+            array(
+                'name' => 'Имя',
+                'value' => '$data->name',
+            ),
+            array(
+                'name' => 'Телефон',
+                'value' => '$data->phone',
             ),
 
         ),

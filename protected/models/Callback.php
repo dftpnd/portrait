@@ -50,10 +50,29 @@ class Callback extends CActiveRecord
     {
         return array(
             'id' => 'ID',
-            'name' => 'Name',
-            'phone' => 'Phone',
-            'email' => 'Email',
+            'name' => 'Имя',
+            'phone' => 'Телефон',
+            'email' => 'email',
         );
+    }
+
+    protected function afterFind()
+    {
+        // convert to display format
+        $this->created = DateTime::createFromFormat('U', $this->created)->format('d.m.Y H:i');
+        parent::afterFind();
+    }
+
+    protected function beforeSave()
+    {
+        MyHelper::sendMail($this);
+        $this->created = time();
+        return parent::beforeSave();
+    }
+
+    public function getTitle()
+    {
+        return "Обратный звонок";
     }
 
     /**
@@ -70,14 +89,9 @@ class Callback extends CActiveRecord
      */
     public function search()
     {
-        // @todo Please modify the following code to remove attributes that should not be searched.
-
         $criteria = new CDbCriteria;
-
+        $criteria->order = 'id DESC';
         $criteria->compare('id', $this->id);
-        $criteria->compare('name', $this->name, true);
-        $criteria->compare('phone', $this->phone, true);
-        $criteria->compare('email', $this->email, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,

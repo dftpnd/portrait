@@ -57,7 +57,7 @@ class Datapick extends CActiveRecord
     {
         return array(
             'id' => 'ID',
-            'created' => 'Created',
+            'created' => 'Дата создания',
             'datapick' => 'Дата бронирования',
             'status' => 'Статус',
             'home_id' => 'Номер домика',
@@ -144,6 +144,7 @@ class Datapick extends CActiveRecord
 
     protected function beforeSave()
     {
+        MyHelper::sendMail($this);
         $this->datapick = DateTime::createFromFormat('d.m.Y', $this->datapick)->format('Y-m-d');
         return parent::beforeSave();
     }
@@ -183,6 +184,11 @@ class Datapick extends CActiveRecord
 
         return true;
 
+    }
+
+    public function getTitle()
+    {
+        return "Заявка";
     }
 
 }
