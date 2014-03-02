@@ -479,7 +479,7 @@
                 <a class="vk" href="#">
                     <div></div>
                 </a>
-                <a class="inst" href="#">
+                <a class="inst" href="http://instagram.com/baza_ilet">
                     <div></div>
                 </a>
 

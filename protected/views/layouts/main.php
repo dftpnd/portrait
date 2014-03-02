@@ -6,7 +6,7 @@
     <title>База отдыха Илеть</title>
     <link href="/favicon.gif" rel="icon" type="image/x-icon"/>
     <link href="/favicon.gif" rel="shortcut icon" type="image/x-icon"/>
-    <?php if (false): ?>
+    <?php if (true): ?>
         <script type="text/javascript"
                 src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBeYC5t9v6gdSm-utyFxVNbGoxZPv1YCD8&sensor=false">
         </script>
