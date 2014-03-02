@@ -297,7 +297,6 @@ $(function () {
     });
 
     $('#map-detail').click(function () {
-        initialize();
         openModal($('#map-detail-modal'));
         return false;
     });

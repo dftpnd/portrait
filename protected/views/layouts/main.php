@@ -6,23 +6,7 @@
     <title>База отдыха Илеть</title>
     <link href="/favicon.gif" rel="icon" type="image/x-icon"/>
     <link href="/favicon.gif" rel="shortcut icon" type="image/x-icon"/>
-    <?php if (true): ?>
-        <script type="text/javascript"
-                src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBeYC5t9v6gdSm-utyFxVNbGoxZPv1YCD8&sensor=false">
-        </script>
-        <!--    http://maps.google.com/maps/api/geocode/xml?address=%D0%9C%D0%B0%D1%80%D0%B8-%D0%9B%D1%83%D0%B3%D0%BE%D0%B2%D0%B0%D1%8F&sensor=false-->
-        <script type="text/javascript">
-            function initialize() {
-                var mapOptions = {
-                    center: new google.maps.LatLng(55.9407024, 48.1917855),
-                    zoom: 15,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
-                var map = new google.maps.Map(document.getElementById("map_canvas"),
-                    mapOptions);
-            }
-        </script>
-    <?php endif; ?>
+
 </head>
 <body>
 <div class="help-menu">

@@ -497,7 +497,7 @@
 </section>
 
 
-<div id="map-detail-modal" class="modal fade modal-zakaz" tabindex="1" data-width="700">
+<div id="map-detail-modal" class="modal fade modal-zakaz" tabindex="1" data-width="auto">
     <div class="modal-content">
         <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
         <div class="anchor"></div>
@@ -505,7 +505,11 @@
             <h3 class="modal-title">Тут мы находимся</h3>
 
             <div class="map-detail-content">
-                <div id="map_canvas"></div>
+                <?php if (true): ?>
+                    <script type="text/javascript" charset="utf-8"
+                            src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=ZKSMoU93YgJx1P_bBdCL20NJ_9oXDEnJ&width=600&height=450"></script>
+                <?php endif; ?>
+
             </div>
         </div>
     </div>
