@@ -9,7 +9,18 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $datapicks = Datapick::model()->jsonePrepeare(Datapick::model()->findAllByAttributes(array('status' => Datapick::STATUS_APPROVED)));
-        $this->render('index', array('datapicks' => $datapicks));
+        $homes = Home::model()->findAll();
+
+        $homes_arr[] = array();
+        foreach ($homes as $home) {
+            $homes_arr[$home->id] = $home;
+        }
+
+        $this->render('index',
+            array(
+                'datapicks' => $datapicks,
+                'home' => $homes_arr
+            ));
     }
 
 
@@ -62,9 +73,55 @@ class SiteController extends Controller
         echo $this->renderPartial('_calendar_door', array('datapick' => $datapick));
     }
 
-    public function actionOrderCallback($name, $phone)
+    public function actionOrderCallback1($name, $phone)
     {
+        $response = array(
+            'status' => 'success',
+        );
 
+        $callback = new Callback("1");
+        $callback->name = $name;
+        $callback->phone = $phone;
+        if (!$callback->save()) {
+            $response = array(
+                'status' => 'error',
+                'messages' => $callback->getErrors(),
+            );
+        }
+
+        echo CJSON::encode($response);
+    }
+
+    public function actionSendReview()
+    {
+        $model = new Review();
+        $model->attributes = $_POST;
+        $model->save();
+
+        echo CJSON::encode($response = array(
+            'status' => 'success',
+        ));
+    }
+
+
+    public function actionOrderCallback2($name, $phone, $email)
+    {
+        $response = array(
+            'status' => 'success',
+        );
+
+        $callback = new Callback();
+        $callback->name = $name;
+        $callback->phone = $phone;
+        $callback->email = $email;
+        if (!$callback->save()) {
+            $response = array(
+                'status' => 'error',
+                'messages' => $callback->getErrors(),
+            );
+        }
+
+        echo CJSON::encode($response);
     }
 
     public function actionHomeBron()

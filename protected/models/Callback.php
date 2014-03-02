@@ -1,27 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "{{upload}}".
+ * This is the model class for table "{{callback}}".
  *
- * The followings are the available columns in table '{{upload}}':
+ * The followings are the available columns in table '{{callback}}':
  * @property integer $id
- * @property integer $home_id
- * @property string $size
- * @property string $mime
  * @property string $name
- * @property string $source
+ * @property string $phone
+ * @property string $email
  */
-class Upload extends CActiveRecord
+class Callback extends CActiveRecord
 {
-    const width = 151;
-    const height = 80;
-
     /**
      * @return string the associated database table name
      */
     public function tableName()
     {
-        return '{{upload}}';
+        return '{{callback}}';
     }
 
     /**
@@ -32,12 +27,9 @@ class Upload extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('home_id, size, mime, name, source', 'required'),
-            array('home_id, created', 'numerical', 'integerOnly' => true),
-            array('size, mime, name, source', 'length', 'max' => 255),
+            array('name, phone, email', 'length', 'max' => 255),
             // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-            array('id, home_id, size, mime, name, source', 'safe', 'on' => 'search'),
+            array('name, phone', 'required', 'on' => '1'),
         );
     }
 
@@ -58,12 +50,9 @@ class Upload extends CActiveRecord
     {
         return array(
             'id' => 'ID',
-            'home_id' => 'Home',
-            'size' => 'Size',
-            'mime' => 'Mime',
             'name' => 'Name',
-            'source' => 'Source',
-            'created' => 'created',
+            'phone' => 'Phone',
+            'email' => 'Email',
         );
     }
 
@@ -86,11 +75,9 @@ class Upload extends CActiveRecord
         $criteria = new CDbCriteria;
 
         $criteria->compare('id', $this->id);
-        $criteria->compare('home_id', $this->home_id);
-        $criteria->compare('size', $this->size, true);
-        $criteria->compare('mime', $this->mime, true);
         $criteria->compare('name', $this->name, true);
-        $criteria->compare('source', $this->source, true);
+        $criteria->compare('phone', $this->phone, true);
+        $criteria->compare('email', $this->email, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -101,16 +88,10 @@ class Upload extends CActiveRecord
      * Returns the static model of the specified AR class.
      * Please note that you should have this exact method in all your CActiveRecord descendants!
      * @param string $className active record class name.
-     * @return Upload the static model class
+     * @return Callback the static model class
      */
     public static function model($className = __CLASS__)
     {
         return parent::model($className);
-    }
-
-    protected function beforeSave()
-    {
-        $this->created = time();
-        return parent::beforeSave();
     }
 }

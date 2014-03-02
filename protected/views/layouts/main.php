@@ -79,14 +79,14 @@
                     <div class="modal-body">
                         <h4>Оставьте номер,</h4>
 
-                        <form id="form-order-callback-top" action="/site/orderCallback" method="GET">
+                        <form id="form-order-callback-top" action="/site/orderCallback1" method="GET">
                             <p class="callback-title">мы перезвоним Вам сами</p>
 
-                            <div class="error-field">
+                            <div class="model-row">
                                 <p class="error-text">Поле обязательно для заполнения!</p>
                                 <input name="name" type="text" placeholder="*Ваше имя" class=""/>
                             </div>
-                            <div class="error-text">
+                            <div class="model-row">
                                 <p class="hidden">Поле обязательно для заполнения!</p>
                                 <input name="phone" type="text" placeholder="*Ваш телефон"
                                        class="phone-mask"/>

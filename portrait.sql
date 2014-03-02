@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.0
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Фев 27 2014 г., 14:02
--- Версия сервера: 5.5.34-0ubuntu0.13.10.1
--- Версия PHP: 5.5.3-1ubuntu2
+-- Время создания: Мар 02 2014 г., 17:39
+-- Версия сервера: 5.6.12-log
+-- Версия PHP: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,22 @@ SET time_zone = "+00:00";
 --
 -- База данных: `portrait`
 --
+CREATE DATABASE IF NOT EXISTS `portrait` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `portrait`;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `gr_callback`
+--
+
+CREATE TABLE IF NOT EXISTS `gr_callback` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -89,6 +105,19 @@ INSERT INTO `gr_lookup` (`id`, `name`, `code`, `type`, `position`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `gr_review`
+--
+
+CREATE TABLE IF NOT EXISTS `gr_review` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `text` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `gr_upload`
 --
 
@@ -99,6 +128,7 @@ CREATE TABLE IF NOT EXISTS `gr_upload` (
   `mime` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `source` varchar(255) NOT NULL,
+  `created` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 

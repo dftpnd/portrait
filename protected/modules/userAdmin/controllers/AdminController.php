@@ -120,7 +120,7 @@ class AdminController extends CController
     {
         $criteria = new CDbCriteria;
         $criteria->compare('t.id', $home_id);
-        $criteria->order  = 'upload.created DESC';
+        $criteria->order = 'upload.created DESC';
 
         $model = Home::model()->with('upload')->find($criteria);
 
@@ -260,6 +260,14 @@ class AdminController extends CController
                 throw new CHttpException(500, "Could not upload file");
             }
         }
+    }
+
+
+    public function actionDeleteUpload($id)
+    {
+        Upload::model()->deleteByPk($id);
+
+        echo CJSON::encode(array('status' => 'success'));
     }
 
 }

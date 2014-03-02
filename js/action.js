@@ -28,45 +28,47 @@ var flag = true;
 var date_cliked = {};
 
 $(function () {
-    var onMouseOutOpacity = 0.67;
+    var onMouseOutOpacity = 1;
     var i = 1;
     while (i <= 5) {
         if ($('#thumbs-' + i).length != 0)
-            $('#thumbs-' + i).galleriffic({
-                delay: 0,
-                numThumbs: 3,
-                preloadAhead: 10,
-                enableTopPager: false,
-                enableBottomPager: true,
-                maxPagesToShow: 10,
-                imageContainerSel: '#slideshow-' + i,
-                controlsContainerSel: '#controls-' + i,
-                captionContainerSel: '#caption-' + i,
-                loadingContainerSel: '#loading-' + i,
-                renderSSControls: true,
-                renderNavControls: true,
-                playLinkText: 'Play Slideshow',
-                pauseLinkText: 'Pause Slideshow',
-                prevLinkText: '&lsaquo; Previous Photo',
-                nextLinkText: 'Next Photo &rsaquo;',
-                nextPageLinkText: '&rarr;',
-                prevPageLinkText: '&larr;',
-                enableHistory: false,
-                autoStart: false,
-                syncTransitions: false,
-                defaultTransitionDuration: 0,
-                onSlideChange: function (prevIndex, nextIndex) {
-                    this.find('ul.thumbs').children()
-                        .eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
-                        .eq(nextIndex).fadeTo('fast', 1.0);
-                },
-                onPageTransitionOut: function (callback) {
-                    this.fadeTo('fast', 0.0, callback);
-                },
-                onPageTransitionIn: function () {
-                    this.fadeTo('fast', 1.0);
-                }
-            });
+            if ($('#thumbs-' + i + ' .thumbs li').length != 0)
+                $('#thumbs-' + i).galleriffic({
+                    delay: 0,
+                    numThumbs: 3,
+                    preloadAhead: 10,
+                    enableTopPager: false,
+                    enableBottomPager: true,
+                    maxPagesToShow: 10,
+                    imageContainerSel: '#slideshow-' + i,
+                    controlsContainerSel: '#controls-' + i,
+                    captionContainerSel: '#caption-' + i,
+                    loadingContainerSel: '#loading-' + i,
+                    renderSSControls: true,
+                    renderNavControls: true,
+                    playLinkText: 'Play Slideshow',
+                    pauseLinkText: 'Pause Slideshow',
+                    prevLinkText: '&lsaquo; Previous Photo',
+                    nextLinkText: 'Next Photo &rsaquo;',
+                    nextPageLinkText: '&rarr;',
+                    prevPageLinkText: '&larr;',
+                    enableHistory: false,
+                    autoStart: false,
+                    syncTransitions: false,
+                    defaultTransitionDuration: 0,
+                    onSlideChange: function (prevIndex, nextIndex) {
+//                        this.find('ul.thumbs').children()
+//                            .eq(prevIndex).hide().end()
+//                            .eq(nextIndex).show()
+                    },
+                    onPageTransitionOut: function (callback) {
+                        this.hide();
+                        callback();
+                    },
+                    onPageTransitionIn: function () {
+                        this.show();
+                    }
+                });
         i++;
     }
 
@@ -163,8 +165,15 @@ $(function () {
             });
         });
 
+    $.fn.clearForm = function ($form) {
+        $.each($form.find('input'), function (k, el) {
+            $(el).val('')
+        });
 
-    $.fn.jax = function (complete, success) {
+        return $(this);
+    }
+
+    $.fn.jax = function (complete, success, error) {
 
         var $element = $(this);
         var data, url, type;
@@ -177,6 +186,7 @@ $(function () {
             data = $form.serialize();
             url = $form.attr('action');
             type = $form.attr('method');
+
         }
 
 
@@ -192,11 +202,15 @@ $(function () {
                     }
 
                 } else {
-                    $.each(data.message, function (atrib, messages) {
-                        $.each(messages, function (i, msg) {
-                            alert(msg);
+                    if (typeof error != "undefined") {
+                        error(data);
+                    } else {
+                        $.each(data.message, function (atrib, messages) {
+                            $.each(messages, function (i, msg) {
+                                alert(msg);
+                            });
                         });
-                    });
+                    }
                 }
             },
             complete: function () {
@@ -229,20 +243,32 @@ $(function () {
         openModal($('#callback-modal'));
     });
 
-    $('.reservd').click(function () {
-        openModal($('#reservd-modal'));
-    });
-
-    $('.ask-btn').click(function () {
-        openModal($('#ask-modal'));
-    });
-
     $('.callback-bottom').click(function () {
         openModal($('#callback-modal-bottom'));
     });
 
     $('.add_review').click(function () {
         openModal($('#review-modal'));
+    });
+
+    $('.delete-upload').click(function () {
+        var $el = $(this);
+        var id = $el.data('upload-id');
+
+        $.ajax({
+            url: "/userAdmin/admin/deleteUpload",
+            type: "GET",
+            dataType: 'json',
+            data: ({
+                id: id
+            }),
+            success: function (data) {
+                if (data.status == "success") {
+                    $el.parents('.template-download').remove();
+                }
+            }
+        });
+
     });
 
 
@@ -277,15 +303,100 @@ $(function () {
     });
 
     $('#order-callback-top').click(function () {
+        var $form = $(this).parents('form');
         $(this).jax(
             function () {
 
             },
             function () {
-
+                $form.clearForm($form);
+                $('#callback-modal').modal('hide');
+                $('#reservd-modal').modal('show');
+            },
+            function (data) {
+                $.each(data.messages, function (atrib, messages) {
+                    $form.find('input[name="' + atrib + '"]').parents('.model-row').addClass('error-field ');
+                });
             }
         );
 
+    });
+
+    $('#order-callback-bottom').click(function () {
+        var $form = $(this).parents('form');
+        $(this).jax(
+            function () {
+
+            },
+            function () {
+                $form.clearForm($form);
+                $('#callback-modal').modal('hide');
+                $('#reservd-modal').modal('show');
+            },
+            function (data) {
+                $.each(data.messages, function (atrib, messages) {
+                    $form.find('input[name="' + atrib + '"]').parents('.model-row').addClass('error-field ');
+                });
+            }
+        );
+
+    });
+
+
+    $('#order-callback-sall').click(function () {
+        var $form = $(this).parents('form');
+        $(this).jax(
+            function () {
+
+            },
+            function () {
+                $form.clearForm($form);
+                $('#callback-modal').modal('hide');
+                $('#reservd-modal').modal('show');
+            },
+            function (data) {
+                $.each($form.find('.error-field'), function (i, el) {
+                    $(el).removeClass('error-field');
+                });
+
+                $.each(data.messages, function (atrib, messages) {
+                    $form.find('input[name="' + atrib + '"]').parents('.model-row').addClass('error-field ');
+                });
+            }
+        );
+    });
+
+    $('#order-callback-midle').click(function () {
+        var $form = $(this).parents('form');
+        $(this).jax(
+            function () {
+
+            },
+            function () {
+                $form.clearForm($form);
+                $('#reservd-modal').modal('show');
+            },
+            function (data) {
+
+            }
+        );
+    });
+
+    $('#send-review').click(function () {
+        var $form = $(this).parents('form');
+        $(this).jax(
+            function () {
+
+            },
+            function () {
+                $form.clearForm($form);
+                $('#review-modal').modal('hide');
+                $('#reservd-modal').modal('show');
+            },
+            function (data) {
+
+            }
+        );
     });
 
 

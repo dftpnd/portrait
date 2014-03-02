@@ -30,25 +30,27 @@
         </div>
         <div class="action-bg"></div>
         <div class="window">
-            <div class="w_info">
-                <p>Подайте заявку прямо</p>
+            <form id="form-order-callback-sall" action="/site/orderCallback1" method="GET">
+                <div class="w_info">
+                    <p>Подайте заявку прямо</p>
 
-                <p>сейчас и получите скидку</p>
+                    <p>сейчас и получите скидку</p>
 
-                <p>50% на вторые сутки!</p>
-            </div>
-            <div class="error-field">
-                <p class="error-text">Поле обязательно для заполнения!</p>
-                <input type="text" class="default-field" placeholder="*Ваше имя"/>
-            </div>
-            <div>
-                <p class="error-text">Поле обязательно для заполнения!</p>
-                <input type="text" class="default-field phone-mask" placeholder="*Ваш телефон"/>
-            </div>
+                    <p>50% на вторые сутки!</p>
+                </div>
+                <div class="model-row">
+                    <p class="error-text">Поле обязательно для заполнения!</p>
+                    <input type="text" class="default-field" name="name" placeholder="*Ваше имя"/>
+                </div>
+                <div class="model-row">
+                    <p class="error-text">Поле обязательно для заполнения!</p>
+                    <input type="text" class="default-field phone-mask" name="phone" placeholder="*Ваш телефон"/>
+                </div>
 
-            <p class="inp_descr">*Ваши данные в безопасности</p>
+                <p class="inp_descr">*Ваши данные в безопасности</p>
 
-            <button class="button reservd"></button>
+                <button id="order-callback-sall" type="button" class="button reservd"></button>
+            </form>
         </div>
         <div class="anchor"></div>
 
@@ -109,21 +111,21 @@
     <div class="centerator">
         <div class="container-block">
             <div class="picterform">
-                <form class="ask-form">
+                <form id="form-order-callback-midle" class="ask-form" action="/site/orderCallback2" method="GET">
                     <h2 class="d-green">Появился вопрос? Задай!</h2>
-                    <input class="input-name" placeholder="Введите ваше имя и вопрос" type="text"/>
+                    <input name="name" class="input-name" placeholder="Введите ваше имя и вопрос" type="text"/>
 
                     <div class="input-phone">
                         <div>
-                            <input placeholder="Телефон" class="phone-mask" type="text"/>
+                            <input name="phone" placeholder="Телефон" class="phone-mask" type="text"/>
                         </div>
                     </div>
                     <div class="input-mail">
                         <div>
-                            <input placeholder="E-mail" type="text"/>
+                            <input name="email" placeholder="E-mail" type="text"/>
                         </div>
                     </div>
-                    <button type="button" class="ask-btn"></button>
+                    <button id="order-callback-midle" type="button" class="ask-btn"></button>
                 </form>
             </div>
         </div>
@@ -232,238 +234,149 @@
             <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
             <div class="anchor"></div>
             <div class="modal-body review-modal">
-                <h3 class="modal-title">Добавить отзыв</h3>
-
-                <dl class="dl-horizontal">
-                    <dt>ФИО<span class="required">*</span></dt>
-                    <dd><input class="input-fio" type="text"/></dd>
-                    <dt>Отзыв</dt>
-                    <dd><textarea></textarea></dd>
-                </dl>
-                <button class="add-btn"></button>
+                <form id="form-send-review" action="/site/sendReview" method="POST">
+                    <h3 class="modal-title">Добавить отзыв</h3>
+                    <dl class="dl-horizontal">
+                        <dt>ФИО<span class="required">*</span></dt>
+                        <dd><input name="name" class="input-fio" type="text"/></dd>
+                        <dt>Отзыв</dt>
+                        <dd><textarea name="text"></textarea></dd>
+                    </dl>
+                    <button id="send-review" type="button" class="add-btn"></button>
+                </form>
             </div>
         </div>
     </div>
     <div class="anchor"></div>
 </article>
 <article id="ourhome" class="in_scrollspy">
-<div class="centrator cottage">
-<div class="container-block">
-<h2>Наши коттеджи</h2>
-<ul class="cottages-ul">
-<li>
-    <div class="cottages-wrapp">
-        <div>
-            <h3>Коттедж № 1</h3>
+    <div class="centrator cottage">
+        <div class="container-block">
+            <h2>Наши коттеджи</h2>
+            <ul class="cottages-ul">
+                <li>
+                    <div class="cottages-wrapp">
+                        <div>
+                            <h3>Коттедж № 1</h3>
 
-            <p>Просторный коттедж для шумных компаний.</p>
-            <ul class="cott-descr cott-descr-marg">
-                <li>Большой зал для застолья.</li>
-                <li>12 спальных мест</li>
-                <li>Кухонные приборы, бытовая техника</li>
-            </ul>
-            <div id="thumbs-1" class="navigation" data-home-id="1">
-                <ul class="thumbs noscript">
-                    <?php $i = 1;
-                    while ($i < 12): ?>
-                        <li>
-                            <a class="thumb" name="leaf"
-                               href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg" title="Title #0">
-                                <img src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_s.jpg"
-                                     alt="Title #0"/>
-                            </a>
-
-                            <div class="caption">
-                                <div class="download">
-                                    <a href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_b.jpg">Download
-                                        Original</a>
-                                </div>
-                                <div class="image-title">Title #0</div>
-                                <div class="image-desc">Description</div>
+                            <p>Просторный коттедж для шумных компаний.</p>
+                            <ul class="cott-descr cott-descr-marg">
+                                <li>Большой зал для застолья.</li>
+                                <li>12 спальных мест</li>
+                                <li>Кухонные приборы, бытовая техника</li>
+                            </ul>
+                            <div id="thumbs-1" class="navigation" data-home-id="1">
+                                <ul class="thumbs noscript">
+                                    <?php $this->renderPartial('_photo', array('uploads' => $home[1])); ?>
+                                </ul>
                             </div>
-                        </li>
-                        <?php $i++; endwhile; ?>
-                </ul>
-            </div>
 
-            <div class="pagination"></div>
+                            <div class="pagination"></div>
 
 
-            <button class="cot-reservd-btn cot-reservd-pos home-btn" data-home-id="1"
-                    type="button"></button>
+                            <button class="cot-reservd-btn cot-reservd-pos home-btn" data-home-id="1"
+                                    type="button"></button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="cottages-wrapp">
+                        <div>
+                            <h3>Коттедж № 2</h3>
+
+                            <div>Идеально подходит для влюбленной пары или небольшой компании.</div>
+                            <div>В доме есть:</div>
+                            <ul class="cott-descr">
+                                <li>душевая кабина</li>
+                                <li>оборудованная кухня</li>
+                                <li>9 спальных мест</li>
+                            </ul>
+                            <div id="thumbs-2" class="navigation" data-home-id="2">
+                                <ul class="thumbs noscript">
+                                    <?php $this->renderPartial('_photo', array('uploads' => $home[2])); ?>
+                                </ul>
+                            </div>
+
+
+                            <button class="cot-reservd-btn cot-reservd-pos home-btn" data-home-id="2"
+                                    type="button"></button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="cottages-wrapp">
+                        <div>
+                            <h3>Коттедж № 3</h3>
+
+                            <p>Просторный коттедж для шумных компаний.</p>
+                            <ul class="cott-descr  cott-descr-marg">
+                                <li>Большой зал для застолья.</li>
+                                <li>12 спальных мест</li>
+                                <li>Кухонные приборы, бытовая техника</li>
+                            </ul>
+                            <div id="thumbs-3" class="navigation" data-home-id="3">
+                                <ul class="thumbs noscript">
+                                    <?php $this->renderPartial('_photo', array('uploads' => $home[3])); ?>
+                                </ul>
+                            </div>
+
+                            <button class="cot-reservd-btn cot-reservd-pos home-btn" data-home-id="3"
+                                    type="button"></button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="cottages-wrapp">
+                        <div>
+                            <h3>Коттедж № 4</h3>
+
+                            <p>Просторный коттедж для шумных компаний.</p>
+                            <ul class="cott-descr cott-descr-marg">
+                                <li>Большой зал для застолья.</li>
+                                <li>12 спальных мест</li>
+                                <li>Кухонные приборы, бытовая техника</li>
+                            </ul>
+                            <div id="thumbs-4" class="navigation" data-home-id="4">
+                                <ul class="thumbs noscript">
+                                    <?php $this->renderPartial('_photo', array('uploads' => $home[4])); ?>
+                                </ul>
+                            </div>
+
+                            <button class="cot-reservd-btn cot-reservd-pos home-btn" data-home-id="4"
+                                    type="button"></button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="cottages-wrapp">
+                        <div>
+                            <h3>Коттедж № 5</h3>
+
+                            <p>Просторный коттедж для шумных компаний.</p>
+                            <ul class="cott-descr  cott-descr-marg">
+                                <li>Большой зал для застолья.</li>
+                                <li>12 спальных мест</li>
+                                <li>Кухонные приборы, бытовая техника</li>
+                            </ul>
+                            <div id="thumbs-5" class="navigation" data-home-id="5">
+                                <ul class="thumbs noscript">
+                                    <?php $this->renderPartial('_photo', array('uploads' => $home[5])); ?>
+                                </ul>
+                            </div>
+
+                            <button class="cot-reservd-btn cot-reservd-pos home-btn" data-home-id="5"
+                                    type="button"></button>
+                        </div>
+                    </div>
+                </li>
+
+
+            </ul>
         </div>
     </div>
-</li>
-<li>
-    <div class="cottages-wrapp">
-        <div>
-            <h3>Коттедж № 2</h3>
-
-            <div>Идеально подходит для влюбленной пары или небольшой компании.</div>
-            <div>В доме есть:</div>
-            <ul class="cott-descr">
-                <li>душевая кабина</li>
-                <li>оборудованная кухня</li>
-                <li>9 спальных мест</li>
-            </ul>
-            <div id="thumbs-2" class="navigation" data-home-id="2">
-                <ul class="thumbs noscript">
-                    <?php $i = 1;
-                    while ($i < 7): ?>
-                        <li>
-                            <a class="thumb" name="leaf"
-                               href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg" title="Title #0">
-                                <img src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_s.jpg"
-                                     alt="Title #0"/>
-                            </a>
-
-                            <div class="caption">
-                                <div class="download">
-                                    <a href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_b.jpg">Download
-                                        Original</a>
-                                </div>
-                                <div class="image-title">Title #0</div>
-                                <div class="image-desc">Description</div>
-                            </div>
-                        </li>
-                        <?php $i++; endwhile; ?>
-                </ul>
-            </div>
 
 
-            <button class="cot-reservd-btn cot-reservd-pos home-btn" data-home-id="2"
-                    type="button"></button>
-        </div>
-    </div>
-</li>
-<li>
-    <div class="cottages-wrapp">
-        <div>
-            <h3>Коттедж № 3</h3>
-
-            <p>Просторный коттедж для шумных компаний.</p>
-            <ul class="cott-descr  cott-descr-marg">
-                <li>Большой зал для застолья.</li>
-                <li>12 спальных мест</li>
-                <li>Кухонные приборы, бытовая техника</li>
-            </ul>
-            <div id="thumbs-3" class="navigation" data-home-id="3">
-                <ul class="thumbs noscript">
-                    <?php $i = 1;
-                    while ($i < 5): ?>
-                        <li>
-                            <a class="thumb" name="leaf"
-                               href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg" title="Title #0">
-                                <img src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_s.jpg"
-                                     alt="Title #0"/>
-                            </a>
-
-                            <div class="caption">
-                                <div class="download">
-                                    <a href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_b.jpg">Download
-                                        Original</a>
-                                </div>
-                                <div class="image-title">Title #0</div>
-                                <div class="image-desc">Description</div>
-                            </div>
-                        </li>
-                        <?php $i++; endwhile; ?>
-                </ul>
-            </div>
-
-            <button class="cot-reservd-btn cot-reservd-pos home-btn" data-home-id="3"
-                    type="button"></button>
-        </div>
-    </div>
-</li>
-<li>
-    <div class="cottages-wrapp">
-        <div>
-            <h3>Коттедж № 4</h3>
-
-            <p>Просторный коттедж для шумных компаний.</p>
-            <ul class="cott-descr cott-descr-marg">
-                <li>Большой зал для застолья.</li>
-                <li>12 спальных мест</li>
-                <li>Кухонные приборы, бытовая техника</li>
-            </ul>
-            <div id="thumbs-4" class="navigation" data-home-id="4">
-                <ul class="thumbs noscript">
-                    <?php $i = 1;
-                    while ($i < 5): ?>
-                        <li>
-                            <a class="thumb" name="leaf"
-                               href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg" title="Title #0">
-                                <img src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_s.jpg"
-                                     alt="Title #0"/>
-                            </a>
-
-                            <div class="caption">
-                                <div class="download">
-                                    <a href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_b.jpg">Download
-                                        Original</a>
-                                </div>
-                                <div class="image-title">Title #0</div>
-                                <div class="image-desc">Description</div>
-                            </div>
-                        </li>
-                        <?php $i++; endwhile; ?>
-                </ul>
-            </div>
-
-            <button class="cot-reservd-btn cot-reservd-pos home-btn" data-home-id="4"
-                    type="button"></button>
-        </div>
-    </div>
-</li>
-<li>
-    <div class="cottages-wrapp">
-        <div>
-            <h3>Коттедж № 5</h3>
-
-            <p>Просторный коттедж для шумных компаний.</p>
-            <ul class="cott-descr  cott-descr-marg">
-                <li>Большой зал для застолья.</li>
-                <li>12 спальных мест</li>
-                <li>Кухонные приборы, бытовая техника</li>
-            </ul>
-            <div id="thumbs-5" class="navigation" data-home-id="5">
-                <ul class="thumbs noscript">
-                    <?php $i = 1;
-                    while ($i < 5): ?>
-                        <li>
-                            <a class="thumb" name="leaf"
-                               href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg" title="Title #0">
-                                <img src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_s.jpg"
-                                     alt="Title #0"/>
-                            </a>
-
-                            <div class="caption">
-                                <div class="download">
-                                    <a href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_b.jpg">Download
-                                        Original</a>
-                                </div>
-                                <div class="image-title">Title #0</div>
-                                <div class="image-desc">Description</div>
-                            </div>
-                        </li>
-                        <?php $i++; endwhile; ?>
-                </ul>
-            </div>
-
-            <button class="cot-reservd-btn cot-reservd-pos home-btn" data-home-id="5"
-                    type="button"></button>
-        </div>
-    </div>
-</li>
-
-
-</ul>
-</div>
-</div>
-
-
-<div class="anchor"></div>
+    <div class="anchor"></div>
 </article>
 
 <article class="in_scrollspy centrator calendar" id="reservation">
@@ -533,17 +446,20 @@
                     <div class="modal-body">
                         <h4>Оставьте номер,</h4>
 
-                        <p class="callback-title">мы перезвоним Вам сами</p>
+                        <form id="form-order-callback-bottom" action="/site/orderCallback1" method="GET">
+                            <p class="callback-title">мы перезвоним Вам сами</p>
 
-                        <div class="error-field">
-                            <p class="error-text">Поле обязательно для заполнения!</p>
-                            <input type="text" placeholder="*Ваше имя" class=""/>
-                        </div>
-                        <div class="">
-                            <p class="error-text">Поле обязательно для заполнения!</p>
-                            <input type="text" placeholder="*Ваш телефон" class="phone-mask"/>
-                        </div>
-                        <button class="callback-modal-btn"></button>
+                            <div class="model-row">
+                                <p class="error-text">Поле обязательно для заполнения!</p>
+                                <input name="name" type="text" placeholder="*Ваше имя" class=""/>
+                            </div>
+                            <div class="model-row">
+                                <p class="hidden">Поле обязательно для заполнения!</p>
+                                <input name="phone" type="text" placeholder="*Ваш телефон"
+                                       class="phone-mask"/>
+                            </div>
+                            <button id="order-callback-bottom" class="callback-modal-btn" type="button"></button>
+                        </form>
                     </div>
                     <div class="bottom-link"></div>
                 </div>
@@ -607,7 +523,7 @@
 </div>
 <?php $i = 1; ?>
 <?php while ($i <= 5): ?>
-    <div id="thumb-modal-<?php echo $i ?>" class="modal fade thumb-modal" tabindex="1" data-width="auto">
+    <div id="thumb-modal-<?php echo $i ?>" class="modal fade thumb-modal" tabindex="1" data-width="65%">
         <div class="modal-content">
             <div class="modal-body">
                 <div id="gallery-<?php echo $i ?>" class="content">
@@ -615,10 +531,9 @@
                         <div id="loading-<?php echo $i ?>" class="loader"></div>
                         <div id="slideshow-<?php echo $i ?>" class="slideshow"></div>
                     </div>
-                    <div id="controls-<?php echo $i ?>" class="controls"></div>
+                    <div id="controls-<?php echo $i ?>" class="controls" style="display: none"></div>
                     <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true"></button>
                     <div class="anchor"></div>
-<!--                    <div id="caption---><?php //echo $i ?><!--" class="caption-container"></div>-->
                 </div>
             </div>
         </div>

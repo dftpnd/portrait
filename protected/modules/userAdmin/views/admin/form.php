@@ -73,7 +73,7 @@ $form = $this->beginWidget('CActiveForm', array(
                 </td>
                 <td colspan="2"></td>
                 <td class="delete">
-                    <button class="btn btn-danger"
+                    <button data-upload-id="<?php echo $file->id; ?>" class="btn delete-upload btn-danger"
                             data-url="/userAdmin/admin/upload/_method/delete/file/<?php echo $file->id; ?>"
                             data-type="POST">
                         <i class="icon-trash icon-white"></i>

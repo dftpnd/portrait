@@ -5,18 +5,21 @@
     font-weight: 400;
     src: local('PT Sans'), local('PTSans-Regular'), url('../fonts/PT_Sans_400.woff') format('woff');
 }
+
 @font-face {
     font-family: 'PT Sans';
     font-style: normal;
     font-weight: 700;
     src: local('PT Sans Bold'), local('PTSans-Bold'), url('../fonts/PT_Sans_700.woff') format('woff');
 }
+
 @font-face {
     font-family: 'PT Sans';
     font-style: italic;
     font-weight: 400;
     src: local('PT Sans Italic'), local('PTSans-Italic'), url('../fonts/PT_Sans_400_ital.woff') format('woff');
 }
+
 @font-face {
     font-family: 'PT Sans';
     font-style: italic;
@@ -461,9 +464,11 @@ div.hr {
 .error-field {
     position: relative;
 }
-.error-text{
+
+.error-text {
     display: none;
 }
+
 .error-field p.error-text {
     display: block;
     color: #fe4302;
@@ -1127,11 +1132,12 @@ h1, h2, h3 {
     width: 100%;
 }
 
-.thumbs li{
+.thumbs li {
     margin-top: 10px;
     width: 32%;
 }
-.thumbs li img{
+
+.thumbs li img {
     width: 100%;
     max-height: 80px;
 }
@@ -1964,9 +1970,14 @@ dd {
     height: 500px;
 }
 
-#thumbs{
-    width: 100%!important;
+#thumbs {
+    width: 100% !important;
 }
+
+.thumbs * {
+    transition: all 0s ease-in-out !important;
+}
+
 .thumbs {
     display: block;
     width: 100%;
@@ -1975,6 +1986,7 @@ dd {
 .thumbs li {
     display: inline-block;
 }
+
 .thumb-modal .modal-content {
     position: relative;
     background: none;
@@ -1982,10 +1994,15 @@ dd {
     border-radius: 6px;
     outline: 0;
     -webkit-box-shadow: 0px 0px 0px 7px rgba(0, 0, 0, 0.45);
-    -moz-box-shadow:    0px 0px 0px 7px rgba(0, 0, 0, 0.45);
-    box-shadow:         0px 0px 0px 7px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0px 0px 0px 7px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 0px 0px 7px rgba(0, 0, 0, 0.45);
     background-clip: padding-box;
 }
+
 .thumb-modal .modal-body {
     padding: 0px;
+}
+
+.advance-link img {
+    width: 100%;
 }
