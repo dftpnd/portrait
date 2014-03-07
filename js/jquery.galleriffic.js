@@ -946,43 +946,6 @@
         if (initFirstImage)
             this.gotoIndex(0, false, true);
 
-        // Setup Keyboard Navigation
-        if (this.enableKeyboardNavigation) {
-            $(document).keydown(function (e) {
-                var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
-                switch (key) {
-                    case 32: // space
-                        gallery.next();
-                        e.preventDefault();
-                        break;
-                    case 33: // Page Up
-                        gallery.previousPage();
-                        e.preventDefault();
-                        break;
-                    case 34: // Page Down
-                        gallery.nextPage();
-                        e.preventDefault();
-                        break;
-                    case 35: // End
-                        gallery.gotoIndex(gallery.data.length - 1);
-                        e.preventDefault();
-                        break;
-                    case 36: // Home
-                        gallery.gotoIndex(0);
-                        e.preventDefault();
-                        break;
-                    case 37: // left arrow
-                        gallery.previous();
-                        e.preventDefault();
-                        break;
-                    case 39: // right arrow
-                        gallery.next();
-                        e.preventDefault();
-                        break;
-                }
-            });
-        }
-
         // Auto start the slideshow
         if (this.autoStart)
             this.play();
