@@ -20,6 +20,11 @@
                 'active' => (Yii::app()->controller->getId() == 'admin' && Yii::app()->controller->getAction()->getId() == 'form')
             ),
             array(
+                'label' => 'Отзывы',
+                'url' => Yii::app()->urlManager->createUrl('/userAdmin/admin/review'),
+                'active' => (Yii::app()->controller->getId() == 'admin' && Yii::app()->controller->getAction()->getId() == 'review')
+            ),
+            array(
                 'label' => 'Учетные данные',
                 'url' => Yii::app()->urlManager->createUrl('/userAdmin/admin/index'),
                 'active' => (Yii::app()->controller->getId() == 'admin' && Yii::app()->controller->getAction()->getId() == 'index')

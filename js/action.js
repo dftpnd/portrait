@@ -409,7 +409,8 @@ $(function () {
             success: function (data) {
                 if (data.status == "success") {
                     $form.find('input').parent().removeClass('error-field');
-                    alert('Забронировано');
+                    $('#home-modal').modal('hide');
+                    $('#reservd-modal').modal('show');
                 } else {
                     for (key in data.message) {
                         var $error_input = $form.find('.bh-' + key);
