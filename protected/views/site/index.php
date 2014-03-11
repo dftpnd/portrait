@@ -183,7 +183,7 @@
                                     Антон, Казань.
                                 </div>
                                 <div class="avatar">
-                                    <img src=""/>
+                                    
                                 </div>
                                 <div class="reviews-info">
                                     <p class="reviews-name">Илья Бондарев</p>
