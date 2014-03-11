@@ -15,7 +15,7 @@
                 <span class="active">4000 р</span>
                 <!--                <span class="no-price">вместо</span>-->
 
-<!--                <div class="no-price hr"><hr>4000p</div>-->
+                <!--                <div class="no-price hr"><hr>4000p</div>-->
                 <span class="no-price">в будни</span>
             </div>
             <div>
@@ -488,7 +488,7 @@
                 <div class="pingvin"></div>
             </div>
             <div class="partners-right">
-                <a class="vk" href="#">
+                <a class="vk" href="http://vk.com/club17685998">
                     <div></div>
                 </a>
                 <a class="inst" href="http://instagram.com/baza_ilet">
