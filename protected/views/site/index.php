@@ -12,16 +12,18 @@
 
         <div class="act-price">
             <div>
-                <span class="active">4000 р</span>
+                <!--                <span class="active">4000 р</span>-->
                 <!--                <span class="no-price">вместо</span>-->
 
-<!--                <div class="no-price hr"><hr>4000p</div>-->
+                <div class="no-price hr">4000p</div>
                 <span class="no-price">в будни</span>
             </div>
             <div>
-                <span class="active">6000 р</span>
+                <!--                <span class="active">6000 р</span>-->
                 <!--                <span class="no-price">вместо</span>-->
-                <!--                <span class="no-price hr"><hr>6000p</span>-->
+                                <span class="no-price hr">
+<!--                                    <hr>-->
+                                    6000p</span>
                 <span class="no-price">в выходные</span>
             </div>
         </div>
